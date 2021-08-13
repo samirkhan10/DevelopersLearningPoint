@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DevelopersLearningPoint</string>
+
+    <array name="learnjava">
+
+        <item>whatisjava</item>
+        <item>feauresofjava</item>
+        <item>c++vsjava</item>
+
+
+    </array>
+</resources>
