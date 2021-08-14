@@ -1,0 +1,366 @@
+<h1 class="h1">Loops in Java</h1>
+<p>The Java&nbsp;<em>for loop</em>&nbsp;is used to iterate a part of the program several times. If the number of iteration is&nbsp;<strong>fixed</strong>, it is recommended to use for loop.</p>
+<p>There are three types of for loops in Java.</p>
+<ul class="points">
+<li>Simple for Loop</li>
+<li><a href="https://www.javatpoint.com/for-each-loop">For-each</a>&nbsp;or Enhanced for Loop</li>
+<li>Labeled for Loop</li>
+</ul>
+<h2 class="h2">Java Simple for Loop</h2>
+<p>A simple for loop is the same as&nbsp;<a href="https://www.javatpoint.com/c-programming-language-tutorial">C</a>/<a href="https://www.javatpoint.com/cpp-tutorial">C++</a>. We can initialize the&nbsp;<a href="https://www.javatpoint.com/java-variables">variable</a>, check condition and increment/decrement value. It consists of four parts:</p>
+<ol class="points">
+<li><strong>Initialization</strong>: It is the initial condition which is executed once when the loop starts. Here, we can initialize the variable, or we can use an already initialized variable. It is an optional condition.</li>
+<li><strong>Condition</strong>: It is the second condition which is executed each time to test the condition of the loop. It continues execution until the condition is false. It must return boolean value either true or false. It is an optional condition.</li>
+<li><strong>Increment/Decrement</strong>: It increments or decrements the variable value. It is an optional condition.</li>
+<li><strong>Statement</strong>: The statement of the loop is executed each time until the second condition is false.</li>
+</ol>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(initialization;&nbsp;condition;&nbsp;increment/decrement){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//statement&nbsp;or&nbsp;code&nbsp;to&nbsp;be&nbsp;executed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Flowchart:</strong></p>
+<p><strong>Example:</strong></p>
+<p><strong>ForExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;example&nbsp;of&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//which&nbsp;prints&nbsp;table&nbsp;of&nbsp;1</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;ForExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Code&nbsp;of&nbsp;Java&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=ForExample" target="_blank">Test it Now</a></span></p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+</div>
+<h2 class="h2">Java Nested for Loop</h2>
+<p>If we have a for loop inside the another loop, it is known as nested for loop. The inner loop executes completely whenever outer loop executes.</p>
+<p><strong>Example:</strong></p>
+<p><strong>NestedForExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;NestedForExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//loop&nbsp;of&nbsp;i</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">3</span>;i++){&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//loop&nbsp;of&nbsp;j</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j=<span class="number">1</span>;j&lt;=<span class="number">3</span>;j++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i+<span class="string">"&nbsp;"</span>+j);&nbsp;&nbsp;</li>
+<li class="">}<span class="comment">//end&nbsp;of&nbsp;i</span>&nbsp;&nbsp;</li>
+<li class="alt">}<span class="comment">//end&nbsp;of&nbsp;j</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+3 1
+3 2
+3 3
+</pre>
+</div>
+<p><strong>Pyramid Example 1:</strong></p>
+<p><strong>PyramidExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;PyramidExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++){&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j=<span class="number">1</span>;j&lt;=i;j++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class="string">"*&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">System.out.println();<span class="comment">//new&nbsp;line</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+</pre>
+</div>
+<p><strong>Pyramid Example 2:</strong></p>
+<p><strong>PyramidExample2.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;PyramidExample2&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;term=<span class="number">6</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=term;i++){&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j=term;j&gt;=i;j--){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class="string">"*&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">System.out.println();<span class="comment">//new&nbsp;line</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*  
+</pre>
+</div>
+<h2 class="h2">Java for-each Loop</h2>
+<p>The for-each loop is used to traverse array or collection in Java. It is easier to use than simple for loop because we don't need to increment value and use subscript notation.</p>
+<p>It works on the basis of elements and not the index. It returns element one by one in the defined variable.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(data_type&nbsp;variable&nbsp;:&nbsp;array_name){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<p><strong>ForEachExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;For-each&nbsp;loop&nbsp;example&nbsp;which&nbsp;prints&nbsp;the</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//elements&nbsp;of&nbsp;the&nbsp;array</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;ForEachExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Declaring&nbsp;an&nbsp;array</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;arr[]={<span class="number">12</span>,<span class="number">23</span>,<span class="number">44</span>,<span class="number">56</span>,<span class="number">78</span>};&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Printing&nbsp;array&nbsp;using&nbsp;for-each&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i:arr){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=ForEachExample" target="_blank">Test it Now</a></span></p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>12
+23
+44
+56
+78
+</pre>
+</div>
+<h2 class="h2">Java Labeled For Loop</h2>
+<p>We can have a name of each Java for loop. To do so, we use label before the for loop. It is useful while using the nested for loop as we can break/continue specific for loop.</p>
+<h4 class="n">Note: The break and continue keywords breaks or continues the innermost for loop respectively.</h4>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">labelname:&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(initialization;&nbsp;condition;&nbsp;increment/decrement){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<p><strong>LabeledForExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//A&nbsp;Java&nbsp;program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;labeled&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;LabeledForExample&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Using&nbsp;Label&nbsp;for&nbsp;outer&nbsp;and&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;aa:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">3</span>;i++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bb:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j=<span class="number">1</span>;j&lt;=<span class="number">3</span>;j++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(i==<span class="number">2</span>&amp;&amp;j==<span class="number">2</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>&nbsp;aa;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i+<span class="string">"&nbsp;"</span>+j);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1 1
+1 2
+1 3
+2 1
+</pre>
+</div>
+<p>If you use&nbsp;<strong>break bb;</strong>, it will break inner loop only which is the default behaviour of any loop.</p>
+<p><strong>LabeledForExample2.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;LabeledForExample2&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;aa:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">3</span>;i++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bb:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j=<span class="number">1</span>;j&lt;=<span class="number">3</span>;j++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(i==<span class="number">2</span>&amp;&amp;j==<span class="number">2</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>&nbsp;bb;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i+<span class="string">"&nbsp;"</span>+j);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1 1
+1 2
+1 3
+2 1
+3 1
+3 2
+3 3
+</pre>
+</div>
+<h2 class="h2">Java Infinitive for Loop</h2>
+<p>If you use two semicolons ;; in the for loop, it will be infinitive for loop.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(;;){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<p><strong>ForExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;infinite&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//which&nbsp;prints&nbsp;an&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;ForExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Using&nbsp;no&nbsp;condition&nbsp;in&nbsp;for&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(;;){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"infinitive&nbsp;loop"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>infinitive loop
+infinitive loop
+infinitive loop
+infinitive loop
+infinitive loop
+ctrl+c
+</pre>
+</div>
+<p>Now, you need to press ctrl+c to exit from the program.</p>
+<h2 class="h2">Java for Loop vs while Loop vs do-while Loop</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>Comparison</th>
+<th>for loop</th>
+<th>while loop</th>
+<th>do-while loop</th>
+</tr>
+<tr>
+<td>Introduction</td>
+<td>The Java for loop is a control flow statement that iterates a part of the&nbsp;<a href="https://www.javatpoint.com/java-programs">programs</a>&nbsp;multiple times.</td>
+<td>The Java while loop is a control flow statement that executes a part of the programs repeatedly on the basis of given boolean condition.</td>
+<td>The Java do while loop is a control flow statement that executes a part of the programs at least once and the further execution depends upon the given boolean condition.</td>
+</tr>
+<tr>
+<td>When to use</td>
+<td>If the number of iteration is fixed, it is recommended to use for loop.</td>
+<td>If the number of iteration is not fixed, it is recommended to use while loop.</td>
+<td>If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use the do-while loop.</td>
+</tr>
+<tr>
+<td>Syntax</td>
+<td>for(init;condition;incr/decr){<br />// code to be executed<br />}</td>
+<td>while(condition){<br />//code to be executed<br />}</td>
+<td>do{<br />//code to be executed<br />}while(condition);</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>//for loop<br />for(int i=1;i&lt;=10;i++){<br />System.out.println(i);<br />}</td>
+<td>//while loop<br />int i=1;<br />while(i&lt;=10){<br />System.out.println(i);<br />i++;<br />}</td>
+<td>//do-while loop<br />int i=1;<br />do{<br />System.out.println(i);<br />i++;<br />}while(i&lt;=10);</td>
+</tr>
+<tr>
+<td>Syntax for infinitive loop</td>
+<td>for(;;){<br />//code to be executed<br />}</td>
+<td>while(true){<br />//code to be executed<br />}</td>
+<td>do{<br />//code to be executed<br />}while(true);</td>
+</tr>
+</tbody>
+</table>

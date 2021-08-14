@@ -1,0 +1,95 @@
+<h1 class="h1">Java do-while Loop</h1>
+<p>The Java&nbsp;<em>do-while loop</em>&nbsp;is used to iterate a part of the program repeatedly, until the specified condition is true. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use a do-while loop.</p>
+<p>Java do-while loop is called an&nbsp;<strong>exit control loop</strong>. Therefore, unlike while loop and for loop, the do-while check the condition at the end of loop body. The Java&nbsp;<em>do-while loop</em>&nbsp;is executed at least once because condition is checked after loop body.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">do</span>{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;/&nbsp;loop&nbsp;body</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//update&nbsp;statement&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">while</span>&nbsp;(condition);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>The different parts of do-while loop:</strong></p>
+<p>1. Condition: It is an expression which is tested. If the condition is true, the loop body is executed and control goes to update expression. As soon as the condition becomes false, loop breaks automatically.</p>
+<p><strong>Example:</strong></p>
+<p><strong>i &lt;=100</strong></p>
+<p>2. Update expression: Every time the loop body is executed, the this expression increments or decrements loop variable.</p>
+<p><strong>Example:</strong></p>
+<p><strong>i++;</strong></p>
+<h4 class="n">Note: The do block is executed at least once, even if the condition is false.</h4>
+<p><strong>Flowchart of do-while loop:</strong></p>
+<p><strong>Example:</strong></p>
+<p>In the below example, we print integer values from 1 to 10. Unlike the for loop, we separately need to initialize and increment the variable used in the condition (here, i). Otherwise, the loop will execute infinitely.</p>
+<p><strong>DoWhileExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;DoWhileExample&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span>{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">while</span>(i&lt;=<span class="number">10</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=DoWhileExample" target="_blank">Test it Now</a></span></p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+</div>
+<h2 class="h2">Java Infinitive do-while Loop</h2>
+<p>If you pass&nbsp;<strong>true</strong>&nbsp;in the do-while loop, it will be infinitive do-while loop.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">do</span>{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed</span>&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">while</span>(<span class="keyword">true</span>);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<p><strong>DoWhileExample2.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;DoWhileExample2&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"infinitive&nbsp;do&nbsp;while&nbsp;loop"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">while</span>(<span class="keyword">true</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>infinitive do while loop
+infinitive do while loop
+infinitive do while loop
+ctrl+c
+</pre>
+</div>
+<p>In the above code, we need to enter Ctrl + C command to terminate the infinite loop.</p>

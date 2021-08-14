@@ -1,0 +1,66 @@
+<h1 class="h1">First Java Program | Hello World Example</h1>
+<div id="upr">
+<ol class="points">
+<li>Software Requirements</li>
+<li>Creating Hello Java Example</li>
+<li>Resolving javac is not recognized</li>
+</ol>
+</div>
+<p>In this section, we will learn how to write the simple program of Java. We can write a simple hello Java program easily after installing the JDK.</p>
+<p>To create a simple Java program, you need to create a class that contains the main method. Let's understand the requirement first.</p>
+<h3 id="hellojavareq" class="h3">The requirement for Java Hello World Example</h3>
+<p>For executing any Java program, the following software or application must be properly installed.</p>
+<ul class="points">
+<li>Install the JDK if you don't have installed it,&nbsp;download the JDK&nbsp;and install it.</li>
+<li>Set path of the jdk/bin directory.&nbsp;http://www.javatpoint.com/how-to-set-path-in-java</li>
+<li>Create the Java program</li>
+<li>Compile and run the Java program</li>
+</ul>
+<hr />
+<h3 id="hellojavaex" class="h3ex">Creating Hello World Example</h3>
+<p>Let's create the hello java program:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Simple{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Hello&nbsp;Java"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit">Test it Now</span></p>
+<p>Save the above file as Simple.java.</p>
+<table>
+<tbody>
+<tr>
+<td><strong>To compile:</strong></td>
+<td>javac Simple.java</td>
+</tr>
+<tr>
+<td><strong>To execute:</strong></td>
+<td>java Simple</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Hello Java
+</pre>
+</div>
+<p><strong>Compilation Flow:</strong></p>
+<p>When we compile Java program using javac tool, the Java compiler converts the source code into byte code</p>
+<h2 class="h2">Parameters used in First Java Program</h2>
+<p>Let's see what is the meaning of class, public, static, void, main, String[], System.out.println().</p>
+<p>&nbsp;</p>
+<ul class="points">
+<li><strong>class</strong>&nbsp;keyword is used to declare a class in Java.</li>
+<li><strong>public</strong>&nbsp;keyword is an access modifier that represents visibility. It means it is visible to all.</li>
+<li><strong>static</strong>&nbsp;is a keyword. If we declare any method as static, it is known as the static method. The core advantage of the static method is that there is no need to create an object to invoke the static method. The main() method is executed by the JVM, so it doesn't require creating an object to invoke the main() method. So, it saves memory.</li>
+<li><strong>void</strong>&nbsp;is the return type of the method. It means it doesn't return any value.</li>
+<li><strong>main</strong>&nbsp;represents the starting point of the program.</li>
+<li><strong>String[] args</strong>&nbsp;or&nbsp;<strong>String args[]</strong>&nbsp;is used for&nbsp;command line argument. We will discuss it in coming section.</li>
+<li><strong>System.out.println()</strong>&nbsp;is used to print statement. Here, System is a class, out is an object of the PrintStream class, println() is a method of the PrintStream class. We will discuss the internal working of&nbsp;System.out.println()&nbsp;statement in the coming section.</li>
+</ul>

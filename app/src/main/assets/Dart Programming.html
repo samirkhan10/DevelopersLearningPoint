@@ -1,0 +1,253 @@
+<h1 class="h1">What is Dart Programming</h1>
+<p>Dart is an open-source, general-purpose, object-oriented programming language with C-style syntax developed by&nbsp;<strong>Google in 2011</strong>. The purpose of Dart programming is to create a frontend user interfaces for the web and mobile apps. It is under active development, compiled to native machine code for building mobile apps, inspired by other programming languages such as Java, JavaScript, C#, and is Strongly Typed. Since Dart is a compiled language so you cannot execute your code directly; instead, the compiler parses it and transfer it into machine code.</p>
+<p>It supports most of the common concepts of programming languages like classes, interfaces, functions, unlike other programming languages. Dart language does not support arrays directly. It supports collection, which is used to replicate the data structure such as arrays, generics, and optional typing.</p>
+<p>The following example shows simple Dart programming.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(<span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&nbsp;&lt;&nbsp;<span class="number">5</span>;&nbsp;i++)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">'hello&nbsp;${i&nbsp;+&nbsp;1}'</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Data Type</h2>
+<p>Dart is a Strongly Typed programming language. It means, each value you use in your programming language has a type either string or number and must be known when the code is compiled. Here, we are going to discuss the most common basic data types used in the Dart programming language.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Data Type</th>
+<th>Example</th>
+<th>Descriptions</th>
+</tr>
+<tr>
+<td>String</td>
+<td>String myName = 'javatpoint';</td>
+<td>It holds text. In this, you can use single or double quotation marks. Once you decide the quotation marks, you should have to be consistent with your choice.</td>
+</tr>
+<tr>
+<td>num, int, double</td>
+<td>int age = 25;<br />double price = 125.50;</td>
+<td>The num data type stands for a number. Dart has two types of numbers:
+<ul class="points">
+<li>Integer (It is a number without a decimal place.)</li>
+<li>Double (It is a number with a decimal place.)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>bool var_name = true;<br />Or<br />bool var_name = false;</td>
+<td>It uses the bool keyword to represents the Boolean value true and false.</td>
+</tr>
+<tr>
+<td>object</td>
+<td>Person = Person()</td>
+<td>Generally, everything in Dart is an object (e.g., Integer, String). But an object can also be more complex.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Variables and Functions</h2>
+<p>Variables are the namespace in memory that stores values. The name of a variable is called as&nbsp;<strong>identifiers</strong>. They are the data containers, which can store the value of any type. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">var&nbsp;myAge&nbsp;=&nbsp;<span class="number">50</span>;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Here,&nbsp;<strong>myAge</strong>&nbsp;is a variable that stores an integer value 50. We can also give it int and double. However, Dart has a feature Type Inference, which infers the types of values. So, if you create a variable with a&nbsp;<strong>var</strong>&nbsp;keyword, Dart can infer that variable as of type integer.</p>
+<p>Besides variable, Functions are another core feature of any programming language. Functions are a set of statements that performs a specific task. They are organized into the logical blocks of code that are readable, maintainable, and reusable. The function declaration contains the function name, return type, and parameters. The following example explains the function used in Dart programming.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Function&nbsp;declaration</span>&nbsp;&nbsp;</li>
+<li class="">num&nbsp;addNumbers(num&nbsp;a,&nbsp;num&nbsp;b)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Here,&nbsp;we&nbsp;use&nbsp;num&nbsp;as&nbsp;a&nbsp;type&nbsp;because&nbsp;it&nbsp;should&nbsp;work&nbsp;with&nbsp;int&nbsp;and&nbsp;double&nbsp;both.</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;a&nbsp;+&nbsp;b;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">var&nbsp;price1&nbsp;=&nbsp;<span class="number">29.99</span>;&nbsp;&nbsp;</li>
+<li class="alt">var&nbsp;price2&nbsp;=&nbsp;<span class="number">20.81</span>;&nbsp;&nbsp;</li>
+<li class="">var&nbsp;total&nbsp;=&nbsp;addNumbers(price1,&nbsp;price2);&nbsp;&nbsp;</li>
+<li class="alt">var&nbsp;num1&nbsp;=&nbsp;<span class="number">10</span>;&nbsp;&nbsp;</li>
+<li class="">var&nbsp;num2&nbsp;=&nbsp;<span class="number">45</span>;&nbsp;&nbsp;</li>
+<li class="alt">var&nbsp;total2&nbsp;=&nbsp;addNumbers(num1,&nbsp;num2);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Operators</h2>
+<p>Dart language supports all operators, as you are familiar with other programming languages such as C, Kotlin, and Swift. The operator's name is listed below:</p>
+<ul class="points">
+<li>Arithmetic</li>
+<li>Equality</li>
+<li>Increment and Decrement</li>
+<li>Logical</li>
+<li>Comparison</li>
+</ul>
+<h2 class="h2">Decision Making and Loops</h2>
+<p>The decision-making is a feature that allows you to evaluate a condition before the instructions are executed. The Dart language supports the following types of decision-making statements:</p>
+<ul class="points">
+<li>If statement</li>
+<li>If-else statement</li>
+<li>Switch statement</li>
+</ul>
+<p>The below diagram explains it more clearly.</p>
+<p>&nbsp;</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;var&nbsp;num&nbsp;=&nbsp;<span class="number">12</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(num&nbsp;%&nbsp;<span class="number">2</span>&nbsp;=&nbsp;=&nbsp;<span class="number">0</span>)&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Number&nbsp;is&nbsp;Even."</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Number&nbsp;is&nbsp;Odd."</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Loops</strong>&nbsp;are used to execute a block of code repeatedly until a specified condition becomes true. Dart language supports the following types of loop statements:</p>
+<ul class="points">
+<li>for</li>
+<li>for..in</li>
+<li>while</li>
+<li>do..while</li>
+</ul>
+<p>The below diagram explains it more clearly.</p>
+<p>&nbsp;</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;var&nbsp;name&nbsp;=&nbsp;[<span class="string">"Peter"</span>,&nbsp;<span class="string">"Rinky&nbsp;Ponting"</span>,&nbsp;<span class="string">"Abhishek"</span>];&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(var&nbsp;prop&nbsp;in&nbsp;name)&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(prop);&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Comments</h2>
+<p>Comments are the lines of&nbsp;<strong>non-executable</strong>&nbsp;code. They are one of the main aspects of all programming languages. The purpose of this is to provide information about the project, variable, or an operation. There are three types of comments in Dart programming:</p>
+<ul class="points">
+<li><strong>Make format comments:</strong>&nbsp;It is a single line comment (//)</li>
+<li><strong>Block Comments:</strong>&nbsp;It is a multi-line comment (/*...*/)</li>
+<li><strong>Doc Comments:</strong>&nbsp;It is a document comment that used for member and types (///)</li>
+</ul>
+<h2 class="h2">Continue and Break</h2>
+<p>Dart has also used the continue and break keyword in the loop, and elsewhere it required. The continue statement allows you to skip the remaining code inside the loop and immediately jump to the next iteration of the loop. We can understand it from the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(i==<span class="number">5</span>){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Hello"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>;&nbsp;<span class="comment">//it&nbsp;will&nbsp;skip&nbsp;the&nbsp;rest&nbsp;statement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(i);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The&nbsp;<strong>break</strong>&nbsp;statement allows you to terminate or stops the current flow of a program and continues execution after the body of the loop. The following example gives a detailed explanation.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(i==<span class="number">5</span>){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Hello"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;<span class="comment">//it&nbsp;will&nbsp;terminate&nbsp;the&nbsp;rest&nbsp;statement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(i);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Final and Const Keyword</h2>
+<p>We can use a final keyword to restrict the user. It can be applied in many contexts, such as variables, classes, and methods.</p>
+<p>Const keyword is used to declare constant. We cannot change the value of the const keyword after assigning it.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">final</span>&nbsp;a&nbsp;=&nbsp;<span class="number">100</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">const</span>&nbsp;pi&nbsp;=&nbsp;<span class="number">3.14</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;print(a);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;print(pi);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Object-Oriented Programming</h2>
+<p>Dart is an object-oriented programming language, which means every value in a Dart is an object. A number is also an object in Dart language. Dart programming supports the concept of OOPs features like objects, classes, interfaces, etc.</p>
+<p><strong>Object:</strong>&nbsp;An object is an entity, which has state and behavior. It can be physical or logical. In Dart, every value is an object, even primitive values like text and number. Dart can also allow you to build your custom object to express more complex relations between data.</p>
+<p><strong>Class:</strong>&nbsp;A class is a collection of objects. It means the objects are created with the help of classes because every object needs a blueprint based on which you can create an individual object. A class definition includes the following things:</p>
+<ul class="points">
+<li>Fields</li>
+<li>Methods</li>
+<li>Constructor</li>
+<li>Getters and setters</li>
+</ul>
+<p>Let us see an example, which helps you to understand the OOPs concept easily.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Mobile&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//&nbsp;Property&nbsp;Declaration</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;String&nbsp;color,&nbsp;brandName,&nbsp;modelName;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//&nbsp;Method&nbsp;Creation</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;String&nbsp;calling()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="string">"Mobile&nbsp;can&nbsp;do&nbsp;call&nbsp;to&nbsp;everyone."</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;String&nbsp;musicPlay()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="string">"Mobile&nbsp;can&nbsp;play&nbsp;all&nbsp;types&nbsp;of&nbsp;Music."</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;String&nbsp;clickPicture()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="string">"Mobile&nbsp;can&nbsp;take&nbsp;pictures."</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//&nbsp;Object&nbsp;Creation</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;var&nbsp;myMob&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Mobile();&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//&nbsp;Accessing&nbsp;Class's&nbsp;Property</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;myMob.color&nbsp;=&nbsp;<span class="string">"Black"</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;myMob.brandName&nbsp;=&nbsp;<span class="string">"Apple&nbsp;Inc."</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;myMob.modelName&nbsp;=&nbsp;<span class="string">"iPhone&nbsp;11&nbsp;Pro"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//Display&nbsp;Output</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;print(myMob.color);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;print(myMob.modelName);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;print(myMob.brandName);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;print(myMob.calling());&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;print(myMob.musicPlay());&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;print(myMob.clickPicture());&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example, we define a class&nbsp;<strong>Mobile</strong>, which has three variables of string type and three functions or methods. Then, we create a&nbsp;<strong>main</strong>&nbsp;function which Dart will execute first when your app starts. Inside the main, we create an&nbsp;<strong>object</strong>&nbsp;to access the class's properties. Finally, we print the output.</p>

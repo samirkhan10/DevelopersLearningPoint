@@ -1,0 +1,99 @@
+<h1 class="h1">Java While Loop</h1>
+<p>The&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>&nbsp;<em>while loop</em>&nbsp;is used to iterate a part of the&nbsp;<a href="https://www.javatpoint.com/programs-list">program</a>&nbsp;repeatedly until the specified Boolean condition is true. As soon as the Boolean condition becomes false, the loop automatically stops.</p>
+<p>The while loop is considered as a repeating if statement. If the number of iteration is not fixed, it is recommended to use the while&nbsp;<a href="https://www.javatpoint.com/java-for-loop">loop</a>.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">while</span>&nbsp;(condition){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">I&nbsp;ncrement&nbsp;/&nbsp;decrement&nbsp;statement&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>The different parts of do-while loop:</strong></p>
+<p>1. Condition: It is an expression which is tested. If the condition is true, the loop body is executed and control goes to update expression. When the condition becomes false, we exit the while loop.</p>
+<p><strong>Example</strong>:</p>
+<p>i &lt;=100</p>
+<p>2. Update expression: Every time the loop body is executed, this expression increments or decrements loop variable.</p>
+<p><strong>Example:</strong></p>
+<p><strong>i++;</strong></p>
+<p><strong>Flowchart of Java While Loop</strong></p>
+<p>Here, the important thing about while loop is that, sometimes it may not even execute. If the condition to be tested results into false, the loop body is skipped and first statement after the while loop will be executed.</p>
+<p><strong>Example:</strong></p>
+<p>In the below example, we print integer values from 1 to 10. Unlike the for loop, we separately need to initialize and increment the variable used in the condition (here, i). Otherwise, the loop will execute infinitely.</p>
+<p><strong>WhileExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;WhileExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i&lt;=<span class="number">10</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=WhileExample" target="_blank">Test it Now</a></span></p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+</div>
+<h2 class="h2">Java Infinitive While Loop</h2>
+<p>If you pass&nbsp;<strong>true</strong>&nbsp;in the while loop, it will be infinitive while loop.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">while</span>(<span class="keyword">true</span>){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<p><strong>WhileExample2.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;WhileExample2&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="comment">//&nbsp;setting&nbsp;the&nbsp;infinite&nbsp;while&nbsp;loop&nbsp;by&nbsp;passing&nbsp;true&nbsp;to&nbsp;the&nbsp;condition</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(<span class="keyword">true</span>){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"infinitive&nbsp;while&nbsp;loop"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>infinitive while loop
+infinitive while loop
+infinitive while loop
+infinitive while loop
+infinitive while loop
+ctrl+c
+</pre>
+</div>
+<p>In the above code, we need to enter Ctrl + C command to terminate the infinite loop.</p>

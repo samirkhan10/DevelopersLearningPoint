@@ -1,0 +1,298 @@
+<h1 class="h1">Java If-else Statement</h1>
+<p>The&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>&nbsp;<em>if statement</em>&nbsp;is used to test the condition. It checks&nbsp;<a href="https://www.javatpoint.com/boolean-keyword-in-java">boolean</a>&nbsp;condition:&nbsp;<em>true</em>&nbsp;or&nbsp;<em>false</em>. There are various types of if statement in Java.</p>
+<ul class="points">
+<li>if statement</li>
+<li>if-else statement</li>
+<li>if-else-if ladder</li>
+<li>nested if statement</li>
+</ul>
+<h2 class="h2">Java if Statement</h2>
+<p>The Java if statement tests the condition. It executes the&nbsp;<em>if block</em>&nbsp;if condition is true.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstate&nbsp;the&nbsp;use&nbsp;of&nbsp;if&nbsp;statement.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;IfExample&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//defining&nbsp;an&nbsp;'age'&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;age=<span class="number">20</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//checking&nbsp;the&nbsp;age</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(age&gt;<span class="number">18</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class="string">"Age&nbsp;is&nbsp;greater&nbsp;than&nbsp;18"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=IfExample" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Age is greater than 18
+</pre>
+</div>
+<h2 class="h2">Java if-else Statement</h2>
+<p>The Java if-else statement also tests the condition. It executes the&nbsp;<em>if block</em>&nbsp;if condition is true otherwise&nbsp;<em>else block</em>&nbsp;is executed.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;if&nbsp;condition&nbsp;is&nbsp;true</span>&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;if&nbsp;condition&nbsp;is&nbsp;false</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//A&nbsp;Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;if-else&nbsp;statement.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//It&nbsp;is&nbsp;a&nbsp;program&nbsp;of&nbsp;odd&nbsp;and&nbsp;even&nbsp;number.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;IfElseExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//defining&nbsp;a&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;number=<span class="number">13</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Check&nbsp;if&nbsp;the&nbsp;number&nbsp;is&nbsp;divisible&nbsp;by&nbsp;2&nbsp;or&nbsp;not</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(number%<span class="number">2</span>==<span class="number">0</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"even&nbsp;number"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"odd&nbsp;number"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=IfElseExample" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>odd number
+</pre>
+</div>
+<p><strong>Leap Year Example:</strong></p>
+<p>A year is leap, if it is divisible by 4 and 400. But, not by 100.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;LeapYearExample&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;year=<span class="number">2020</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(((year&nbsp;%&nbsp;<span class="number">4</span>&nbsp;==<span class="number">0</span>)&nbsp;&amp;&amp;&nbsp;(year&nbsp;%&nbsp;<span class="number">100</span>&nbsp;!=<span class="number">0</span>))&nbsp;||&nbsp;(year&nbsp;%&nbsp;<span class="number">400</span>==<span class="number">0</span>)){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"LEAP&nbsp;YEAR"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"COMMON&nbsp;YEAR"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>LEAP YEAR
+</pre>
+</div>
+<h2 class="h2">Using Ternary Operator</h2>
+<p>We can also use ternary operator (? :) to perform the task of if...else statement. It is a shorthand way to check the condition. If the condition is true, the result of ? is returned. But, if the condition is false, the result of : is returned.</p>
+<p><strong>Example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;IfElseTernaryExample&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;number=<span class="number">13</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Using&nbsp;ternary&nbsp;operator</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;output=(number%<span class="number">2</span>==<span class="number">0</span>)?<span class="string">"even&nbsp;number"</span>:<span class="string">"odd&nbsp;number"</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(output);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>odd number
+</pre>
+</div>
+<h2 class="h2">Java if-else-if ladder Statement</h2>
+<p>The if-else-if ladder statement executes one condition from multiple statements.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition1){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;condition1&nbsp;is&nbsp;true</span>&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(condition2){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;condition2&nbsp;is&nbsp;true</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(condition3){&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;condition3&nbsp;is&nbsp;true</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">...&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;all&nbsp;the&nbsp;conditions&nbsp;are&nbsp;false</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;If&nbsp;else-if&nbsp;ladder.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//It&nbsp;is&nbsp;a&nbsp;program&nbsp;of&nbsp;grading&nbsp;system&nbsp;for&nbsp;fail,&nbsp;D&nbsp;grade,&nbsp;C&nbsp;grade,&nbsp;B&nbsp;grade,&nbsp;A&nbsp;grade&nbsp;and&nbsp;A+.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;IfElseIfExample&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;marks=<span class="number">65</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(marks&lt;<span class="number">50</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"fail"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(marks&gt;=<span class="number">50</span>&nbsp;&amp;&amp;&nbsp;marks&lt;<span class="number">60</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"D&nbsp;grade"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(marks&gt;=<span class="number">60</span>&nbsp;&amp;&amp;&nbsp;marks&lt;<span class="number">70</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"C&nbsp;grade"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(marks&gt;=<span class="number">70</span>&nbsp;&amp;&amp;&nbsp;marks&lt;<span class="number">80</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"B&nbsp;grade"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(marks&gt;=<span class="number">80</span>&nbsp;&amp;&amp;&nbsp;marks&lt;<span class="number">90</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"A&nbsp;grade"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(marks&gt;=<span class="number">90</span>&nbsp;&amp;&amp;&nbsp;marks&lt;<span class="number">100</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"A+&nbsp;grade"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Invalid!"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>C grade
+</pre>
+</div>
+<p><strong>Program to check POSITIVE, NEGATIVE or ZERO:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;PositiveNegativeExample&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;number=-<span class="number">13</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(number&gt;<span class="number">0</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"POSITIVE"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(number&lt;<span class="number">0</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"NEGATIVE"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"ZERO"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>NEGATIVE
+</pre>
+</div>
+<h2 class="h2">Java Nested if statement</h2>
+<p>The nested if statement represents the&nbsp;<em>if block within another if block</em>. Here, the inner if block condition executes only when outer if block condition is true.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(condition){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><strong>Example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;Nested&nbsp;If&nbsp;Statement.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;JavaNestedIfExample&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Creating&nbsp;two&nbsp;variables&nbsp;for&nbsp;age&nbsp;and&nbsp;weight</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;age=<span class="number">20</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;weight=<span class="number">80</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//applying&nbsp;condition&nbsp;on&nbsp;age&nbsp;and&nbsp;weight</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(age&gt;=<span class="number">18</span>){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(weight&gt;<span class="number">50</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"You&nbsp;are&nbsp;eligible&nbsp;to&nbsp;donate&nbsp;blood"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=JavaNestedIfExample" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>You are eligible to donate blood
+</pre>
+</div>
+<p><strong>Example 2:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;Nested&nbsp;If&nbsp;Statement.&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;JavaNestedIfExample2&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Creating&nbsp;two&nbsp;variables&nbsp;for&nbsp;age&nbsp;and&nbsp;weight&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;age=<span class="number">25</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;weight=<span class="number">48</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//applying&nbsp;condition&nbsp;on&nbsp;age&nbsp;and&nbsp;weight&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(age&gt;=<span class="number">18</span>){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(weight&gt;<span class="number">50</span>){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"You&nbsp;are&nbsp;eligible&nbsp;to&nbsp;donate&nbsp;blood"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"You&nbsp;are&nbsp;not&nbsp;eligible&nbsp;to&nbsp;donate&nbsp;blood"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Age&nbsp;must&nbsp;be&nbsp;greater&nbsp;than&nbsp;18"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://compiler.javatpoint.com/opr/test.jsp?filename=JavaNestedIfExample2" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>You are not eligible to donate blood</pre>
+</div>

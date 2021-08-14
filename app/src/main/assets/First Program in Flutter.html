@@ -1,0 +1,96 @@
+<h1 class="h1">Flutter First Application</h1>
+<p>In this section, we are going to learn how to create a simple application in Android Studio to understand the basics of the Flutter application. To create Flutter application, do the following steps:</p>
+<p><strong>Step 1:</strong>&nbsp;Open the Android Studio.</p>
+<p><strong>Step 2:</strong>&nbsp;Create the Flutter project. To create a project, go to File-&gt; New-&gt;New Flutter Project. The following screen helps to understand it more clearly.</p>
+<p>&nbsp;</p>
+<p><strong>Step 3:</strong>&nbsp;In the next wizard, you need to choose the Flutter Application. For this, select Flutter Application-&gt; click Next, as shown in the below screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 4:</strong>&nbsp;Next, configure the application details as shown in the below screen and click on the Next button.</p>
+<p><strong>Project Name:</strong>&nbsp;Write your Application Name.</p>
+<p><strong>Flutter SDK Path:</strong>&nbsp;&lt;path_to_flutter_sdk&gt;</p>
+<p><strong>Project Location:</strong>&nbsp;&lt;path_to_project_folder&gt;</p>
+<p><strong>Descriptions:</strong>&nbsp;&lt;A new Flutter hello world application&gt;.</p>
+<p>&nbsp;</p>
+<p><strong>Step 5:</strong>&nbsp;In the next wizard, you need to set the company domain name and click the Finish button.</p>
+<p>&nbsp;</p>
+<p>After clicking the Finish button, it will take some time to create a project. When the project is created, you will get a fully working Flutter application with minimal functionality.</p>
+<p>&nbsp;</p>
+<p><strong>Step 6:</strong>&nbsp;Now, let us check the structure of the Flutter project application and its purpose. In the below image, you can see the various folders and components of the Flutter application structure, which are going to discuss here.</p>
+<p>&nbsp;</p>
+<p><strong>.idea:</strong>&nbsp;This folder is at the very top of the project structure, which holds the configuration for Android Studio. It doesn't matter because we are not going to work with Android Studio so that the content of this folder can be ignored.</p>
+<p><strong>.android:</strong>&nbsp;This folder holds a complete Android project and used when you build the Flutter application for Android. When the Flutter code is compiled into the native code, it will get injected into this Android project, so that the result is a native Android application.&nbsp;<strong>For Example:</strong>&nbsp;When you are using the Android emulator, this Android project is used to build the Android app, which further deployed to the Android Virtual Device.</p>
+<p><strong>.ios:</strong>&nbsp;This folder holds a complete Mac project and used when you build the Flutter application for iOS. It is similar to the android folder that is used when developing an app for Android. When the Flutter code is compiled into the native code, it will get injected into this iOS project, so that the result is a native iOS application. Building a Flutter application for iOS is only possible when you are working on macOS.</p>
+<p><strong>.lib:</strong>&nbsp;It is an essential folder, which stands for the library. It is a folder where we will do our 99 percent of project work. Inside the lib folder, we will find the Dart files which contain the code of our Flutter application. By default, this folder contains the file&nbsp;<strong>main.dart</strong>, which is the entry file of the Flutter application.</p>
+<p><strong>.test:</strong>&nbsp;This folder contains a Dart code, which is written for the Flutter application to perform the automated test when building the app. It won't be too important for us here.</p>
+<p>We can also have some default files in the Flutter application. In 99.99 percent of cases, we don't touch these files manually. These files are:</p>
+<p><strong>.gitignore:</strong>&nbsp;It is a text file containing a list of files, file extensions, and folders that tells Git which files should be ignored in a project. Git is a version-control file for tracking changes in source code during software development Git.</p>
+<p><strong>.metadata:</strong>&nbsp;It is an auto-generated file by the flutter tools, which is used to track the properties of the Flutter project. This file performs the internal tasks, so you do not need to edit the content manually at any time.</p>
+<p><strong>.packages:</strong>&nbsp;It is an auto-generated file by the Flutter SDK, which is used to contain a list of dependencies for your Flutter project.</p>
+<p><strong>flutter_demoapp.iml:</strong>&nbsp;It is always named according to the Flutter project's name that contains additional settings of the project. This file performs the internal tasks, which is managed by the Flutter SDK, so you do not need to edit the content manually at any time.</p>
+<p><strong>pubspec.yaml:</strong>&nbsp;It is the project's configuration file that will use a lot during working with the Flutter project. It allows you how your application works. This file contains:</p>
+<ul class="points">
+<li>Project general settings such as name, description, and version of the project.</li>
+<li>Project dependencies.</li>
+<li>Project assets (e.g., images).</li>
+</ul>
+<p><strong>pubspec.lock:</strong>&nbsp;It is an auto-generated file based on the&nbsp;<strong>.yaml</strong>&nbsp;file. It holds more detail setup about all dependencies.</p>
+<p><strong>README.md:</strong>&nbsp;It is an auto-generated file that holds information about the project. We can edit this file if we want to share information with the developers.</p>
+<p><strong>Step 7:</strong>&nbsp;Open the&nbsp;<strong>main.dart</strong>&nbsp;file and replace the code with the following code snippets.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;=&gt;&nbsp;runApp(MyApp());&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;widget&nbsp;is&nbsp;the&nbsp;root&nbsp;of&nbsp;your&nbsp;application.</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span class="string">'Hello&nbsp;World&nbsp;Flutter&nbsp;Application'</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme:&nbsp;ThemeData(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;is&nbsp;the&nbsp;theme&nbsp;of&nbsp;your&nbsp;application.</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primarySwatch:&nbsp;Colors.blue,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;MyHomePage(title:&nbsp;<span class="string">'Home&nbsp;page'</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;MyHomePage({Key&nbsp;key,&nbsp;<span class="keyword">this</span>.title})&nbsp;:&nbsp;<span class="keyword">super</span>(key:&nbsp;key);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;widget&nbsp;is&nbsp;the&nbsp;home&nbsp;page&nbsp;of&nbsp;your&nbsp;application.</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">final</span>&nbsp;String&nbsp;title;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="keyword">this</span>.title),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;Center(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">'Hello&nbsp;World'</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Step 8:</strong>&nbsp;Let us understand the above code snippet line by line.</p>
+<ul class="points">
+<li>To start Flutter programming, you need first to import the Flutter package. Here, we have imported a&nbsp;<strong>Material package</strong>. This package allows you to create user interface according to the Material design guidelines specified by Android.</li>
+<li>The second line is an entry point of the Flutter applications similar to the main method in other programming languages. It calls the&nbsp;<strong>runApp</strong>&nbsp;function and pass it an object of&nbsp;<strong>MyApp</strong>&nbsp;The primary purpose of this function is to attach the given widget to the screen.</li>
+<li>Line 5 to 18 is a widget used for creating UI in the Flutter framework. Here, the&nbsp;<strong>StatelessWidget</strong>&nbsp;does not maintain any state of the widget. MyApp extends StatelessWidget that overrides its&nbsp;<strong>build</strong>&nbsp;The build method is used for creating a part of the UI of the application. In this block, the build method uses MaterialApp, a widget to create the root level UI of the application and contains three properties - title, theme, and home.
+<ol class="points">
+<li><strong>Title:</strong>&nbsp;It is the title of the Flutter application.</li>
+<li><strong>Theme:</strong>&nbsp;It is the theme of the widget. By default, it set the blue as the overall color of the application.</li>
+<li><strong>Home:</strong>&nbsp;It is the inner UI of the application, which sets another widget (MyHomePage) for the application.</li>
+</ol>
+</li>
+<li>Line 19 to 35, the&nbsp;<strong>MyHomePage</strong>&nbsp;is similar to MyApp, except it will return the&nbsp;<strong>Scaffold</strong>&nbsp;Scaffold widget is a top-level widget after the MaterialApp widget for creating the user interface. This widget contains two properties&nbsp;<strong>appBar</strong>&nbsp;and&nbsp;<strong>body</strong>. The appBar shows the header of the app, and body property shows the actual content of the application. Here,&nbsp;<strong>AppBar</strong>&nbsp;render the header of the application,&nbsp;<strong>Center</strong>&nbsp;widget is used to center the child widget, and&nbsp;<strong>Text</strong>&nbsp;is the final widget used to show the text content and displays in the center of the screen.</li>
+</ul>
+<p><strong>Step 9:</strong>&nbsp;Now, run the application. To do this, go to Run-&gt;Run main.dart, as shown in the below screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 10:</strong>&nbsp;Finally, you will get the output as below screen.</p>

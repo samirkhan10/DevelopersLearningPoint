@@ -1,0 +1,99 @@
+<h1 class="h1">Kotlin Standard Input/Output</h1>
+<p>Kotlin standard input output operations are performed to flow byte stream from input device (keyboard) to main memory and from main memory to output device (screen).</p>
+<h2 class="h2">Kotlin Output</h2>
+<p>Kotlin output operation is performed using the standard methods&nbsp;<strong>print()</strong>&nbsp;and&nbsp;<strong>println()</strong>. Let's see an example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Hello&nbsp;World!"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Welcome&nbsp;to&nbsp;&nbsp;JavaTpoint"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output</strong></p>
+<div class="codeblock3">
+<pre>Hello World!
+Welcome to  JavaTpoint
+</pre>
+</div>
+<p>The methods print() and println() are internally call System.out.print() and System.out.println() respectively.</p>
+<h3 class="h3">Difference between print() and println() methods:</h3>
+<ul class="points">
+<li><strong>print():</strong>&nbsp;print() method is used to print values provided inside the method "()".</li>
+<li><strong>println():</strong>&nbsp;println() method is used to print values provided inside the method "()" and moves cursor to the beginning of next line.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="number">10</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Welcome&nbsp;to&nbsp;&nbsp;JavaTpoint"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="number">20</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Hello"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>10
+Welcome to  JavaTpoint
+20Hello
+</pre>
+</div>
+<h2 class="h2">Kotlin Input</h2>
+<p>Kotlin has standard library function&nbsp;<strong>readLine()</strong>&nbsp;which is used for reads line of string input from standard input stream. It returns the line read or null. Let's see an example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Enter&nbsp;your&nbsp;name"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;name&nbsp;=&nbsp;readLine()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Enter&nbsp;your&nbsp;age"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;age:&nbsp;Int&nbsp;=Integer.valueOf(readLine())&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Your&nbsp;name&nbsp;is&nbsp;$name&nbsp;and&nbsp;your&nbsp;age&nbsp;is&nbsp;$age"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter your name
+Ashutosh
+Enter your age
+25
+Your name is Ashutosh and your age is 25
+</pre>
+</div>
+<p>While using the readLine() function, input lines other than String are explicitly converted into their corresponding types.</p>
+<p>To input other data type rather than String, we need to use Scanner object of java.util.Scanner class from Java standard library.</p>
+<p><strong>Example Getting Integer Input</strong></p>
+<p>&nbsp;</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.Scanner&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;read&nbsp;=&nbsp;Scanner(System.`in`)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Enter&nbsp;your&nbsp;age"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;age&nbsp;=&nbsp;read.nextInt()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Your&nbsp;input&nbsp;age&nbsp;is&nbsp;"</span>+age)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter your age
+25
+Your input age is 25
+</pre>
+</div>
+<p>Here nextInt() is a method which takes integer input and stores in integer variable. The other data types Boolean, Float, Long and Double uses nextBoolean(), nextFloat(), nextLong() and nextDouble() to get input from user.</p>

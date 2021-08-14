@@ -1,12 +1,42 @@
 <resources>
-    <string name="app_name">DevelopersLearningPoint</string>
+    <string name="app_name">Learn Technology</string>
 
     <array name="learnjava">
 
-        <item>whatisjava</item>
-        <item>feauresofjava</item>
-        <item>c++vsjava</item>
+        <item>what is java</item>
+        <item>feaures of java</item>
+        <item>c++ vs java</item>
+        <item>first Program In Java</item>
+        <item>Data types in java</item>
+        <item>Control Statement in Java</item>
+        <item>if else in java</item>
+        <item>Switch case in java</item>
+        <item>For loop in java</item>
+        <item>While loop in java</item>
+        <item>do while loop in java</item>
+        <item>Break Statement in java</item>
 
+    </array>
+
+
+    <array name="learnkotlin">
+
+        <item>what is Kotlin</item>
+        <item>Data types in Kotlin</item>
+        <item>syntax of Kotlin</item>
+        <item>Operators in Kotlin</item>
+        <item>Taking Input In Kotlin</item>
+        <item>Comments in Kotlin</item>
+
+    </array>
+
+    <array name="learnflutter">
+
+        <item>What is Flutter</item>
+        <item>Installation of Flutter</item>
+        <item>First Program in Flutter</item>
+        <item>Flutter vs React Native</item>
+        <item>Dart Programming</item>
 
     </array>
 </resources>

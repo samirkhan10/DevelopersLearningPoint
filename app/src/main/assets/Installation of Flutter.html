@@ -1,0 +1,79 @@
+<h1 class="h1">Flutter Installation</h1>
+<p>In this section, we are going to learn how to set up an environment for the successful development of the Flutter application.</p>
+<h2 class="h2">System requirements for Windows</h2>
+<p>To install and run Flutter on the Windows system, you need first to meet these requirements for your development environment.</p>
+<table class="alt">
+<tbody>
+<tr>
+<td><strong>Operating System</strong></td>
+<td>Windows 7 or Later (I am Windows 10. You can also use Mac or Linux OS.).</td>
+</tr>
+<tr>
+<td><strong>Disk Space</strong></td>
+<td>400 MB (It does not include disk space for IDE/tools).</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>1. Windows PowerShell<br />2. Git for Windows 2.x (Here, Use Git from Windows Command Prompt option).</td>
+</tr>
+<tr>
+<td><strong>SDK</strong></td>
+<td>Flutter SDK for Windows</td>
+</tr>
+<tr>
+<td><strong>IDE</strong></td>
+<td>Android Studio (Official)</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Install Git</h2>
+<p><strong>Step 1:</strong>&nbsp;To download Git,&nbsp;<a href="https://git-scm.com/download/win" target="_blank" rel="nofollow">click here</a>.</p>
+<p><strong>Step 2:</strong>&nbsp;Run the&nbsp;<strong>.exe</strong>&nbsp;file to complete the installation. During installation, make sure that you have selected the recommended option.</p>
+<p>&nbsp;</p>
+<p>To read more information about installing Git,&nbsp;<a href="https://www.javatpoint.com/how-to-install-git-on-windows">click here</a>.</p>
+<h2 class="h2">Install the Flutter SDK</h2>
+<p><strong>Step 1:</strong>&nbsp;Download the installation bundle of the Flutter Software Development Kit for windows. To download Flutter SDK, Go to its official&nbsp;<a href="https://flutter.dev/" target="_blank" rel="nofollow">website</a>, click on&nbsp;<strong>Get started</strong>&nbsp;button, you will get the following screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 2:</strong>&nbsp;Next, to download the latest Flutter SDK, click on the Windows&nbsp;<strong>icon</strong>. Here, you will find the download link for&nbsp;<a href="https://flutter.dev/docs/get-started/install/windows" target="_blank" rel="nofollow">SDK</a>.</p>
+<p><strong>Step 3:</strong>&nbsp;When your download is complete, extract the&nbsp;<strong>zip</strong>&nbsp;file and place it in the desired installation folder or location, for example, D: /Flutter.</p>
+<h4 class="n"><span class="bold">Note:</span>&nbsp;The Flutter SDK should not be placed where the administrator's permission is required.</h4>
+<p><strong>Step 4:</strong>&nbsp;To run the Flutter command in regular windows console, you need to update the system path to include the flutter bin directory. The following steps are required to do this:</p>
+<p><strong>Step 4.1:</strong>&nbsp;Go to MyComputer properties -&gt; advanced tab -&gt; environment variables. You will get the following screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 4.2:</strong>&nbsp;Now, select path -&gt; click on edit. The following screen appears.</p>
+<p>&nbsp;</p>
+<p><strong>Step 4.3:</strong>&nbsp;In the above window, click on New-&gt;write path of Flutter bin folder in variable value -&gt; ok -&gt; ok -&gt; ok.</p>
+<p><strong>Step 5:</strong>&nbsp;Now, run the $&nbsp;<strong>flutter doctor</strong>&nbsp;command. This command checks for all the requirements of Flutter app development and displays a report of the status of your Flutter installation.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">$&nbsp;flutter&nbsp;doctor&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Step 6:</strong>&nbsp;When you run the above command, it will analyze the system and show its report, as shown in the below image. Here, you will find the details of all missing tools, which required to run Flutter as well as the development tools that are available but not connected with the device.</p>
+<p>&nbsp;</p>
+<p><strong>Step 7:</strong>&nbsp;Install the Android SDK. If the flutter doctor command does not find the Android SDK tool in your system, then you need first to install the Android Studio IDE. To install Android Studio IDE, do the following steps.</p>
+<p><strong>Step 7.1:&nbsp;</strong>Download the latest Android Studio executable or zip file from the&nbsp;<a href="https://developer.android.com/studio/#downloads" target="_blank" rel="nofollow">official site</a>.</p>
+<p><strong>Step 7.2:</strong>&nbsp;When the download is complete, open the&nbsp;<strong>.exe</strong>&nbsp;file and run it. You will get the following dialog box.</p>
+<p>&nbsp;</p>
+<p><strong>Step 7.3:</strong>&nbsp;Follow the steps of the installation wizard. Once the installation wizard completes, you will get the following screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 7.4:</strong>&nbsp;In the above screen, click Next-&gt; Finish. Once the Finish button is clicked, you need to choose the 'Don't import Settings option&rsquo; and click OK. It will start the Android Studio.</p>
+<h4 class="n"><span class="bold">Note:</span>&gt; Meanwhile, the installation wizard also includes downloading Android SDK components that are required by Flutter for development.</h4>
+<p>&nbsp;</p>
+<p><strong>Step 8:</strong>&nbsp;Next, you need to set up an Android emulator. It is responsible for running and testing the Flutter application.</p>
+<p><strong>Step 8.1:&nbsp;</strong>To set an Android emulator, go to Android Studio &gt; Tools &gt; Android &gt; AVD Manager and select Create Virtual Device. Or, go to Help-&gt;Find Action-&gt;Type Emulator in the search box. You will get the following screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 8.2:</strong>&nbsp;Choose your device definition and click on Next.</p>
+<p><strong>Step 8.3:</strong>&nbsp;Select the system image for the latest Android version and click on Next.</p>
+<p><strong>Step 8.4:</strong>&nbsp;Now, verify the all AVD configuration. If it is correct, click on Finish. The following screen appears.</p>
+<p>&nbsp;</p>
+<p><strong>Step 8.5:</strong>&nbsp;Last, click on the icon pointed into the red color rectangle. The Android emulator displayed as below screen.</p>
+<p>&nbsp;</p>
+<p><strong>Step 9:</strong>&nbsp;Now, install Flutter and Dart plugin for building Flutter application in Android Studio. These plugins provide a template to create a Flutter application, give an option to run and debug Flutter application in the Android Studio itself. Do the following steps to install these plugins.</p>
+<p><strong>Step 9.1:</strong>&nbsp;Open the Android Studio and then go to File-&gt;Settings-&gt;Plugins.</p>
+<p><strong>Step 9.2:</strong>&nbsp;Now, search the Flutter plugin. If found, select Flutter plugin and click install. When you click on install, it will ask you to install Dart plugin as below screen. Click yes to proceed.</p>
+<p>&nbsp;</p>
+<p><strong>Step 9.3:</strong>&nbsp;Restart the Android Studio.</p>

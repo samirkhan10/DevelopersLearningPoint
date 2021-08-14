@@ -1,0 +1,173 @@
+<h1 class="h1">Kotlin Data Type</h1>
+<p><strong>Data type</strong>&nbsp;(basic type) refers to type and size of data associated with variables and functions. Data type is used for declaration of memory location of variable which determines the features of data.</p>
+<p>In Kotlin, everything is an object, which means we can call member function and properties on any variable.</p>
+<p>Kotlin built in data type are categorized as following different categories:</p>
+<ul class="points">
+<li>Number</li>
+<li>Character</li>
+<li>Boolean</li>
+<li>Array</li>
+<li>String</li>
+</ul>
+<h2 class="h2">Number Types</h2>
+<p>Number types of data are those which hold only number type data variables. It is further categorized into different Integer and Floating point.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Data Type</th>
+<th>Bit Width (Size)</th>
+<th>Data Range</th>
+</tr>
+<tr>
+<td>Byte</td>
+<td>8 bit</td>
+<td>-128 to 127</td>
+</tr>
+<tr>
+<td>Short</td>
+<td>16 bit</td>
+<td>-32768 to 32767</td>
+</tr>
+<tr>
+<td>Int</td>
+<td>32 bit</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>64 bit</td>
+<td>-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>32 bit</td>
+<td>1.40129846432481707e-45 to 3.40282346638528860e+38</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>64 bit</td>
+<td>4.94065645841246544e-324 to 1.79769313486231570e+308</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Character (Char) Data Type</h2>
+<p>Characters are represented using the keyword&nbsp;<strong>Char</strong>. Char types are declared using single quotes ('').</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Data Type</th>
+<th>Bit Width (Size)</th>
+<th>Data Range</th>
+</tr>
+<tr>
+<td>Char</td>
+<td>4 bit</td>
+<td>-128 to 127</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;value1&nbsp;=&nbsp;<span class="string">'A'</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//or</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;&nbsp;value2:&nbsp;Char&nbsp;&nbsp;</li>
+<li class="">value2=&nbsp;<span class="string">'A'</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Boolean Data Types</h2>
+<p>Boolean data is represented using the type&nbsp;<strong>Boolean</strong>. It contains values either true or false.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Data Type</th>
+<th>Bit Width (Size)</th>
+<th>Data Value</th>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>1 bit</td>
+<td>true or false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;flag&nbsp;=&nbsp;<span class="keyword">true</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Array</h2>
+<p>Arrays in Kotlin are represented by the Array class. Arrays are created using library function arrayOf() and Array() constructor. Array has get (), set() function, size property as well as some other useful member functions.</p>
+<h3 class="h3">Creating Array using library function arrayOf()</h3>
+<p>The arrayOf() function creates array of wrapper types. The item value are passed inside arrayOf() function like arrayOf(1,2,3) which creates an array[1,2,3].</p>
+<p>The elements of array are accessed through their index values (array[index]). Array index are start from zero.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;id&nbsp;=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)&nbsp;&nbsp;</li>
+<li class="">val&nbsp;firstId&nbsp;=&nbsp;id[<span class="number">0</span>]&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;lasted&nbsp;=&nbsp;id[id.size-<span class="number">1</span>]&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Creating Array using Array() constructor</h3>
+<p>Creating array using Array() constructor takes two arguments in Array() constructor:</p>
+<ol class="points">
+<li>First argument as a size of array, and</li>
+<li>Second argument as the function, which is used to initialize and return the value of array element given its index.</li>
+</ol>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;asc&nbsp;=&nbsp;Array(<span class="number">5</span>,&nbsp;{&nbsp;i&nbsp;-&gt;&nbsp;i&nbsp;*&nbsp;<span class="number">2</span>&nbsp;})&nbsp;<span class="comment">//asc[0,2,4,6,8]</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">String</h2>
+<p>String in Kotlin is represented by String class. String is immutable, which means we cannot change the elements in String.</p>
+<p><strong>String declaration:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;text&nbsp;=<span class="string">"Hello,&nbsp;JavaTpoint"</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Types of String</h3>
+<p>String are categorize into two types. These are:</p>
+<p>1.&nbsp;<strong>Escaped String:&nbsp;</strong>Escape String is declared within double quote (" ") and may contain escape characters like '\n', '\t', '\b' etc.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;text1&nbsp;=<span class="string">"Hello,&nbsp;JavaTpoint"</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//or</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text2&nbsp;=<span class="string">"Hello,&nbsp;JavaTpoint\n"</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//or</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text3&nbsp;=<span class="string">"Hello,&nbsp;\nJavaTpoint"</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>2.&nbsp;<strong>Raw String:&nbsp;</strong>Row String is declared within triple quote (""" """). It provides facility to declare String in new lines and contain multiple lines. Row String cannot contain any escape character.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;text1&nbsp;=<span class="string">""</span>"&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaTpoint&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>"&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>

@@ -1,0 +1,576 @@
+<h1 class="h1">Java Control Statements | Control Flow in Java</h1>
+<p>Java compiler executes the code from top to bottom. The statements in the code are executed according to the order in which they appear. However,&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>&nbsp;provides statements that can be used to control the flow of Java code. Such statements are called control flow statements. It is one of the fundamental features of Java, which provides a smooth flow of program.</p>
+<p>Java provides three types of control flow statements.</p>
+<ol class="points">
+<li>Decision Making statements
+<ul class="points">
+<li>if statements</li>
+<li>switch statement</li>
+</ul>
+</li>
+<li>Loop statements
+<ul class="points">
+<li>do while loop</li>
+<li>while loop</li>
+<li>for loop</li>
+<li>for-each loop</li>
+</ul>
+</li>
+<li>Jump statements
+<ul class="points">
+<li>break statement</li>
+<li>continue statement</li>
+</ul>
+</li>
+</ol>
+<h3 class="h3">Decision-Making statements:</h3>
+<p>As the name suggests, decision-making statements decide which statement to execute and when. Decision-making statements evaluate the Boolean expression and control the program flow depending upon the result of the condition provided. There are two types of decision-making statements in Java, i.e., If statement and switch statement.</p>
+<h3 class="h3">1) If Statement:</h3>
+<p>In Java, the "if" statement is used to evaluate a condition. The control of the program is diverted depending upon the specific condition. The condition of the If statement gives a Boolean value, either true or false. In Java, there are four types of if-statements given below.</p>
+<ol class="points">
+<li>Simple if statement</li>
+<li>if-else statement</li>
+<li>if-else-if ladder</li>
+<li>Nested if-statement</li>
+</ol>
+<p>Let's understand the if-statements one by one.</p>
+<h3 class="h4">1) Simple if statement:</h3>
+<p>It is the most basic statement among all control flow statements in Java. It evaluates a Boolean expression and enables the program to enter a block of code if the expression evaluates to true.</p>
+<p>Syntax of if statement is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">1</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example in which we have used the&nbsp;<strong>if</strong>&nbsp;statement in the java code.</p>
+<p>Student.java</p>
+<p><strong>Student.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;x&nbsp;=&nbsp;<span class="number">10</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;y&nbsp;=&nbsp;<span class="number">12</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(x+y&nbsp;&gt;&nbsp;<span class="number">20</span>)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"x&nbsp;+&nbsp;y&nbsp;is&nbsp;greater&nbsp;than&nbsp;20"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>x + y is greater than 20
+</pre>
+</div>
+<h3 class="h4">2) if-else statement</h3>
+<p>The&nbsp;<a href="https://www.javatpoint.com/java-if-else">if-else statement</a>&nbsp;is an extension to the if-statement, which uses another block of code, i.e., else block. The else block is executed if the condition of the if-block is evaluated as false.</p>
+<p><strong>Syntax:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">1</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">statement&nbsp;<span class="number">2</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;is&nbsp;false&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example.</p>
+<p><strong>Student.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;x&nbsp;=&nbsp;<span class="number">10</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;y&nbsp;=&nbsp;<span class="number">12</span>;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(x+y&nbsp;&lt;&nbsp;<span class="number">10</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"x&nbsp;+&nbsp;y&nbsp;is&nbsp;less&nbsp;than&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10"</span>);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"x&nbsp;+&nbsp;y&nbsp;is&nbsp;greater&nbsp;than&nbsp;20"</span>);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>x + y is greater than 20
+</pre>
+</div>
+<h3 class="h4">3) if-else-if ladder:</h3>
+<p>The if-else-if statement contains the if-statement followed by multiple else-if statements. In other words, we can say that it is the chain of if-else statements that create a decision tree where the program may enter in the block of code where the condition is true. We can also define an else statement at the end of the chain.</p>
+<p>Syntax of if-else-if statement is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition&nbsp;<span class="number">1</span>)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">1</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;1&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(condition&nbsp;<span class="number">2</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">statement&nbsp;<span class="number">2</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;2&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">2</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;all&nbsp;the&nbsp;conditions&nbsp;are&nbsp;false&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example.</p>
+<p><strong>Student.java</strong></p>
+<p>&nbsp;</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">String&nbsp;city&nbsp;=&nbsp;<span class="string">"Delhi"</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(city&nbsp;==&nbsp;<span class="string">"Meerut"</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"city&nbsp;is&nbsp;meerut"</span>);&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>&nbsp;(city&nbsp;==&nbsp;<span class="string">"Noida"</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"city&nbsp;is&nbsp;noida"</span>);&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(city&nbsp;==&nbsp;<span class="string">"Agra"</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"city&nbsp;is&nbsp;agra"</span>);&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(city);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Delhi
+</pre>
+</div>
+<h3 class="h4">4. Nested if-statement</h3>
+<p>In nested if-statements, the if statement can contain a&nbsp;<strong>if</strong>&nbsp;or&nbsp;<strong>if-else</strong>&nbsp;statement inside another if or else-if statement.</p>
+<p>Syntax of Nested if-statement is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condition&nbsp;<span class="number">1</span>)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">1</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;1&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(condition&nbsp;<span class="number">2</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">statement&nbsp;<span class="number">2</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;2&nbsp;is&nbsp;true&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">statement&nbsp;<span class="number">2</span>;&nbsp;<span class="comment">//executes&nbsp;when&nbsp;condition&nbsp;2&nbsp;is&nbsp;false&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example.</p>
+<p><strong>Student.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">String&nbsp;address&nbsp;=&nbsp;<span class="string">"Delhi,&nbsp;India"</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(address.endsWith(<span class="string">"India"</span>))&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(address.contains(<span class="string">"Meerut"</span>))&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Your&nbsp;city&nbsp;is&nbsp;Meerut"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(address.contains(<span class="string">"Noida"</span>))&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Your&nbsp;city&nbsp;is&nbsp;Noida"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(address.split(<span class="string">","</span>)[<span class="number">0</span>]);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"You&nbsp;are&nbsp;not&nbsp;living&nbsp;in&nbsp;India"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Delhi
+</pre>
+</div>
+<h3 class="h3">Switch Statement:</h3>
+<p>In Java,&nbsp;<a href="https://www.javatpoint.com/java-switch">Switch statements</a>&nbsp;are similar to if-else-if statements. The switch statement contains multiple blocks of code called cases and a single case is executed based on the variable which is being switched. The switch statement is easier to use instead of if-else-if statements. It also enhances the readability of the program.</p>
+<p>Points to be noted about switch statement:</p>
+<ul class="points">
+<li>The case variables can be int, short, byte, char, or enumeration. String type is also supported since version 7 of Java</li>
+<li>Cases cannot be duplicate</li>
+<li>Default statement is executed when any of the case doesn't match the value of expression. It is optional.</li>
+<li>Break statement terminates the switch block when the condition is satisfied.<br />It is optional, if not used, next case is executed.</li>
+<li>While using switch statements, we must notice that the case expression will be of the same type as the variable. However, it will also be a constant value.</li>
+</ul>
+<p>The syntax to use the switch statement is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">switch</span>&nbsp;(expression){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;value1:&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement1;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;valueN:&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statementN;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">default</span>:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">default</span>&nbsp;statement;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example to understand the flow of the switch statement.</p>
+<p><strong>Student.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;<span class="keyword">implements</span>&nbsp;Cloneable&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;num&nbsp;=&nbsp;<span class="number">2</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">switch</span>&nbsp;(num){&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">case</span>&nbsp;<span class="number">0</span>:&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"number&nbsp;is&nbsp;0"</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">case</span>&nbsp;<span class="number">1</span>:&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"number&nbsp;is&nbsp;1"</span>);&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">default</span>:&nbsp;&nbsp;</li>
+<li class="">System.out.println(num);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>2
+</pre>
+</div>
+<p>While using switch statements, we must notice that the case expression will be of the same type as the variable. However, it will also be a constant value. The switch permits only int, string, and Enum type variables to be used.</p>
+<h3 class="h3">Loop Statements</h3>
+<p>In programming, sometimes we need to execute the block of code repeatedly while some condition evaluates to true. However, loop statements are used to execute the set of instructions in a repeated order. The execution of the set of instructions depends upon a particular condition.</p>
+<p>In Java, we have three types of loops that execute similarly. However, there are differences in their syntax and condition checking time.</p>
+<ol class="points">
+<li>for loop</li>
+<li>while loop</li>
+<li>do-while loop</li>
+</ol>
+<p>Let's understand the loop statements one by one.</p>
+<h3 class="h3">Java for loop</h3>
+<p>In Java,&nbsp;<a href="https://www.javatpoint.com/java-for-loop">for loop</a>&nbsp;is similar to&nbsp;<a href="https://www.javatpoint.com/c-programming-language-tutorial">C</a>&nbsp;and&nbsp;<a href="https://www.javatpoint.com/cpp-tutorial">C++</a>. It enables us to initialize the loop variable, check the condition, and increment/decrement in a single line of code. We use the for loop only when we exactly know the number of times, we want to execute the block of code.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(initialization,&nbsp;condition,&nbsp;increment/decrement)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//block&nbsp;of&nbsp;statements&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The flow chart for the for-loop is given below.</p>
+<p>Consider the following example to understand the proper functioning of the for loop in java.</p>
+<p><strong>Calculation.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Calculattion&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;sum&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j&nbsp;=&nbsp;<span class="number">1</span>;&nbsp;j&lt;=<span class="number">10</span>;&nbsp;j++)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">sum&nbsp;=&nbsp;sum&nbsp;+&nbsp;j;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"The&nbsp;sum&nbsp;of&nbsp;first&nbsp;10&nbsp;natural&nbsp;numbers&nbsp;is&nbsp;"</span>&nbsp;+&nbsp;sum);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>The sum of first 10 natural numbers is 55
+</pre>
+</div>
+<h3 class="h3">Java for-each loop</h3>
+<p>Java provides an enhanced for loop to traverse the data structures like array or collection. In the for-each loop, we don't need to update the loop variable. The syntax to use the for-each loop in java is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(data_type&nbsp;var&nbsp;:&nbsp;array_name/collection_name){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//statements&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Consider the following example to understand the functioning of the for-each loop in Java.</p>
+<p><strong>Calculation.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">String[]&nbsp;names&nbsp;=&nbsp;{<span class="string">"Java"</span>,<span class="string">"C"</span>,<span class="string">"C++"</span>,<span class="string">"Python"</span>,<span class="string">"JavaScript"</span>};&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Printing&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;array&nbsp;names:\n"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(String&nbsp;name:names)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(name);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Printing the content of the array names:
+
+Java
+C
+C++
+Python
+JavaScript
+</pre>
+</div>
+<h3 class="h3">Java while loop</h3>
+<p>The&nbsp;<a href="https://www.javatpoint.com/java-while-loop">while loop</a>&nbsp;is also used to iterate over the number of statements multiple times. However, if we don't know the number of iterations in advance, it is recommended to use a while loop. Unlike for loop, the initialization and increment/decrement doesn't take place inside the loop statement in while loop.</p>
+<p>It is also known as the entry-controlled loop since the condition is checked at the start of the loop. If the condition is true, then the loop body will be executed; otherwise, the statements after the loop will be executed.</p>
+<p>The syntax of the while loop is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">while</span>(condition){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//looping&nbsp;statements&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The flow chart for the while loop is given in the following image.</p>
+<p>Consider the following example.</p>
+<p><strong>Calculation .java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Printing&nbsp;the&nbsp;list&nbsp;of&nbsp;first&nbsp;10&nbsp;even&nbsp;numbers&nbsp;\n"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(i&lt;=<span class="number">10</span>)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(i);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">i&nbsp;=&nbsp;i&nbsp;+&nbsp;<span class="number">2</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Printing the list of first 10 even numbers 
+
+0
+2
+4
+6
+8
+10
+</pre>
+</div>
+<h3 class="h3">Java do-while loop</h3>
+<p>The&nbsp;<a href="https://www.javatpoint.com/java-do-while-loop">do-while loop</a>&nbsp;checks the condition at the end of the loop after executing the loop statements. When the number of iteration is not known and we have to execute the loop at least once, we can use do-while loop.</p>
+<p>It is also known as the exit-controlled loop since the condition is not checked in advance. The syntax of the do-while loop is given below.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">do</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//statements&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;<span class="keyword">while</span>&nbsp;(condition);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The flow chart of the do-while loop is given in the following image.</p>
+<p>Consider the following example to understand the functioning of the do-while loop in Java.</p>
+<p><strong>Calculation.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Printing&nbsp;the&nbsp;list&nbsp;of&nbsp;first&nbsp;10&nbsp;even&nbsp;numbers&nbsp;\n"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">do</span>&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(i);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">i&nbsp;=&nbsp;i&nbsp;+&nbsp;<span class="number">2</span>;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">while</span>(i&lt;=<span class="number">10</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Printing the list of first 10 even numbers 
+0
+2
+4
+6
+8
+10
+</pre>
+</div>
+<h3 class="h3">Jump Statements</h3>
+<p>Jump statements are used to transfer the control of the program to the specific statements. In other words, jump statements transfer the execution control to the other part of the program. There are two types of jump statements in Java, i.e., break and continue.</p>
+<h3 class="h3">Java break statement</h3>
+<p>As the name suggests, the&nbsp;<a href="https://www.javatpoint.com/java-break">break statement</a>&nbsp;is used to break the current flow of the program and transfer the control to the next statement outside a loop or switch statement. However, it breaks only the inner loop in the case of the nested loop.</p>
+<p>The break statement cannot be used independently in the Java program, i.e., it can only be written inside the loop or switch statement.</p>
+<p><strong>The break statement example with for loop</strong></p>
+<p>Consider the following example in which we have used the break statement with the for loop.</p>
+<p><strong>BreakExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;BreakExample&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&lt;=&nbsp;<span class="number">10</span>;&nbsp;i++)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">System.out.println(i);&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(i==<span class="number">6</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>0
+1
+2
+3
+4
+5
+6
+</pre>
+</div>
+<p><strong>break statement example with labeled for loop</strong></p>
+<p><strong>Calculation.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">a:&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&lt;=&nbsp;<span class="number">10</span>;&nbsp;i++)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">b:&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;j&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;j&lt;=<span class="number">15</span>;j++)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">c:&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;(<span class="keyword">int</span>&nbsp;k&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;k&lt;=<span class="number">20</span>;&nbsp;k++)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(k);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(k==<span class="number">5</span>)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">break</span>&nbsp;a;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>0
+1
+2
+3
+4
+5
+</pre>
+</div>
+<h3 class="h3">Java continue statement</h3>
+<p>Unlike break statement, the&nbsp;<a href="https://www.javatpoint.com/java-continue">continue statement</a>&nbsp;doesn't break the loop, whereas, it skips the specific part of the loop and jumps to the next iteration of the loop immediately.</p>
+<p>Consider the following example to understand the functioning of the continue statement in Java.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;ContinueExample&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//&nbsp;TODO&nbsp;Auto-generated&nbsp;method&nbsp;stub</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&lt;=&nbsp;<span class="number">2</span>;&nbsp;i++)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;(<span class="keyword">int</span>&nbsp;j&nbsp;=&nbsp;i;&nbsp;j&lt;=<span class="number">5</span>;&nbsp;j++)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(j&nbsp;==&nbsp;<span class="number">4</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">continue</span>;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(j);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>0
+1
+2
+3
+5
+1
+2
+3
+5
+2
+3
+5</pre>
+</div>
