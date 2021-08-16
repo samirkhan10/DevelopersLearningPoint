@@ -1,0 +1,106 @@
+<h1 class="h1">Inline Function</h1>
+<p>An&nbsp;<strong>inline function</strong>&nbsp;is declare with a keyword inline. The use of inline function enhances the performance of higher order function. The inline function tells the compiler to copy parameters and functions to the call site.</p>
+<p>The&nbsp;<em>virtual</em>&nbsp;function or&nbsp;<em>local</em>&nbsp;function cannot be declared as&nbsp;<strong>inline</strong>. Following are some expressions and declarations which are not supported anywhere inside the inline functions:</p>
+<ul class="points">
+<li>Declaration of local classes</li>
+<li>Declaration of inner nested classes</li>
+<li>Function expressions</li>
+<li>Declarations of local function</li>
+<li>Default value for optional parameters</li>
+</ul>
+<p>Let's see the basic example of inline function:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">inlineFunction({&nbsp;println(<span class="string">"calling&nbsp;inline&nbsp;functions"</span>)})&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">inline&nbsp;<span class="keyword">fun</span>&nbsp;inlineFunction(myFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit&nbsp;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">myFun()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"code&nbsp;inside&nbsp;inline&nbsp;function"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>calling inline functions
+code inside inline function
+</pre>
+</div>
+<h3 class="h3">Non local control flow</h3>
+<p>From inline function, we can return from lambda expression itself. This will also lead to exit from the function in which inline function was called. The function literal is allowed to have non local return statements in such case.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">inlineFunction({&nbsp;println(<span class="string">"calling&nbsp;inline&nbsp;functions"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>},{&nbsp;println(<span class="string">"next&nbsp;parameter&nbsp;in&nbsp;inline&nbsp;functions"</span>)})&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">inline&nbsp;<span class="keyword">fun</span>&nbsp;inlineFunction(myFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit,&nbsp;nxtFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">myFun()&nbsp;&nbsp;</li>
+<li class="">nxtFun()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"code&nbsp;inside&nbsp;inline&nbsp;function"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>calling inline functions
+</pre>
+</div>
+<h3 class="h3">crossinline annotation</h3>
+<p>To prevent return from lambda expression and inline function itself, we can mark the lambda expression as&nbsp;<strong>crossinline</strong>. This will throw a compiler error if it found a return statement inside that lambda expression.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">inlineFunction({&nbsp;println(<span class="string">"calling&nbsp;inline&nbsp;functions"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="comment">//&nbsp;compile&nbsp;time&nbsp;error</span>&nbsp;&nbsp;</li>
+<li class="">},{&nbsp;println(<span class="string">"next&nbsp;parameter&nbsp;in&nbsp;inline&nbsp;functions"</span>)})&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">inline&nbsp;<span class="keyword">fun</span>&nbsp;inlineFunction(crossline&nbsp;myFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit,&nbsp;nxtFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">myFun()&nbsp;&nbsp;</li>
+<li class="alt">nxtFun()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"code&nbsp;inside&nbsp;inline&nbsp;function"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">noinline modifier</h3>
+<p>In inline function, when we want some of lambdas passed in inline function to be an inlined, mark other function parameter with noinline modifier. This is used to set expressions not to be inlined in the call.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">inlineFunctionExample({&nbsp;&nbsp;println(<span class="string">"calling&nbsp;inline&nbsp;functions"</span>)},&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;println(<span class="string">"next&nbsp;parameter&nbsp;in&nbsp;inline&nbsp;functions"</span>)}&nbsp;)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">println(<span class="string">"this&nbsp;is&nbsp;main&nbsp;function&nbsp;closing"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">inline&nbsp;<span class="keyword">fun</span>&nbsp;inlineFunctionExample(myFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit,&nbsp;noinline&nbsp;nxtFun:&nbsp;()&nbsp;-&gt;&nbsp;Unit&nbsp;&nbsp;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">myFun()&nbsp;&nbsp;</li>
+<li class="">nxtFun()&nbsp;&nbsp;</li>
+<li class="alt">println(<span class="string">"code&nbsp;inside&nbsp;inline&nbsp;function"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>calling inline functions
+next parameter in inline functions
+code inside inline function
+this is main function closing
+</pre>
+</div>
+<p>If an inline function does not contain any noinline function parameter and no reified type parameters then compiler will generate a warning.</p>

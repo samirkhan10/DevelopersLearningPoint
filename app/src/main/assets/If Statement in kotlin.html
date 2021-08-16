@@ -1,0 +1,140 @@
+<h1 class="h1">Kotlin if Expression</h1>
+<p>In Kotlin,&nbsp;<strong>if</strong>&nbsp;is an expression is which returns a value. It is used for control the flow of program structure. There is various type of if expression in Kotlin.</p>
+<ul class="points">
+<li>if-else expression</li>
+<li>if-else if-else ladder expression</li>
+<li>nested if expression</li>
+</ul>
+<h2 class="h2">Traditional if Statement</h2>
+<p>Syntax of traditional&nbsp;<strong>if</strong>&nbsp;statement</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condation){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Syntax of traditional&nbsp;<strong>if else</strong>&nbsp;statement</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">if</span>(condation){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//code&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Kotlin if-else Expression</h2>
+<p>As if is an expression it is not used as standalone, it is used with if-else expression and the result of an if-else expression is assign into a variable.</p>
+<p>Syntax of if-else expression</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;returnValue&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;(condation)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//code&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;code&nbsp;statement</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(returnValue)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Kotlin if-else Expression Example</strong></p>
+<p>Let's see an example of if-else expression.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num1&nbsp;=&nbsp;<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num2&nbsp;=<span class="number">20</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;(num1&nbsp;&gt;&nbsp;num2)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$num1&nbsp;is&nbsp;greater&nbsp;than&nbsp;$num2"</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$num1&nbsp;is&nbsp;smaller&nbsp;than&nbsp;$num2"</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>10 is smaller than 20
+</pre>
+</div>
+<p>We can remove the curly braces of if-else body by writing if expression in only one statement.</p>
+<p><strong>For example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num1&nbsp;=&nbsp;<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num2&nbsp;=<span class="number">20</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;(num1&nbsp;&gt;&nbsp;num2)&nbsp;<span class="string">"$num1&nbsp;is&nbsp;greater&nbsp;than&nbsp;$num2"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">"$num1&nbsp;is&nbsp;smaller&nbsp;than&nbsp;$num2"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Using if-else expression in one single line statement is like ternary operator in Java. Kotlin does not support any ternary operator.</p>
+<h2 class="h2">Kotlin if-else if-else Ladder Expression</h2>
+<p>Let's see an example of if-else if-else ladder expression.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num&nbsp;=&nbsp;<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;(num&nbsp;&gt;&nbsp;<span class="number">0</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$num&nbsp;is&nbsp;positive"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(num&nbsp;&lt;&nbsp;<span class="number">0</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$num&nbsp;is&nbsp;negative"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$num&nbsp;is&nbsp;zero"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>10 is positive
+</pre>
+</div>
+<h2 class="h2">Kotlin Nested if Expression</h2>
+<p>Let's see an example of nested if expression.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num1&nbsp;=&nbsp;<span class="number">25</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num2&nbsp;=&nbsp;<span class="number">20</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;num3&nbsp;=&nbsp;<span class="number">30</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;(num1&nbsp;&gt;&nbsp;num2){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;max&nbsp;=&nbsp;<span class="keyword">if</span>(num1&nbsp;&gt;&nbsp;num3){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num1&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num3&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"body&nbsp;of&nbsp;if&nbsp;"</span>+max&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(num2&nbsp;&gt;&nbsp;num3){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"body&nbsp;of&nbsp;else&nbsp;if"</span>+num2&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"body&nbsp;of&nbsp;else&nbsp;"</span>+num3&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"$result"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>body of if 30</pre>
+</div>

@@ -1,0 +1,299 @@
+<h1 class="h1">Flutter Widgets</h1>
+<p>In this section, we are going to learn the concept of a widget, how to create it, and their different types available in the Flutter framework. We have learned earlier that everything in Flutter is a widget.</p>
+<p>If you are familiar with React or Vue.js, then it is easy to understand the Flutter.</p>
+<p>Whenever you are going to code for building anything in Flutter, it will be inside a widget. The central purpose is to build the app out of widgets. It describes how your app view should look like with their current configuration and state. When you made any alteration in the code, the widget rebuilds its description by calculating the difference of previous and current widget to determine the minimal changes for rendering in UI of the app.</p>
+<p>Widgets are nested with each other to build the app. It means the root of your app is itself a widget, and all the way down is a widget also. For example, a widget can display something, can define design, can handle interaction, etc.</p>
+<p>The below image is a simple visual representation of the widget tree.</p>
+<p>We can create the Flutter widget like this:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">Class&nbsp;ImageWidget&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Class&nbsp;Stuff</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Hello World Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;MyHomePage({Key&nbsp;key,&nbsp;<span class="keyword">this</span>.title})&nbsp;:&nbsp;<span class="keyword">super</span>(key:&nbsp;key);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;widget&nbsp;is&nbsp;the&nbsp;home&nbsp;page&nbsp;of&nbsp;your&nbsp;application.&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">final</span>&nbsp;String&nbsp;title;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Scaffold(&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="keyword">this</span>.title),&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;Center(&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">'Hello&nbsp;World'</span>),&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Types of Widget</h2>
+<p>We can split the Flutter widget into two categories:</p>
+<ol class="points">
+<li>Visible (Output and Input)</li>
+<li>Invisible (Layout and Control)</li>
+</ol>
+<h3 class="h3">Visible widget</h3>
+<p>The visible widgets are related to the user input and output data. Some of the important types of this widget are:</p>
+<p class="pq"><strong>Text</strong></p>
+<p>A Text widget holds some text to display on the screen. We can align the text widget by using&nbsp;<strong>textAlign</strong>&nbsp;property, and style property allow the customization of Text that includes font, font weight, font style, letter spacing, color, and many more. We can use it as like below code snippets.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="string">'Hello,&nbsp;Javatpoint!'</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">textAlign:&nbsp;TextAlign.center,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">style:&nbsp;<span class="keyword">new</span>&nbsp;TextStyle(fontWeight:&nbsp;FontWeight.bold),&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Button</strong></p>
+<p>This widget allows you to perform some action on click. Flutter does not allow you to use the Button widget directly; instead, it uses a type of buttons like a&nbsp;<strong>FlatButton</strong>&nbsp;and a&nbsp;<strong>RaisedButton</strong>. We can use it as like below code snippets.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//FlatButton&nbsp;Example</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">new</span>&nbsp;FlatButton(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"Click&nbsp;here"</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;onPressed:&nbsp;()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Do&nbsp;something&nbsp;here</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="alt">),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//RaisedButton&nbsp;Example</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">new</span>&nbsp;RaisedButton(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"Click&nbsp;here"</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;elevation:&nbsp;<span class="number">5.0</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;onPressed:&nbsp;()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;Do&nbsp;something&nbsp;here</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="">),&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example, the&nbsp;<strong>onPressed</strong>&nbsp;property allows us to perform an action when you click the button, and&nbsp;<strong>elevation</strong>&nbsp;property is used to change how much it stands out.</p>
+<p class="pq"><strong>Image</strong></p>
+<p>This widget holds the image which can fetch it from multiple sources like from the asset folder or directly from the URL. It provides many constructors for loading image, which are given below:</p>
+<ul class="points">
+<li><strong>Image:</strong>&nbsp;It is a generic image loader, which is used by&nbsp;<strong>ImageProvider</strong>.</li>
+<li><strong>asset:</strong>&nbsp;It load image from your project asset folder.</li>
+<li><strong>file:</strong>&nbsp;It loads images from the system folder.</li>
+<li><strong>memory:&nbsp;</strong>It load image from memory.</li>
+<li><strong>network:</strong>&nbsp;It loads images from the network.</li>
+</ul>
+<p>To add an image in the project, you need first to create an assets folder where you keep your images and then add the below line in&nbsp;<strong>pubspec.yaml</strong>&nbsp;file.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">assets:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;-&nbsp;assets/&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Now, add the following line in the dart file.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Image.asset(<span class="string">'assets/computer.png'</span>)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The complete source code for adding an image is shown below in the&nbsp;<strong>hello world</strong>&nbsp;example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;MyHomePage({Key&nbsp;key,&nbsp;<span class="keyword">this</span>.title})&nbsp;:&nbsp;<span class="keyword">super</span>(key:&nbsp;key);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;widget&nbsp;is&nbsp;the&nbsp;home&nbsp;page&nbsp;of&nbsp;your&nbsp;application.</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">final</span>&nbsp;String&nbsp;title;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="keyword">this</span>.title),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;Center(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Image.asset(<span class="string">'assets/computer.png'</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>When you run the app, it will give the following output.</p>
+<p class="pq"><strong>Icon</strong></p>
+<p>This widget acts as a container for storing the Icon in the Flutter. The following code explains it more clearly.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Icon(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Icons.add,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;size:&nbsp;<span class="number">34.0</span>,&nbsp;&nbsp;</li>
+<li class="">)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Invisible widget</h3>
+<p>The invisible widgets are related to the layout and control of widgets. It provides controlling how the widgets actually behave and how they will look onto the screen. Some of the important types of these widgets are:</p>
+<p class="pq"><strong>Column</strong></p>
+<p>A column widget is a type of widget that arranges all its children's widgets in a vertical alignment. It provides spacing between the widgets by using the&nbsp;<strong>mainAxisAlignment</strong>&nbsp;and&nbsp;<strong>crossAxisAlignment</strong>&nbsp;properties. In these properties, the main axis is the vertical axis, and the cross axis is the horizontal axis.</p>
+<p><strong>Example</strong></p>
+<p>The below code snippets construct two widget elements vertically.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Column(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;mainAxisAlignment:&nbsp;MainAxisAlignment.center,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;children:&nbsp;&lt;Widget&gt;[&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"VegElement"</span>,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Non-vegElement"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;],&nbsp;&nbsp;</li>
+<li class="alt">),&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Row</strong></p>
+<p>The row widget is similar to the column widget, but it constructs a widget horizontally rather than vertically. Here, the main axis is the horizontal axis, and the cross axis is the vertical axis.</p>
+<p><strong>Example</strong></p>
+<p>The below code snippets construct two widget elements horizontally.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Row(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;mainAxisAlignment:&nbsp;MainAxisAlignment.spaceEvenly,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;children:&nbsp;&lt;Widget&gt;[&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"VegElement"</span>,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Non-vegElement"</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;],&nbsp;&nbsp;</li>
+<li class="alt">),&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Center</strong></p>
+<p>This widget is used to center the child widget, which comes inside it. All the previous examples contain inside the center widget.</p>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Center(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;child:&nbsp;<span class="keyword">new</span>&nbsp;clumn(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;mainAxisAlignment:&nbsp;MainAxisAlignment.spaceEvenly,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;children:&nbsp;&lt;Widget&gt;[&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"VegElement"</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Non-vegElement"</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;],&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">),&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Padding</strong></p>
+<p>This widget wraps other widgets to give them padding in specified directions. You can also provide padding in all directions. We can understand it from the below example that gives the text widget padding of 6.0 in all directions.</p>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Padding(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;padding:&nbsp;<span class="keyword">const</span>&nbsp;EdgeInsets.all(<span class="number">6.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;child:&nbsp;<span class="keyword">new</span>&nbsp;Text(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Element&nbsp;1"</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">),&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p class="pq"><strong>Scaffold</strong></p>
+<p>This widget provides a framework that allows you to add common material design elements like AppBar, Floating Action Buttons, Drawers, etc.</p>
+<p class="pq"><strong>Stack</strong></p>
+<p>It is an essential widget, which is mainly used for&nbsp;<strong>overlapping</strong>&nbsp;a widget, such as a button on a background gradient.</p>
+<h2 class="h2">State Management Widget</h2>
+<p>In Flutter, there are mainly two types of widget:</p>
+<ul class="points">
+<li>StatelessWidget</li>
+<li>StatefulWidget</li>
+</ul>
+<h3 class="h3">StatefulWidget</h3>
+<p>A StatefulWidget has state information. It contains mainly two classes: the&nbsp;<strong>state object</strong>&nbsp;and the&nbsp;<strong>widget</strong>. It is dynamic because it can change the inner data during the widget lifetime. This widget does not have a&nbsp;<strong>build()</strong>&nbsp;method. It has&nbsp;<strong>createState()</strong>&nbsp;method, which returns a class that extends the Flutters State Class. The examples of the StatefulWidget are Checkbox, Radio, Slider, InkWell, Form, and TextField.</p>
+<p class="pq"><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Car&nbsp;<span class="keyword">extends</span>&nbsp;StatefulWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">const</span>&nbsp;Car({&nbsp;Key&nbsp;key,&nbsp;<span class="keyword">this</span>.title&nbsp;})&nbsp;:&nbsp;<span class="keyword">super</span>(key:&nbsp;key);&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;_CarState&nbsp;createState()&nbsp;=&gt;&nbsp;_CarState();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;_CarState&nbsp;<span class="keyword">extends</span>&nbsp;State&lt;Car&gt;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;<span class="keyword">const</span>&nbsp;Color(<span class="number">0xFEEFE</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Container(&nbsp;<span class="comment">//child:&nbsp;Container()&nbsp;)</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">StatelessWidget</h3>
+<p>The StatelessWidget does not have any state information. It remains static throughout its lifecycle. The examples of the StatelessWidget are Text, Row, Column, Container, etc.</p>
+<p class="pq"><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;MyStatelessCarWidget&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">const</span>&nbsp;MyStatelessCarWidget&nbsp;({&nbsp;Key&nbsp;key&nbsp;})&nbsp;:&nbsp;<span class="keyword">super</span>(key:&nbsp;key);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Container(color:&nbsp;<span class="keyword">const</span>&nbsp;Color(0x0xFEEFE));&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>

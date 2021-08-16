@@ -1,0 +1,175 @@
+<h1 class="h1">Flutter Row and Column</h1>
+<p>In the previous sections, we have learned to create a simple Flutter application and its basic styling to the widgets. Now, we are going to learn how to&nbsp;<strong>arrange the widgets in rows and columns on the screen</strong>. The rows and columns are not a single widget; they are two different widgets, namely Row and Column. Here, we will integrate these two widgets together because they have similar properties that help us understand them efficiently and quickly.</p>
+<p>Row and column are the two essential widgets in&nbsp;<a href="https://www.javatpoint.com/flutter">Flutter</a>&nbsp;that allows developers to&nbsp;<strong>align children horizontally and vertically according to our needs</strong>. These widgets are very necessary when we design the application user interface in Flutter.</p>
+<h2 class="h2">Key Points</h2>
+<ol class="points">
+<li>Row and Column widgets are the most commonly used layout patterns in the Flutter application.</li>
+<li>Both may take several child widgets.</li>
+<li>A child widget can also be a row or column widget.</li>
+<li>We can stretch or constrain a particular children's widget.</li>
+<li>Flutter also allows developers to specify how child widgets can use row and column widgets' available space.</li>
+</ol>
+<h2 class="h2">Row Widget</h2>
+<p><strong>This widget arranges its children in a horizontal direction on the screen</strong>. In other words, it will expect child widgets in a horizontal array. If the child widgets need to fill the available horizontal space, we must wrap the children widgets in an Expanded widget.</p>
+<p>A row widget does&nbsp;<strong>not appear scrollable</strong>&nbsp;because it displays the widgets within the visible view. So it is considered wrong if we have more children in a row which will not fit in the available space. If we want to make a scrollable list of row widgets, we need to use the ListView widget.</p>
+<p>We can control how a row widget aligns its children based on our choice using the property&nbsp;<strong>crossAxisAlignment</strong>&nbsp;and&nbsp;<strong>mainAxisAlignment</strong>. The row's&nbsp;<strong>cross-axis</strong>&nbsp;will run&nbsp;<strong>vertically</strong>, and the&nbsp;<strong>main axis</strong>&nbsp;will run&nbsp;<strong>horizontally</strong>. See the below visual representation to understand it more clearly.</p>
+<h4 class="n">Note: Flutter row widget has several other properties like mainAxisSize, textDirection, verticalDirection, etc. Here, we will discuss only mainAxisAlignment and crossAxisAlignment properties.</h4>
+<p>We can align the row's children widget with the help of the following properties:</p>
+<ul class="points">
+<li><strong>start:</strong>&nbsp;It will place the children from the starting of the main axis.</li>
+<li><strong>end:</strong>&nbsp;It will place the children at the end of the main axis.</li>
+<li><strong>center:</strong>&nbsp;It will place the children in the middle of the main axis.</li>
+<li><strong>spaceBetween:</strong>&nbsp;It will place the free space between the children evenly.</li>
+<li><strong>spaceAround:</strong>&nbsp;It will place the free space between the children evenly and half of that space before and after the first and last children widget.</li>
+<li><strong>spaceEvenly:</strong>&nbsp;It will place the free space between the children evenly and before and after the first and last children widget.</li>
+</ul>
+<p>Let us understand it with the help of an example where we are going to align the content such that there is an even space around the children in a row:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;runApp(MyApp());&nbsp;}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;MyApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;MyHomePage()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatefulWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;_MyHomePageState&nbsp;createState()&nbsp;=&gt;&nbsp;_MyHomePageState();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;_MyHomePageState&nbsp;<span class="keyword">extends</span>&nbsp;State&lt;MyHomePage&gt;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="string">"Flutter&nbsp;Row&nbsp;Example"</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;Row(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mainAxisAlignment:&nbsp;MainAxisAlignment.spaceEvenly,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children:&lt;Widget&gt;[&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">12.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">8.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.green&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"React.js"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">25</span>),),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">15.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">8.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.green&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"Flutter"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">25</span>),),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">12.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">8.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.green&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"MySQL"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">25</span>),),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<p>try yourself--&gt;</p>
+<h2 class="h2">Column</h2>
+<p><strong>This widget arranges its children in a vertical direction on the screen</strong>. In other words, it will expect a vertical array of children widgets. If the child widgets need to fill the available vertical space, we must wrap the children widgets in an Expanded widget.</p>
+<p>A column widget does&nbsp;<strong>not appear scrollable</strong>&nbsp;because it displays the widgets within the visible view. So it is considered wrong if we have more children in a column which will not fit in the available space. If we want to make a scrollable list of column widgets, we need to use the ListView Widget.</p>
+<p>We can also control how a column widget aligns its children using the property mainAxisAlignment and crossAxisAlignment. The column's&nbsp;<strong>cross-axis&nbsp;</strong>will run&nbsp;<strong>horizontally</strong>, and the&nbsp;<strong>main axis</strong>&nbsp;will run&nbsp;<strong>vertically</strong>. The below visual representation explains it more clearly.</p>
+<p><img src="https://static.javatpoint.com/tutorial/flutter/images/flutter-row-and-column3.png" alt="Flutter Row and Column" /></p>
+<h4 class="n">Note: Column widget also aligns its content by using the same properties as we have discussed in row widget such as start, end, center, spaceAround, spaceBetween, and spaceEvenly.</h4>
+<p>Let us understand it with the help of an example where we are going to align the content such that there is a free space between the children evenly in a column:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;runApp(MyApp());&nbsp;}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;MyApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;MyHomePage()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatefulWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;_MyHomePageState&nbsp;createState()&nbsp;=&gt;&nbsp;_MyHomePageState();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;_MyHomePageState&nbsp;<span class="keyword">extends</span>&nbsp;State&lt;MyHomePage&gt;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="string">"Flutter&nbsp;Column&nbsp;Example"</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;Column(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mainAxisAlignment:&nbsp;MainAxisAlignment.spaceBetween,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children:&lt;Widget&gt;[&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">20.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">12.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.red&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"React.js"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">20</span>),),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">20.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">12.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.red&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"Flutter"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">20</span>),),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;EdgeInsets.all(<span class="number">20.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">12.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:BoxDecoration(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:BorderRadius.circular(<span class="number">8</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:Colors.red&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(<span class="string">"MySQL"</span>,style:&nbsp;TextStyle(color:Colors.yellowAccent,fontSize:<span class="number">20</span>),),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<p>try yourself--&gt;</p>
+<p><strong>Flutter also allows developers to align the child widget with a combination of crossAxisAlignment and mainAxisAlignment for both row and column widget</strong>. Let us take the above example of column widget where we will set mainAxisAlignment as MainAxisAlignment.spaceAround and crossAxisAlignment is CrossAxisAlignment.stretch. It will make the height of the column is equal to the height of the body.&nbsp;</p>
+<h3 class="h3">Drawbacks OF Row and Column Widget:</h3>
+<ul class="points">
+<li>Row widget in Flutter does not have horizontal scrolling. So if we have inserted a large number of children in a single row that cannot be fit in that row, we will see the Overflow message.</li>
+<li>Column widget in Flutter does not have vertical scrolling. So if we have inserted a large number of children in a single column whose total children size is not equal to the height of the screen, we will see the Overflow message.</li>
+</ul>

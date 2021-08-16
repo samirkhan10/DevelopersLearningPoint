@@ -1,0 +1,375 @@
+<h1>Kotlin when expression</h1>
+<div class="text">
+<p>In Kotlin,&nbsp;<strong>when</strong>&nbsp;replaces the&nbsp;<strong>switch</strong>&nbsp;operator of other languages like Java. A certain block of code needs to be executed when some condition is fulfilled. The argument of&nbsp;<em>when&nbsp;</em>expression compares with all the branches one by one until some match is found. After the first match found, it reaches to end of the when block and execute the code next to when block. Unlike switch case in java or any other programming language, we do not require break statement at the end of each case.<br />In Kotlin,&nbsp;<em><strong>when&nbsp;</strong></em>can be used in two ways:&nbsp;<br />&nbsp;</p>
+<ul>
+<li>when as a statement</li>
+<li>when as an expression</li>
+</ul>
+<p>&nbsp;</p>
+<h3>Using&nbsp;<em>when&nbsp;</em>as a statement with&nbsp;<em>else</em>&nbsp;&ndash;</h3>
+<p><strong>when</strong>&nbsp;can be used as a statement with or without&nbsp;<em>else&nbsp;</em>branch. If it is used as a statement, the values of all individual branches are compared sequentially with the argument and execute the corresponding branch where condition matches. If none of the branches satisfied with the condition then it will execute the else branch.&nbsp;<br />&nbsp;</p>
+<div class="noIdeBtnDiv">
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist1-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist1-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_758861" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="keyword">import</code> <code class="plain">java.util.Scanner;</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var reader = Scanner(System.`in`)</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">print(</code><code class="string">"Enter any largebody:"</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var lb = reader.next()</code></div>
+<div class="line number6 index5 alt1">&nbsp;</div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when(lb) {</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Sun"</code> <code class="plain">-&gt; println(</code><code class="string">"Sun is a Star"</code><code class="plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Moon"</code> <code class="plain">-&gt; println(</code><code class="string">"Moon is a Satellite"</code><code class="plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Earth"</code> <code class="plain">-&gt; println(</code><code class="string">"Earth is a planet"</code><code class="plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">-&gt; println(</code><code class="string">"I don't know anything about it"</code><code class="plain">)</code></div>
+<div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number13 index12 alt2"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;&nbsp;</p>
+<pre>Enter any largebody: Sun
+Sun is a Star
+
+Enter any largebody: Mars
+I don't know anything about it</pre>
+<p>&nbsp;</p>
+<h3>Using when as a statement without&nbsp;<em>else</em>&nbsp;&ndash;</h3>
+<p>We can use when as a statement without&nbsp;<em>else&nbsp;</em>branch. If it is used as a statement, the values of all individual branches are compared sequentially with the argument and execute the corresponding branch where condition matches. If none of the branches satisfied with the condition then it simply exits the block without printing anything to system output.<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist2-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist2-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_169718" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="keyword">import</code> <code class="plain">java.util.Scanner;</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var reader = Scanner(System.`in`)</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">print(</code><code class="string">"Enter name:"</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var lb = reader.next()</code></div>
+<div class="line number6 index5 alt1">&nbsp;</div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when(lb) {</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Sun"</code> <code class="plain">-&gt; println(</code><code class="string">"Sun is a Star"</code><code class="plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Moon"</code> <code class="plain">-&gt; println(</code><code class="string">"Moon is a Satellite"</code><code class="plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Earth"</code> <code class="plain">-&gt; println(</code><code class="string">"Earth is a planet"</code><code class="plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number12 index11 alt1"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Enter name: Mars
+
+Process finished with exit code 0</pre>
+<p>&nbsp;</p>
+<h3>Using when as an expression &ndash;</h3>
+<p>If it is used as an expression, the value of the branch with which condition satisfied will be the value of overall expression. As an expression&nbsp;<strong>when</strong>&nbsp;returns a value with which the argument matches and we can store it in a variable or print directly.<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist3-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist3-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_34838" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="keyword">import</code> <code class="plain">java.util.Scanner;</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var reader = Scanner(System.`in`)</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">print(</code><code class="string">"Enter the month number:"</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var monthOfYear = reader.nextInt()</code></div>
+<div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var month = when(monthOfYear){</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">1</code><code class="plain">-&gt;</code><code class="string">"January"</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">2</code><code class="plain">-&gt;</code><code class="string">"February"</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">3</code><code class="plain">-&gt;</code><code class="string">"March"</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">4</code><code class="plain">-&gt;</code><code class="string">"April"</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">5</code><code class="plain">-&gt;</code><code class="string">"May"</code></div>
+<div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">6</code><code class="plain">-&gt;</code><code class="string">"June"</code></div>
+<div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">7</code><code class="plain">-&gt;</code><code class="string">"July"</code></div>
+<div class="line number14 index13 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">8</code><code class="plain">-&gt;</code><code class="string">"August"</code></div>
+<div class="line number15 index14 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">9</code><code class="plain">-&gt;</code><code class="string">"September"</code></div>
+<div class="line number16 index15 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">10</code><code class="plain">-&gt;</code><code class="string">"October"</code></div>
+<div class="line number17 index16 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">11</code><code class="plain">-&gt;</code><code class="string">"November"</code></div>
+<div class="line number18 index17 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="value">12</code><code class="plain">-&gt;</code><code class="string">"December"</code></div>
+<div class="line number19 index18 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">-&gt; {</code></div>
+<div class="line number20 index19 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">println(</code><code class="string">"Not a month of year"</code><code class="plain">)</code></div>
+<div class="line number21 index20 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number22 index21 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number23 index22 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">println(month)</code></div>
+<div class="line number24 index23 alt1"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Enter the month number:8
+August</pre>
+<p>If none of the branch conditions are satisfied with the argument, the else branch is executed. As an expression, the else branch is mandatory, unless the compiler can prove that all possible cases are covered with branch conditions. If we cannot use else branch it will give a compiler error.&nbsp;<br />&nbsp;</p>
+<pre>Error:(6, 17) Kotlin: 'when' expression must be exhaustive, add necessary 'else' branch</pre>
+<p>&nbsp;</p>
+<br />
+<div id="1b4172cd-acc7-4363-9184-3fadd3cdabcf" class="_ap_apex_ad">&nbsp;</div>
+<br />
+<h3>Different ways to use when block in Kotlin:</h3>
+<p><strong>Combine multiple branches in one using comma &ndash;&nbsp;</strong><br />We can use multiple branches in a single one separated by a comma. When common logic is shared by some branches then we can combine them in a single branch. In the example below, we need to check the entered largebody is planet or not, so we combined all the names of planet in a single branch. Anything entered other than planet name will execute the else branch.&nbsp;<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist4-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist4-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_115636" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="keyword">import</code> <code class="plain">java.util.Scanner;</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var reader = Scanner(System.`in`)</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">print(</code><code class="string">"Enter name of planet: "</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var name = reader.next()</code></div>
+<div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when(name) {</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">"Mercury"</code><code class="plain">,</code><code class="string">"Earth"</code><code class="plain">,</code><code class="string">"Mars"</code><code class="plain">,</code><code class="string">"Jupiter"</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">,</code><code class="string">"Neptune"</code><code class="plain">,</code><code class="string">"Saturn"</code><code class="plain">,</code><code class="string">"Venus"</code><code class="plain">,</code><code class="string">"Uranus"</code> <code class="plain">-&gt; println(</code><code class="string">"Planet"</code><code class="plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">-&gt; println(</code><code class="string">"Neither planet nor star"</code><code class="plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number11 index10 alt2"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Enter name of planet: Earth
+Planet</pre>
+<p>&nbsp;&nbsp;<br /><strong>Check the input value in range or not &ndash;</strong>&nbsp;<br />Using the&nbsp;<strong>in</strong>&nbsp;or&nbsp;<strong>!in</strong>&nbsp;operator we can check the range of argument passed in when block. &lsquo;in&rsquo; operator in Koltin is used to check the existence of particular variable or property in a range. If the argument lies in a particular range then in operator return true and if the argument does not lies in particular range then !in returns true.&nbsp;<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist5-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist5-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_824957" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="keyword">import</code> <code class="plain">java.util.Scanner;</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var reader = Scanner(System.`in`)</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">print(</code><code class="string">"Enter the month number of year: "</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var num = reader.nextInt()</code></div>
+<div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when(num){</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">in </code><code class="value">1</code><code class="plain">..</code><code class="value">3</code> <code class="plain">-&gt; println(</code><code class="string">"It is spring season"</code><code class="plain">)</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">in </code><code class="value">4</code><code class="plain">..</code><code class="value">6</code> <code class="plain">-&gt; println(</code><code class="string">"It is summer season"</code><code class="plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">in </code><code class="value">7</code><code class="plain">..</code><code class="value">8</code> <code class="plain">-&gt;println(</code><code class="string">"It is rainy season"</code><code class="plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">in </code><code class="value">9</code><code class="plain">..</code><code class="value">10</code> <code class="plain">-&gt; println(</code><code class="string">"It is autumn season"</code><code class="plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">in </code><code class="value">11</code><code class="plain">..</code><code class="value">12</code> <code class="plain">-&gt; println(</code><code class="string">"It is winter season"</code><code class="plain">)</code></div>
+<div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">!in </code><code class="value">1</code><code class="plain">..</code><code class="value">12</code> <code class="plain">-&gt;println(</code><code class="string">"Enter valid month of year"</code><code class="plain">)</code></div>
+<div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number14 index13 alt1"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Enter the month number of year: 5
+It is summer season
+
+Enter the month number of year: 14
+Enter valid month of year</pre>
+<p>&nbsp;&nbsp;<br /><strong>Check given variable is of certain type or not &ndash;</strong>&nbsp;<br />Using&nbsp;<strong>is</strong>&nbsp;or&nbsp;<strong>!is</strong>&nbsp;operator we can check the type of variable passed as argument in when block. If the variable is Integer type then is Int returns true else return false.&nbsp;<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist6-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist6-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_797180" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var num: Any = </code><code class="string">"GeeksforGeeks"</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when(num){</code></div>
+<div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">is Int -&gt; println(</code><code class="string">"It is an Integer"</code><code class="plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">is String -&gt; println(</code><code class="string">"It is a String"</code><code class="plain">)</code></div>
+<div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">is Double -&gt; println(</code><code class="string">"It is a Double"</code><code class="plain">)</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number8 index7 alt1"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>It is a String</pre>
+<p>&nbsp;&nbsp;<br /><strong>Using when as replacement for an if-else-if chain</strong>&nbsp;&ndash;&nbsp;<br />We can use when as replacement for if-else-if. If no argument is supplied then the branch conditions are simply boolean expressions, and a branch is executed only when its condition is true:&nbsp;<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist7-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist7-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_55363" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="plain">fun isOdd(x: Int) = x % </code><code class="value">2</code> <code class="plain">!= </code><code class="value">0</code></div>
+<div class="line number2 index1 alt1"><code class="plain">fun isEven(x: Int) = x % </code><code class="value">2</code> <code class="plain">== </code><code class="value">0</code></div>
+<div class="line number3 index2 alt2">&nbsp;</div>
+<div class="line number4 index3 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var num = </code><code class="value">8</code></div>
+<div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">when{</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">isOdd(num) -&gt;println(</code><code class="string">"Odd"</code><code class="plain">)</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">isEven(num) -&gt; println(</code><code class="string">"Even"</code><code class="plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">-&gt; println(</code><code class="string">"Neither even nor odd"</code><code class="plain">)</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number11 index10 alt2"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Even</pre>
+<p>&nbsp;&nbsp;<br /><strong>Check that a string contains particular prefix or suffix &ndash;</strong>&nbsp;<br />We can also check prefix or suffix in a given string by the below method. If the string contains the prefix or suffix then it will return Boolean value true else return false.&nbsp;<br />&nbsp;</p>
+<div class="responsive-tabs-wrapper">
+<div class="responsive-tabs responsive-tabs--enabled">
+<ul class="responsive-tabs__list">
+<li id="tablist8-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" tabindex="0">Java</li>
+</ul>
+<div id="tablist8-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active">
+<div class="code-block">
+<div class="code-gutter">&nbsp;</div>
+<div class="code-container">
+<div id="highlighter_502072" class="syntaxhighlighter nogutter">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="plain">fun hasPrefix(company: Any) = when (company) {</code></div>
+<div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">is String -&gt; company.startsWith(</code><code class="string">"GeeksforGeeks"</code><code class="plain">)</code></div>
+<div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">-&gt; </code><code class="keyword">false</code></div>
+<div class="line number4 index3 alt1"><code class="plain">}</code></div>
+<div class="line number5 index4 alt2">&nbsp;</div>
+<div class="line number6 index5 alt1"><code class="plain">fun main(args: Array&lt;String&gt;) {</code></div>
+<div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var company = </code><code class="string">"GeeksforGeeks a computer science portal"</code></div>
+<div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">var result = hasPrefix(company)</code></div>
+<div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code><code class="plain">(result) {</code></div>
+<div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">println(</code><code class="string">"Yes, string started with GeeksforGeeks"</code><code class="plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">else</code> <code class="plain">{</code></div>
+<div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">println(</code><code class="string">"No, String does not started with GeeksforGeeks"</code><code class="plain">)</code></div>
+<div class="line number14 index13 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div>
+<div class="line number15 index14 alt2"><code class="plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Output:</strong>&nbsp;<br />&nbsp;</p>
+<pre>Yes, string started with GeeksforGeeks</pre>
+</div>

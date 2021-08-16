@@ -15,6 +15,10 @@ public class learnJavaActivity extends AppCompatActivity {
 
         webView=findViewById(R.id.webView);
 
+        webView.getSettings().setDisplayZoomControls(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+
 
         int position=getIntent().getIntExtra("key",0);
 
@@ -59,6 +63,27 @@ public class learnJavaActivity extends AppCompatActivity {
         }else if (position==11){
 
             webView.loadUrl("file:///android_asset/Break Statement in java.html");
+        }else if (position==12){
+
+            webView.loadUrl("file:///android_asset/Java Programs.html");
+        }else if (position==13){
+
+            webView.loadUrl("file:///android_asset/oops in Java.html");
+        }else if (position==14){
+
+            webView.loadUrl("file:///android_asset/Classes And Objects.html");
+        }else if (position==15){
+
+            webView.loadUrl("file:///android_asset/Methods in Java.html");
+        }else if (position==16){
+
+            webView.loadUrl("file:///android_asset/Constructors in Java.html");
+        }else if (position==17){
+
+            webView.loadUrl("file:///android_asset/Java Static Keyword.html");
+        }else if (position==18){
+
+            webView.loadUrl("file:///android_asset/This Keyword in Java.html");
         }
 
     }

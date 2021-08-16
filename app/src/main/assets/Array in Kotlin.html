@@ -1,0 +1,285 @@
+<h1 class="h1">Kotlin Array</h1>
+<p>Array is collection of similar data types either of Int, String etc. Array in Kotlinis mutable in nature with fixed size which means we can perform both read and write operations on elements of array.</p>
+<h2 class="h2">Constructor of array:</h2>
+<p>Array constructor is declared with specified&nbsp;<strong>size</strong>&nbsp;and&nbsp;<strong>init</strong>&nbsp;function. The init function is used to returns the elements of array with their index.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Array(size:&nbsp;Int,&nbsp;init:&nbsp;(Int)&nbsp;-&gt;&nbsp;T)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Kotlin Array can be created using&nbsp;<em>arrayOf()</em>,&nbsp;<em>intArrayOf()</em>,&nbsp;<em>charArrayOf()</em>,&nbsp;<em>booleanArrayOf()</em>,&nbsp;<em>longArrayOf()</em>,&nbsp;<em>shortArrayOf()</em>,&nbsp;<em>byteArrayOf()</em>&nbsp;functions.</p>
+<h2 class="h2">Kotlin array declaration - using arrayOf() function</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">var&nbsp;myArray1&nbsp;=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray2&nbsp;=&nbsp;arrayOf&lt;Int&gt;(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;myArray3&nbsp;=&nbsp;arrayOf&lt;String&gt;(<span class="string">"Ajay"</span>,<span class="string">"Prakesh"</span>,<span class="string">"Michel"</span>,<span class="string">"John"</span>,<span class="string">"Sumit"</span>)&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray4=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,&nbsp;<span class="string">"Ajay"</span>,<span class="string">"Prakesh"</span>)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Kotlin array declaration - using intArrayOf() function</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">var&nbsp;myArray5:&nbsp;IntArray&nbsp;=&nbsp;intArrayOf(<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Modify and access elements of array</h2>
+<p>Kotlin has&nbsp;<strong>set()</strong>&nbsp;and&nbsp;<strong>get()</strong>&nbsp;functions that can direct modify and access the particular element of array respectively.</p>
+<p>The set() function is used to set element at particular index location. This is also done with assigning element at array index. Array get() function is used to get element from specified index.</p>
+<h3 class="h3">Kotlin array set() function example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;array1&nbsp;=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;array2&nbsp;=&nbsp;arrayOf&lt;Long&gt;(<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;array1.set(<span class="number">0</span>,<span class="number">5</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;array1[<span class="number">2</span>]&nbsp;=&nbsp;<span class="number">6</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;array2.set(<span class="number">2</span>,<span class="number">10</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;array2[<span class="number">3</span>]&nbsp;=&nbsp;<span class="number">8</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;array1){&nbsp;&nbsp;</li>
+<li class="alt">println(element)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">println()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;array2){&nbsp;&nbsp;</li>
+<li class="alt">println(element)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>5
+2
+6
+4
+
+11
+12
+10
+8
+</pre>
+</div>
+<h2 class="h2">Kotlin array get() function example</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;array1&nbsp;=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;array2&nbsp;=&nbsp;arrayOf&lt;Long&gt;(<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>)&nbsp;&nbsp;</li>
+<li class="">println(array1.get(<span class="number">0</span>))&nbsp;&nbsp;</li>
+<li class="alt">println(array1[<span class="number">2</span>])&nbsp;&nbsp;</li>
+<li class="">println()&nbsp;&nbsp;</li>
+<li class="alt">println(array2.get(<span class="number">2</span>))&nbsp;&nbsp;</li>
+<li class="">println(array2[<span class="number">3</span>])&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1
+3
+
+13
+14
+</pre>
+</div>
+<h3 class="h3">Kotlin Array Example 1:</h3>
+<p>In this example, we are simply initialize an array of size 5 with default value as 0 and traverse its elements. The index value of array starts from 0. First element of array is placed at index value 0 and last element at one less than the size of array.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray&nbsp;=&nbsp;Array&lt;Int&gt;(<span class="number">5</span>){<span class="number">0</span>}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray){&nbsp;&nbsp;</li>
+<li class="alt">println(element)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>0
+0
+0
+0
+0
+</pre>
+</div>
+<h3 class="h3">Kotlin Array Example 2:</h3>
+<p>We can also rewrite the value of array using its index value. Since, we can able to modify the value of array, so array is called as&nbsp;<strong>mutable</strong>&nbsp;property.</p>
+<p><strong>For example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray&nbsp;=&nbsp;Array&lt;Int&gt;(<span class="number">5</span>){<span class="number">0</span>}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">myArray[<span class="number">1</span>]=&nbsp;<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="alt">myArray[<span class="number">3</span>]=&nbsp;<span class="number">15</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>0
+10
+0
+15
+0
+</pre>
+</div>
+<h3 class="h3">Kotlin Array Example 3 - using arrayOf() and intArrayOf() function:</h3>
+<p>Array in Kotlin can also be declared using library functions such as arrayOf(), intArrayOf(), etc. Let's see the example of array using arrayOf() and intArrayOf() function.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">val&nbsp;name&nbsp;=&nbsp;arrayOf&lt;String&gt;(<span class="string">"Ajay"</span>,<span class="string">"Prakesh"</span>,<span class="string">"Michel"</span>,<span class="string">"John"</span>,<span class="string">"Sumit"</span>)&nbsp;&nbsp;</li>
+<li class="alt">var&nbsp;myArray2&nbsp;=&nbsp;arrayOf&lt;Int&gt;(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray3&nbsp;=&nbsp;arrayOf(<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="alt">var&nbsp;myArray4=&nbsp;arrayOf(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,&nbsp;<span class="string">"Ajay"</span>,<span class="string">"Prakesh"</span>)&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray5:&nbsp;IntArray&nbsp;=&nbsp;intArrayOf(<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;name){&nbsp;&nbsp;</li>
+<li class="alt">println(element)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray2){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray3){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray4){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray5){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Ajay
+Prakesh
+Michel
+John
+Sumit
+
+1
+10
+4
+6
+15
+
+5
+10
+20
+12
+15
+
+1
+10
+4
+Ajay
+Prakesh
+
+5
+10
+15
+20
+25
+</pre>
+</div>
+<h3 class="h3">Kotlin Array Example 4</h3>
+<p>Suppose when we try to insert an element at index position greater than array size then what will happen?</p>
+<p>It will throw an&nbsp;<em>ArrayIndexOutOfBoundException</em>. This is because the index value is not present at which we tried to insert element. Due to this, array is called&nbsp;<strong>fixed size</strong>&nbsp;length. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray5:&nbsp;IntArray&nbsp;=&nbsp;intArrayOf(<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;myArray5[<span class="number">6</span>]=<span class="number">18</span>&nbsp;<span class="comment">//&nbsp;ArrayIndexOutOfBoundsException</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(element&nbsp;in&nbsp;myArray5){&nbsp;&nbsp;</li>
+<li class="">println(element)&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 6
+	at ArrayListKt.main(Array.kt:4)
+</pre>
+</div>
+<h3 class="h3">Kotlin Array Example 5 - traversing using range:</h3>
+<p>The Kotlin's array elements are also traversed using index range (minValue..maxValue) or (maxValue..minValue). Let's see an example of array traversing using range.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">var&nbsp;myArray5:&nbsp;IntArray&nbsp;=&nbsp;intArrayOf(<span class="number">5</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">15</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(index&nbsp;in&nbsp;<span class="number">0</span>..<span class="number">4</span>){&nbsp;&nbsp;</li>
+<li class="alt">println(myArray5[index])&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">println()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(index&nbsp;in&nbsp;<span class="number">0</span>..myArray5.size-<span class="number">1</span>){&nbsp;&nbsp;</li>
+<li class="alt">println(myArray5[index])&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>5
+10
+20
+12
+15
+
+5
+10
+20
+12
+15</pre>
+</div>

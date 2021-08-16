@@ -1,0 +1,360 @@
+<h1 class="h1">Kotlin String</h1>
+<p>The&nbsp;<strong>String class</strong>&nbsp;represents an array of char types. Strings are immutable which means the length and elements cannot be changed after their creation.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;ch&nbsp;=&nbsp;charArrayOf(<span class="string">'h'</span>,&nbsp;<span class="string">'e'</span>,&nbsp;<span class="string">'l'</span>,&nbsp;<span class="string">'l'</span>,&nbsp;<span class="string">'o'</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;st&nbsp;=&nbsp;String(ch)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Unlike Java, Kotlin does not require a new keyword to instantiate an object of a String class. A String can be simply declared within double quote (" ") known as&nbsp;<strong>escaped</strong>&nbsp;string or triple quote(""" """) known as&nbsp;<strong>raw</strong>&nbsp;string.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;str1&nbsp;=&nbsp;<span class="string">"Hello,&nbsp;javaTpoint"</span>&nbsp;&nbsp;</li>
+<li class="">val&nbsp;str2&nbsp;=&nbsp;<span class="string">""</span><span class="string">"Welcome&nbsp;To&nbsp;JavaTpoint"</span><span class="string">""</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Kotlin String Property</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>length: Int</td>
+<td>It returns the length of string sequence.</td>
+</tr>
+<tr>
+<td>indices: IntRange</td>
+<td>It returns the ranges of valid character indices from current char sequence.</td>
+</tr>
+<tr>
+<td>lastIndex: Int</td>
+<td>It returns the index of last character from char sequence.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">String Function</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>Functions</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>compareTo(other: String): Int</td>
+<td>It compares the current object with specified object for order. It returns zero if current is equals to specified other object.</td>
+</tr>
+<tr>
+<td>get(index: Int): Char</td>
+<td>It returns the character at given index from the current character sequence.</td>
+</tr>
+<tr>
+<td>plus(other: Any?): String</td>
+<td>It returns the concatenate string with the string representation of the given other string.</td>
+</tr>
+<tr>
+<td>subSequence(startIndex: Int,endIndex: Int): CharSequence</td>
+<td>It returns the new character sequence from current character sequence, starting from startIndex to endIndex.</td>
+</tr>
+<tr>
+<td>CharSequence.contains(other: CharSequence, ignoreCase: Boolean = false):Boolean</td>
+<td>It returns true if the character sequence contains the other specified character sequence.</td>
+</tr>
+<tr>
+<td>CharSequence.count(): Int</td>
+<td>It returns the length of char sequence.</td>
+</tr>
+<tr>
+<td>String.drop(n: Int): String</td>
+<td>It returns a string after removing the first n character.</td>
+</tr>
+<tr>
+<td>String.dropLast(n: Int): String</td>
+<td>It returns a string after removing the last n character.</td>
+</tr>
+<tr>
+<td>String.dropWhile<br />(predicate: (Char) -&gt; Boolean<br />): String</td>
+<td>It returns a character sequence which contains all the characters, except first characters which satisfy the given predicate.</td>
+</tr>
+<tr>
+<td>CharSequence.elementAt(index: Int): Char</td>
+<td>It returns a character at the given index or throws an&nbsp;<em>IndexOutOfBoundsException</em>&nbsp;if the index does not exist in character sequence.</td>
+</tr>
+<tr>
+<td>CharSequence.indexOf(char: Char, startIndex: Int = 0,<br />ignoreCase: Boolean = false<br />): Int</td>
+<td>It returns the index of first occurrence of the given character, starting from the given index value.</td>
+</tr>
+<tr>
+<td>CharSequence.indexOfFirst(<br />predicate: (Char) -&gt; Boolean<br />): Int</td>
+<td>It returns the index of first character which match the given predicate, or -1 if the character sequence not contains any such character.</td>
+</tr>
+<tr>
+<td>CharSequence.indexOfLast(<br />predicate: (Char) -&gt; Boolean<br />): Int</td>
+<td>It returns the index of last character which match the given predicate, or -1 if the character sequence not contains any such character.</td>
+</tr>
+<tr>
+<td>CharSequence.getOrElse(index: Int, defaultValue: (Int) -&gt;Char): Char</td>
+<td>It returns the character at specified index or the result of calling the defaultValue function if the index is out of bound of current character sequence.</td>
+</tr>
+<tr>
+<td>CharSequence.getOrNull(index: Int): Char?</td>
+<td>It returns a character at the given index or returns null if the index is out of bound from character sequence.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">String elements and templates</h2>
+<h3 class="h3">String elements</h3>
+<p>The characters which are present in string are known as elements of string. Element of string are accessed by indexing operation string[index]. String's index value starts from 0 and ends at one less than the size of string string[string.length-1]. Index 0 represent first element, index 1 represent second element and so on.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;str&nbsp;=<span class="string">"Hello,&nbsp;javatpoint"</span>&nbsp;&nbsp;</li>
+<li class="">println(str[<span class="number">0</span>])&nbsp;<span class="comment">//prints&nbsp;H</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Example of accessing string element</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;str&nbsp;=&nbsp;<span class="string">"Hello,&nbsp;javatpoint!"</span>&nbsp;&nbsp;</li>
+<li class="">println(str[<span class="number">0</span>])&nbsp;&nbsp;</li>
+<li class="alt">println(str[<span class="number">1</span>])&nbsp;&nbsp;</li>
+<li class="">println(str[str.length-<span class="number">1</span>])&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>H
+e
+!
+</pre>
+</div>
+<h3 class="h3">String templates</h3>
+<p>String template expression is a piece of code which is evaluated and its result is returned into string. Both string types (escaped and raw string) contain template expressions. String templates starts with a dollar sign $ which consists either a variable name or an arbitrary expression in curly braces.</p>
+<p><strong>String template as variable name:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;i&nbsp;=<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="">print(<span class="string">"i&nbsp;=&nbsp;$i"</span>)&nbsp;<span class="comment">//i=10</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;i&nbsp;=<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"i&nbsp;=&nbsp;$i"</span>)<span class="comment">//i=10</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>i=10
+</pre>
+</div>
+<p><strong>String template as arbitrary expression in curly braces:</strong></p>
+<p>String template is also used in arbitrary expression in curly braces to evaluate a string expression. This is done by using dollar sign $.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;str&nbsp;=&nbsp;<span class="string">"abc"</span>&nbsp;&nbsp;</li>
+<li class="alt">println(<span class="string">"$str&nbsp;is&nbsp;a&nbsp;string&nbsp;which&nbsp;length&nbsp;is&nbsp;${str.length}"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<div class="codeblock3">
+<pre>abc is a string which length is 3
+</pre>
+</div>
+<p><strong>String template in raw string:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;a&nbsp;=&nbsp;<span class="number">10</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;b&nbsp;=&nbsp;<span class="number">5</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;myString&nbsp;=&nbsp;<span class="string">""</span>"value&nbsp;$a&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|is&nbsp;greater&nbsp;than&nbsp;value&nbsp;$b&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>".trimMargin()&nbsp;&nbsp;</li>
+<li class="">println(<span class="string">"${myString.trimMargin()}"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>value 10
+is greater than value 5
+</pre>
+</div>
+<h2 class="h2">Kotlin String Literals</h2>
+<p>Kotlin has two types of string literals:</p>
+<ul class="points">
+<li>Escaped String</li>
+<li>Raw String</li>
+</ul>
+<h3 class="h3">Escaped String</h3>
+<p>Escape String is declared within double quote (" ") and may contain escape characters like '\n', '\t', '\b' ,'\r','\$'etc.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;text1&nbsp;=<span class="string">"Hello,&nbsp;JavaTpoint"</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//or</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text2&nbsp;=<span class="string">"Hello,&nbsp;JavaTpoint\n"</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//or</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text3&nbsp;=<span class="string">"Hello,&nbsp;\nJavaTpoint"</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Raw String</h3>
+<p>Row String is declared within triple quote (""" """).It provides facility to declare String in new lines and contain multiple lines. Row String cannot contain any escape character.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">val&nbsp;text1&nbsp;=<span class="string">""</span>"&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;&nbsp;</li>
+<li class="">JavaTpoint&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>"&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>While using raw string with new line, it generates a | as margin prefix. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text&nbsp;=&nbsp;<span class="string">""</span>"Kotlin&nbsp;is&nbsp;official&nbsp;language&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|announce&nbsp;by&nbsp;Google&nbsp;<span class="keyword">for</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|android&nbsp;application&nbsp;development&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>"&nbsp;&nbsp;</li>
+<li class="alt">println(text)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Kotlin is official language
+        |announce by Google for
+        |android application development
+</pre>
+</div>
+<h2 class="h2">String trimMargin() function</h2>
+<p>Leading whitespace can be removed with trimMargin() function. By default, trimMargin() function uses | as margin prefix.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text&nbsp;=&nbsp;<span class="string">""</span>"Kotlin&nbsp;is&nbsp;official&nbsp;language&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|announce&nbsp;by&nbsp;Google&nbsp;<span class="keyword">for</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|android&nbsp;application&nbsp;development&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>".trimMargin()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">println(text)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Kotlin is official language
+announce by Google for
+android application development
+</pre>
+</div>
+<p>However, it can be change by passing a new string inside trimMargin() function.</p>
+<p>&nbsp;</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;text&nbsp;=&nbsp;<span class="string">""</span>"Kotlin&nbsp;is&nbsp;official&nbsp;language&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#announce&nbsp;by&nbsp;Google&nbsp;<span class="keyword">for</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#android&nbsp;application&nbsp;development&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span><span class="string">".trimMargin("</span>#")&nbsp;&nbsp;</li>
+<li class="alt">println(text)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Kotlin is official language
+announce by Google for
+android application development
+</pre>
+</div>
+<h2 class="h2">Kotlin String Equality</h2>
+<p>In Kotlin, strings equality comparisons are done on the basis of&nbsp;<strong>structural equality</strong>&nbsp;(==) and&nbsp;<strong>referential equality</strong>&nbsp;(===).</p>
+<p>In structural equality two objects have separate instances in memory but contain same value.</p>
+<p>Referential equality specifies that two different references point the same instance in memory.</p>
+<h3 class="h3">Structural equality (==)</h3>
+<p>To check the two objects containing the same value, we use == operator or != operator for negation. It is equivalent to&nbsp;<em>equals()</em>&nbsp;in java.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;str1&nbsp;=&nbsp;<span class="string">"Hello,&nbsp;World!"</span>&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;str2&nbsp;=&nbsp;<span class="string">"Hello,&nbsp;World!"</span>&nbsp;&nbsp;</li>
+<li class="">println(str1==str2)&nbsp;<span class="comment">//true</span>&nbsp;&nbsp;</li>
+<li class="alt">println(str1!=str2)&nbsp;<span class="comment">//false</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>true
+false
+</pre>
+</div>
+<h3 class="h3">Referential equality (===)</h3>
+<p>To check the two different references point to the same instance, we use === operator. The !== operator is used for negation. a === b specifies true if and only if a and b both point to the same object.</p>
+<p>Let's see an example of referential equality to check different reference contains same instance or not. For creating string we are using a helper method buildString rather than using quotes.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">val&nbsp;str1&nbsp;=&nbsp;buildString&nbsp;{&nbsp;<span class="string">"string&nbsp;value"</span>&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">val&nbsp;str2&nbsp;=&nbsp;buildString&nbsp;{&nbsp;<span class="string">"string&nbsp;value"</span>&nbsp;}&nbsp;&nbsp;</li>
+<li class="">println(str1===str2)&nbsp;&nbsp;</li>
+<li class="alt">println(str1!==str2)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>false
+true
+</pre>
+</div>

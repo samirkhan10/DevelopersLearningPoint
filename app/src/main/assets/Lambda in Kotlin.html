@@ -1,0 +1,55 @@
+<h1 class="h1">Kotlin Lambda Function</h1>
+<p>Lambda is a function which has no name. Lambda is defined with a curly braces&nbsp;<strong>{}</strong>&nbsp;which takes&nbsp;<em>variable as a parameter</em>&nbsp;(if any) and body of function. The&nbsp;<em>body of function</em>&nbsp;is written after variable (if any) followed by&nbsp;<strong>-&gt;</strong>&nbsp;operator.</p>
+<h3 class="h3">Syntax of lambda</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">{&nbsp;variable&nbsp;-&gt;&nbsp;body_of_function}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Before we talk about lambda, let's see a simple example of addition of two numbers using normal function.</p>
+<h3 class="h3">Normal function: addition of two numbers</h3>
+<p>In this example, we create a function&nbsp;<em>addNumber()</em>&nbsp;passing two arguments&nbsp;<em>(a,b)</em>&nbsp;calling from the main function.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;addNumber(<span class="number">5</span>,<span class="number">10</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;addNumber(a:&nbsp;Int,&nbsp;b:&nbsp;Int){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;add&nbsp;=&nbsp;a&nbsp;+&nbsp;b&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(add)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>15
+</pre>
+</div>
+<h3 class="h3">Lambda function: addition of two numbers</h3>
+<p>The above program will be rewritten using lambda function as follow:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;myLambda:&nbsp;(Int)&nbsp;-&gt;&nbsp;Unit=&nbsp;{s:&nbsp;Int&nbsp;-&gt;&nbsp;println(s)&nbsp;}&nbsp;<span class="comment">//lambda&nbsp;function</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;addNumber(<span class="number">5</span>,<span class="number">10</span>,myLambda)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">fun</span>&nbsp;addNumber(a:&nbsp;Int,&nbsp;b:&nbsp;Int,&nbsp;mylambda:&nbsp;(Int)&nbsp;-&gt;&nbsp;Unit&nbsp;){&nbsp;&nbsp;&nbsp;<span class="comment">//high&nbsp;level&nbsp;function&nbsp;lambda&nbsp;as&nbsp;parameter</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;add&nbsp;=&nbsp;a&nbsp;+&nbsp;b&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;mylambda(add)&nbsp;<span class="comment">//&nbsp;println(add)</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>15
+</pre>
+</div>
+<p>In the above program we create a lambda expression&nbsp;<em>{s: Int -&gt; println(s) }</em>&nbsp;with its return type Unit. The lambda function is padded as an parameter in high level function&nbsp;<em>addNumber(5,10,myLambda).</em>&nbsp;The variable&nbsp;<em>mylambda</em>&nbsp;in function definition is actually a lambda function. The functionality (body) of&nbsp;<em>mylambda</em>&nbsp;is already given in lambda function.</p>

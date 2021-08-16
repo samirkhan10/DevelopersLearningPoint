@@ -15,6 +15,13 @@
         <item>While loop in java</item>
         <item>do while loop in java</item>
         <item>Break Statement in java</item>
+        <item>Java Programs</item>
+        <item>oops in Java</item>
+        <item>Classes And Objects</item>
+        <item>Methods in Java</item>
+        <item>Constructors in Java</item>
+        <item>Java Static Keyword</item>
+        <item>this Keyword in Java</item>
 
     </array>
 
@@ -27,6 +34,19 @@
         <item>Operators in Kotlin</item>
         <item>Taking Input In Kotlin</item>
         <item>Comments in Kotlin</item>
+        <item>If Statement in kotlin</item>
+        <item>When Expression in Kotlin</item>
+        <item>For loop in Kotlin</item>
+        <item>While Loop in Kotlin</item>
+        <item>Return and Jump Statement in Kotlin</item>
+        <item>Continue Jump Structure in Kotlin</item>
+        <item>Function in Kotlin</item>
+        <item>Recursion Function in Kotlin</item>
+        <item>Lambda in Kotlin</item>
+        <item>Higher Order in Kotlin</item>
+        <item>Inline Function in Kotlin</item>
+        <item>Array in Kotlin</item>
+        <item>String in Kotlin</item>
 
     </array>
 
@@ -37,6 +57,17 @@
         <item>First Program in Flutter</item>
         <item>Flutter vs React Native</item>
         <item>Dart Programming</item>
+        <item>Widgets in Flutter</item>
+        <item>Layouts in Flutter</item>
+        <item>Gestures in flutter</item>
+        <item>State Management in flutter</item>
+        <item>IDE in flutter</item>
+        <item>Scafhold widgets in Flutter</item>
+        <item>Containers in Flutter</item>
+        <item>row and column in flutter</item>
+        <item>text in flutter</item>
+        <item>EditText in flutter</item>
+        <item>Buttons in flutter</item>
 
     </array>
 </resources>

@@ -16,6 +16,10 @@ public class learnflutter extends AppCompatActivity {
 
         webView=findViewById(R.id.fwebView);
 
+        webView.getSettings().setDisplayZoomControls(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+
 
         int position=getIntent().getIntExtra("key",0);
 
@@ -34,6 +38,39 @@ public class learnflutter extends AppCompatActivity {
         }else if (position==4){
 
             webView.loadUrl("file:///android_asset/Dart Programming.html");
+        }else if (position==5){
+
+            webView.loadUrl("file:///android_asset/widgets in Flutter.html");
+        }else if (position==6){
+
+            webView.loadUrl("file:///android_asset/Layouts in Flutter.html");
+        }else if (position==7){
+
+            webView.loadUrl("file:///android_asset/Gestures in flutter.html");
+        }else if (position==8){
+
+            webView.loadUrl("file:///android_asset/State Management in flutter.html");
+        }else if (position==9){
+
+            webView.loadUrl("file:///android_asset/IDE for Flutter.html");
+        }else if (position==10){
+
+            webView.loadUrl("file:///android_asset/Scafhold widgets in Flutter.html");
+        }else if (position==11){
+
+            webView.loadUrl("file:///android_asset/containers in flutter.html");
+        }else if (position==12){
+
+            webView.loadUrl("file:///android_asset/row and column in flutter.html");
+        }else if (position==13){
+
+            webView.loadUrl("file:///android_asset/text in flutter.html");
+        }else if (position==14){
+
+            webView.loadUrl("file:///android_asset/EditText in flutter.html");
+        }else if (position==15){
+
+            webView.loadUrl("file:///android_asset/Buttons in flutter.html");
         }
 
     }

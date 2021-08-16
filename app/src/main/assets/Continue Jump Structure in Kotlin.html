@@ -1,0 +1,83 @@
+<h1 class="h1">Kotlin continue Jump Structure</h1>
+<p>Kotlin,&nbsp;<strong>continue</strong>&nbsp;statement is used to repeat the loop. It continues the current flow of the program and skips the remaining code at specified condition.</p>
+<p>The&nbsp;<em>continue</em>&nbsp;statement within a nested loop only affects the inner loop.</p>
+<p><strong>For example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(..){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//body&nbsp;of&nbsp;for&nbsp;above&nbsp;if</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(checkCondition){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//body&nbsp;of&nbsp;for&nbsp;below&nbsp;if</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example,&nbsp;<strong>for</strong>&nbsp;loop repeat its loop when&nbsp;<strong>if</strong>&nbsp;condition execute continue. The&nbsp;<em>continue</em>&nbsp;statement makes repetition of loop without executing the below code of if condition.</p>
+<p><strong>Kotlin continue example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"i&nbsp;=&nbsp;$i"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(j&nbsp;==&nbsp;<span class="number">2</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"this&nbsp;is&nbsp;below&nbsp;if"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>i = 1
+this is below if
+i = 2
+i = 3
+this is below if
+</pre>
+</div>
+<h3 class="h3">Kotlin Labeled continue Expression</h3>
+<p>Labeled is the form of identifier followed by the&nbsp;<strong>@</strong>&nbsp;sign, for example&nbsp;<strong>abc@,&nbsp;test@.</strong>&nbsp;To make an expression as label, we just put a label in front of expression.</p>
+<p>Kotlin, labeled&nbsp;<em>continue</em>&nbsp;expression is used for repetition of specific loop (labeled loop). This is done by using continue expression with&nbsp;<strong>@</strong>&nbsp;sign followed by label name (continue@labelname).</p>
+<p><strong>Kotlin labeled continue example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;labelname@&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(j&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"i&nbsp;=&nbsp;$i&nbsp;and&nbsp;j&nbsp;=&nbsp;$j"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(i&nbsp;==&nbsp;<span class="number">2</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><span class="annotation">@labelname</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"this&nbsp;is&nbsp;below&nbsp;if"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>i = 1 and j = 1
+this is below if
+i = 1 and j = 2
+this is below if
+i = 1 and j = 3
+this is below if
+i = 2 and j = 1
+i = 3 and j = 1
+this is below if
+i = 3 and j = 2
+this is below if
+i = 3 and j = 3
+this is below if</pre>
+</div>

@@ -1,0 +1,112 @@
+<h1 class="h1">Kotlin Function</h1>
+<p><strong>Function</strong>&nbsp;is a group of inter related block of code which performs a specific task. Function is used to break a program into different sub module. It makes reusability of code and makes program more manageable.</p>
+<p>In Kotlin, functions are declared using&nbsp;<strong>fun</strong>&nbsp;keyword. There are two types of functions depending on whether it is available in standard library or defined by user.</p>
+<ul class="points">
+<li><strong>Standard library function</strong></li>
+<li><strong>User defined function</strong></li>
+</ul>
+<h2 class="h2">Standard Library Function</h2>
+<p>Kotlin Standard library function is built-in library functions which are implicitly present in library and available for use.</p>
+<p><strong>For example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;number&nbsp;=&nbsp;<span class="number">25</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;result&nbsp;=&nbsp;Math.sqrt(number.toDouble())&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"Square&nbsp;root&nbsp;of&nbsp;$number&nbsp;is&nbsp;$result"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Square root of 25 is 5.0
+</pre>
+</div>
+<ul class="points">
+<li>Here,&nbsp;<strong>sqrt()</strong>&nbsp;is a library function which returns square root of a number (Double value).</li>
+<li><strong>print()</strong>&nbsp;library function which prints a message to standard output stream.</li>
+</ul>
+<h2 class="h2">User defined Function</h2>
+<p><em>User defined function</em>&nbsp;is a function which is created by user. User defined function takes the parameter(s), perform an action and return the result of that action as a value.</p>
+<p>Kotlin functions are declared using the fun keyword. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;functionName(){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//&nbsp;body&nbsp;of&nbsp;function</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>We have to call the function to run codes inside the body of the function.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">functionName()&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Kotlin simple function example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;sum()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"code&nbsp;after&nbsp;sum"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">fun</span>&nbsp;sum(){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;num1&nbsp;=<span class="number">5</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;num2&nbsp;=&nbsp;<span class="number">6</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"sum&nbsp;=&nbsp;"</span>+(num1+num2))&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>sum = 11
+code after sum
+</pre>
+</div>
+<h3 class="h3">Kotlin Parameterize Function and Return Value</h3>
+<p>Functions are also takes parameter as arguments and return value. Kotlin functions are defined using Pascal notation, i.e.&nbsp;<em>name:type</em>&nbsp;(name of parameter and its type). Parameters in function are separated using commas.</p>
+<p>If a function does not returns any value than its return type is&nbsp;<em>Unit</em>. It is optional to specify the return type of function definition which does not returns any value.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;functionName(number1:&nbsp;Int,&nbsp;number2:&nbsp;Int){&nbsp;&nbsp;</li>
+<li class="">..&nbsp;..&nbsp;..&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">..&nbsp;..&nbsp;..&nbsp;&nbsp;</li>
+<li class="alt">functionName(value1,&nbsp;value2)&nbsp;&nbsp;</li>
+<li class="">..&nbsp;..&nbsp;..&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Kotlin parameterize function example</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;sum(<span class="number">5</span>,&nbsp;<span class="number">6</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">fun</span>&nbsp;sum(number1:&nbsp;Int,&nbsp;number2:Int):&nbsp;Int{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;add&nbsp;=&nbsp;number1+number2&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;add&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>11</pre>
+</div>

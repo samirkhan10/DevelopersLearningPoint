@@ -10,9 +10,9 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:padding="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:text="Text"
+        android:textColor="@color/white"
+        android:background="@drawable/border"
         android:textSize="20sp" />
 
 </RelativeLayout>

@@ -1,0 +1,324 @@
+<h1 class="h1">Constructors in Java</h1>
+<div id="upr">
+<ol>
+<li><a href="https://www.javatpoint.com/java-constructor#constypes">Types of constructors</a>
+<ol>
+<li><a href="https://www.javatpoint.com/java-constructor#consdef">Default Constructor</a></li>
+<li><a href="https://www.javatpoint.com/java-constructor#conspara">Parameterized Constructor</a></li>
+</ol>
+</li>
+<li><a href="https://www.javatpoint.com/java-constructor#consoverloading">Constructor Overloading</a></li>
+<li><a href="https://www.javatpoint.com/java-constructor#consdoesreturn">Does constructor return any value?</a></li>
+<li><a href="https://www.javatpoint.com/java-constructor#conscopy">Copying the values of one object into another</a></li>
+<li><a href="https://www.javatpoint.com/java-constructor#consothertask">Does constructor perform other tasks instead of the initialization</a></li>
+</ol>
+</div>
+<p>In&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>, a constructor is a block of codes similar to the method. It is called when an instance of the&nbsp;<a href="https://www.javatpoint.com/object-and-class-in-java">class</a>&nbsp;is created. At the time of calling constructor, memory for the object is allocated in the memory.</p>
+<p>It is a special type of method which is used to initialize the object.</p>
+<p>Every time an object is created using the new() keyword, at least one constructor is called.</p>
+<p>It calls a default constructor if there is no constructor available in the class. In such case, Java compiler provides a default constructor by default.</p>
+<p>There are two types of constructors in Java: no-arg constructor, and parameterized constructor.</p>
+<p><strong>Note:</strong>&nbsp;It is called constructor because it constructs the values at the time of object creation. It is not necessary to write a constructor for a class. It is because java compiler creates a default constructor if your class doesn't have any.</p>
+<h3 class="h3">Rules for creating Java constructor</h3>
+<p>There are two rules defined for the constructor.</p>
+<ol class="points">
+<li>Constructor name must be the same as its class name</li>
+<li>A Constructor must have no explicit return type</li>
+<li>A Java constructor cannot be abstract, static, final, and synchronized</li>
+</ol>
+<h4 class="n">Note: We can use&nbsp;<a href="https://www.javatpoint.com/access-modifiers">access modifiers</a>&nbsp;while declaring a constructor. It controls the object creation. In other words, we can have private, protected, public or default constructor in Java.</h4>
+<h2 class="h2">Types of Java constructors</h2>
+<p>There are two types of constructors in Java:</p>
+<ol class="points">
+<li>Default constructor (no-arg constructor</li>
+<li>Parameterized constructor</li>
+</ol>
+<h2 class="h2">Java Default Constructor</h2>
+<p>A constructor is called "Default Constructor" when it doesn't have any parameter.</p>
+<h3 class="h4">Syntax of default constructor:</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt">&lt;class_name&gt;(){}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h3ex">Example of default constructor</h2>
+<table>
+<tbody>
+<tr>
+<td>In this example, we are creating the no-arg constructor in the Bike class. It will be invoked at the time of object creation.</td>
+</tr>
+</tbody>
+</table>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;create&nbsp;and&nbsp;call&nbsp;a&nbsp;default&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Bike1{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//creating&nbsp;a&nbsp;default&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class="">Bike1(){System.out.println(<span class="string">"Bike&nbsp;is&nbsp;created"</span>);}&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//main&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//calling&nbsp;a&nbsp;default&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class="">Bike1&nbsp;b=<span class="keyword">new</span>&nbsp;Bike1();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Bike1" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Bike is created
+</pre>
+</div>
+<h4 class="n">Rule: If there is no constructor in a class, compiler automatically creates a default constructor.</h4>
+<h3 class="h4">Q) What is the purpose of a default constructor?</h3>
+<p>The default constructor is used to provide the default values to the object like 0, null, etc., depending on the type.</p>
+<h3 class="h3ex">Example of default constructor that displays the default values</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Let&nbsp;us&nbsp;see&nbsp;another&nbsp;example&nbsp;of&nbsp;default&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//which&nbsp;displays&nbsp;the&nbsp;default&nbsp;values</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Student3{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="alt">String&nbsp;name;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//method&nbsp;to&nbsp;display&nbsp;the&nbsp;value&nbsp;of&nbsp;id&nbsp;and&nbsp;name</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name);}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//creating&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">Student3&nbsp;s1=<span class="keyword">new</span>&nbsp;Student3();&nbsp;&nbsp;</li>
+<li class="">Student3&nbsp;s2=<span class="keyword">new</span>&nbsp;Student3();&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//displaying&nbsp;values&nbsp;of&nbsp;the&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="">s1.display();&nbsp;&nbsp;</li>
+<li class="alt">s2.display();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student3" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock">
+<pre>0 null
+0 null
+</pre>
+</div>
+<p><strong>Explanation:</strong>In the above class,you are not creating any constructor so compiler provides you a default constructor. Here 0 and null values are provided by default constructor.</p>
+<hr />
+<h3 class="h2">Java Parameterized Constructor</h3>
+<p>A constructor which has a specific number of parameters is called a parameterized constructor.</p>
+<h3 class="h4">Why use the parameterized constructor?</h3>
+<p>The parameterized constructor is used to provide different values to distinct objects. However, you can provide the same values also.</p>
+<h3 class="h3ex">Example of parameterized constructor</h3>
+<p>In this example, we have created the constructor of Student class that have two parameters. We can have any number of parameters in the constructor.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;the&nbsp;parameterized&nbsp;constructor.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student4{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//creating&nbsp;a&nbsp;parameterized&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student4(<span class="keyword">int</span>&nbsp;i,String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;to&nbsp;display&nbsp;the&nbsp;values</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name);}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//creating&nbsp;objects&nbsp;and&nbsp;passing&nbsp;values</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student4&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student4(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student4&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student4(<span class="number">222</span>,<span class="string">"Aryan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//calling&nbsp;method&nbsp;to&nbsp;display&nbsp;the&nbsp;values&nbsp;of&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student4" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan
+222 Aryan
+</pre>
+</div>
+<hr />
+<h2 class="h2">Constructor Overloading in Java</h2>
+<p>In Java, a constructor is just like a method but without return type. It can also be overloaded like Java methods.</p>
+<p>Constructor&nbsp;<a href="https://www.javatpoint.com/method-overloading-in-java">overloading in Java</a>&nbsp;is a technique of having more than one constructor with different parameter lists. They are arranged in a way that each constructor performs a different task. They are differentiated by the compiler by the number of parameters in the list and their types.</p>
+<h3 class="h3ex">Example of Constructor Overloading</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;program&nbsp;to&nbsp;overload&nbsp;constructors</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student5{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;age;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//creating&nbsp;two&nbsp;arg&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student5(<span class="keyword">int</span>&nbsp;i,String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;i;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//creating&nbsp;three&nbsp;arg&nbsp;constructor</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student5(<span class="keyword">int</span>&nbsp;i,String&nbsp;n,<span class="keyword">int</span>&nbsp;a){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;age=a;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name+<span class="string">"&nbsp;"</span>+age);}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student5&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student5(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student5&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student5(<span class="number">222</span>,<span class="string">"Aryan"</span>,<span class="number">25</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student5" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan 0
+222 Aryan 25
+</pre>
+</div>
+<hr />
+<h2 class="h2">Difference between constructor and method in Java</h2>
+<p>There are many differences between constructors and methods. They are given below.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>Java Constructor</th>
+<th>Java Method</th>
+</tr>
+<tr>
+<td>A constructor is used to initialize the state of an object.</td>
+<td>A method is used to expose the behavior of an object.</td>
+</tr>
+<tr>
+<td>A constructor must not have a return type.</td>
+<td>A method must have a return type.</td>
+</tr>
+<tr>
+<td>The constructor is invoked implicitly.</td>
+<td>The method is invoked explicitly.</td>
+</tr>
+<tr>
+<td>The Java compiler provides a default constructor if you don't have any constructor in a class.</td>
+<td>The method is not provided by the compiler in any case.</td>
+</tr>
+<tr>
+<td>The constructor name must be same as the class name.</td>
+<td>The method name may or may not be same as the class name.</td>
+</tr>
+</tbody>
+</table>
+<p><br /><img src="https://static.javatpoint.com/images/constructor-vs-method-in-java.jpg" alt="Java Constructors vs. Methods" /><a id="conscopy"></a></p>
+<h2 class="h2">Java Copy Constructor</h2>
+<p>There is no copy constructor in Java. However, we can copy the values from one object to another like copy constructor in C++.</p>
+<p>There are many ways to copy the values of one object into another in Java. They are:</p>
+<ul class="points">
+<li>By constructor</li>
+<li>By assigning the values of one object into another</li>
+<li>By clone() method of Object class</li>
+</ul>
+<p>In this example, we are going to copy the values of one object into another using Java constructor.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;program&nbsp;to&nbsp;initialize&nbsp;the&nbsp;values&nbsp;from&nbsp;one&nbsp;object&nbsp;to&nbsp;another&nbsp;object.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student6{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//constructor&nbsp;to&nbsp;initialize&nbsp;integer&nbsp;and&nbsp;string</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student6(<span class="keyword">int</span>&nbsp;i,String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//constructor&nbsp;to&nbsp;initialize&nbsp;another&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student6(Student6&nbsp;s){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;s.id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=s.name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name);}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student6&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student6(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student6&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student6(s1);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student6" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan
+111 Karan
+</pre>
+</div>
+<hr />
+<h2 class="h2">Copying values without constructor</h2>
+<p>We can copy the values of one object into another by assigning the objects values to another object. In this case, there is no need to create the constructor.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Student7{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student7(<span class="keyword">int</span>&nbsp;i,String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;=&nbsp;i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student7(){}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name);}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student7&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student7(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student7&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student7();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s2.id=s1.id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s2.name=s1.name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student7" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan
+111 Karan
+</pre>
+</div>
+<hr />
+<h3 class="h3">Q) Does constructor return any value?</h3>
+<p>Yes, it is the current class instance (You cannot use return type yet it returns a value).</p>
+<hr />
+<h3 class="h3">Can constructor perform other tasks instead of initialization?</h3>
+<p>Yes, like object creation, starting a thread, calling a method, etc. You can perform any operation in the constructor as you perform in the method.</p>
+<hr />
+<h3 class="h3">Is there Constructor class in Java?</h3>
+<p>Yes.</p>
+<hr />
+<h3 class="h3">What is the purpose of Constructor class?</h3>
+<p>Java provides a Constructor class which can be used to get the internal information of a constructor in the class. It is found in the java.lang.reflect package.</p>

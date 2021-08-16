@@ -1,0 +1,76 @@
+<h1 class="h1">Kotlin Return and Jump</h1>
+<p>There are three jump expressions in Kotlin. These jump expressions are used for control the flow of program execution. These jump structures are:</p>
+<ul class="points">
+<li>break</li>
+<li>continue</li>
+<li>return</li>
+</ul>
+<h2 class="h2">Break Expression</h2>
+<p>A&nbsp;<strong>break</strong>&nbsp;expression is used for terminate the nearest enclosing loop. It is almost used with if-else condition.</p>
+<p><strong>For example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>(..){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//body&nbsp;of&nbsp;for</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(checkCondition){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example,&nbsp;<strong>for</strong>&nbsp;loop terminates its loop when&nbsp;<strong>if</strong>&nbsp;condition execute break expression.</p>
+<p><strong>Kotlin break example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">5</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(i&nbsp;==&nbsp;<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(i)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>1
+2
+</pre>
+</div>
+<p>In the above example, when the value of&nbsp;<strong>i</strong>&nbsp;became equal to 3 and satisfy the&nbsp;<strong>if</strong>&nbsp;condition(i==3) than the break expression execute and terminate&nbsp;<strong>for</strong>&nbsp;loop.</p>
+<h2 class="h2">Kotlin Labeled break Expression</h2>
+<p>Labeled is the form of identifier followed by the&nbsp;<strong>@</strong>&nbsp;sign, for example&nbsp;<strong>abc@</strong>,&nbsp;<strong>test@</strong>. To make an expression as label, we just put a label in front of expression.</p>
+<p>Kotlin labeled break expression is used to terminate the specific loop. This is done by using break expression with&nbsp;<strong>@</strong>&nbsp;sign followed by label name (break@loop).</p>
+<p><strong>Kotlin labeled break example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;loop@&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(j&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">3</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"i&nbsp;=&nbsp;$i&nbsp;and&nbsp;j&nbsp;=&nbsp;$j"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(i&nbsp;==&nbsp;<span class="number">2</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span class="annotation">@loop</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>i = 1 and j = 1
+i = 1 and j = 2
+i = 1 and j = 3
+i = 2 and j = 1
+</pre>
+</div>
+<p>In the above example, when the value of i became 2 and satisfy the&nbsp;<strong>if</strong>&nbsp;condition which execute break expression followed by labeled name. The&nbsp;<em>break</em>&nbsp;expression followed by labeled name terminates the body of label identifier.</p>

@@ -1,0 +1,219 @@
+<h1 class="h1">Flutter Gestures</h1>
+<p>Gestures are an interesting feature in Flutter that allows us to interact with the mobile app (or any touch-based device). Generally, gestures define any physical action or movement of a user in the intention of specific control of the mobile device. Some of the examples of gestures are:</p>
+<ul class="points">
+<li>When the mobile screen is locked, you slide your finger across the screen to unlock it.</li>
+<li>Tapping a button on your mobile screen, and</li>
+<li>Tapping and holding an app icon on a touch-based device to drag it across screens.</li>
+</ul>
+<p>We use all these gestures in everyday life to interact with your phone or touch-based device.</p>
+<p>Flutter divides the gesture system into two different layers, which are given below:</p>
+<ol class="points">
+<li>Pointers</li>
+<li>Gestures</li>
+</ol>
+<h2 class="h2">Pointers</h2>
+<p>Pointers are the first layer that represents the raw data about user interaction. It has events, which describe the&nbsp;<strong>location</strong>&nbsp;and&nbsp;<strong>movement</strong>&nbsp;of pointers such as touches, mice, and style across the screens. Flutter does not provide any mechanism to cancel or stop the pointer-events from being dispatched further. Flutter provides a&nbsp;<strong>Listener&nbsp;</strong>widget to listen to the pointer-events directly from the widgets layer. The pointer-events are categories into mainly four types:</p>
+<ul class="points">
+<li>PointerDownEvents</li>
+<li>PointerMoveEvents</li>
+<li>PointerUpEvents</li>
+<li>PointerCancelEvents</li>
+</ul>
+<p><strong>PointerDownEvents:</strong>&nbsp;It allows the pointer to contact the screen at a particular location.</p>
+<p><strong>PointerMoveEvents:</strong>&nbsp;It allows the pointer to move from one location to another location on the screen.</p>
+<p><strong>PointerUpEvents:</strong>&nbsp;It allows the pointer to stop contacting the screen.</p>
+<p><strong>PointerCancelEvents:</strong>&nbsp;This event is sent when the pointer interaction is canceled.</p>
+<h2 class="h2">Gestures</h2>
+<p>It is the second layer that represents&nbsp;<strong>semantic actions&nbsp;</strong>such as tap, drag, and scale, which are recognized from multiple individual pointer events. It is also able to dispatch multiple events corresponding to gesture lifecycle like drag start, drag update, and drag end. Some of the popularly used gesture are listed below:</p>
+<p><strong>Tap:</strong>&nbsp;It means touching the surface of the screen from the fingertip for a short time and then releasing them. This gesture contains the following events:</p>
+<ul class="points">
+<li>onTapDown</li>
+<li>onTapUp</li>
+<li>onTap</li>
+<li>onTapCancel</li>
+</ul>
+<p><strong>Double Tap:</strong>&nbsp;It is similar to a Tap gesture, but you need to tapping twice in a short time. This gesture contains the following events:</p>
+<ul class="points">
+<li>onDoubleTap</li>
+</ul>
+<p><strong>Drag:</strong>&nbsp;It allows us to touch the surface of the screen with a fingertip and move it from one location to another location and then releasing them. Flutter categories the drag into two types:</p>
+<ol class="points">
+<li><strong>Horizontal Drag:</strong>&nbsp;This gesture allows the pointer to move in a horizontal direction. It contains the following events:
+<ul class="points">
+<li>onHorizontalDragStart</li>
+<li>onHorizontalDragUpdate</li>
+<li>onHorizontalDragEnd</li>
+</ul>
+</li>
+<li><strong>Vertical Drag:</strong>&nbsp;This gesture allows the pointer to move in a vertical direction. It contains the following events:
+<ul class="points">
+<li>onVerticalDragStart</li>
+<li>onVerticalDragStart</li>
+<li>onVerticalDragStart</li>
+</ul>
+</li>
+</ol>
+<p><strong>Long Press:</strong>&nbsp;It means touching the surface of the screen at a particular location for a long time. This gesture contains the following events:</p>
+<ul class="points">
+<li>onLongPress</li>
+</ul>
+<p><strong>Pan:</strong>&nbsp;It means touching the surface of the screen with a fingertip, which can move in any direction without releasing the fingertip. This gesture contains the following events:</p>
+<ul class="points">
+<li>onPanStart</li>
+<li>onPanUpdate</li>
+<li>onPanEnd</li>
+</ul>
+<p><strong>Pinch:</strong>&nbsp;It means pinching (move one's finger and thumb or bring them together on a touchscreen) the surface of the screen using two fingers to zoom into or out of a screen.</p>
+<h3 class="h3">Gesture Detector</h3>
+<p>Flutter provides a widget that gives excellent support for all types of gestures by using the&nbsp;<strong>GestureDetector</strong>&nbsp;widget. The GestureWidget is non-visual widgets, which is primarily used for detecting the user's gesture. The basic idea of the gesture detector is a&nbsp;<strong>stateless</strong>&nbsp;widget that contains parameters in its constructor for different touch events.</p>
+<p>In some situations, there might be multiple gesture detectors at a particular location on the screen, and then the framework disambiguates which gesture should be called. The GestureDetector widget decides which gesture is going to recognize based on which of its callbacks are non-null.</p>
+<p>Let us learn how we can use these gestures in our application with a simple&nbsp;<strong>onTap()&nbsp;</strong>event and determine how the GestureDetector processes this. Here, we are going to create a&nbsp;<strong>box widget,&nbsp;</strong>design it according to our desired specification, and then add the onTap() function to it.</p>
+<p>Now, create a new Flutter project and replace the following code in&nbsp;<strong>main.dart</strong>&nbsp;file.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;=&gt;&nbsp;runApp(MyApp());&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//&nbsp;This&nbsp;widget&nbsp;is&nbsp;the&nbsp;root&nbsp;of&nbsp;your&nbsp;application.</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span class="string">'Flutter&nbsp;Demo&nbsp;Application'</span>,&nbsp;theme:&nbsp;ThemeData(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primarySwatch:&nbsp;Colors.green,),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;MyHomePage(),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;MyHomePage&nbsp;<span class="keyword">extends</span>&nbsp;StatefulWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;MyHomePageState&nbsp;createState()&nbsp;=&gt;&nbsp;<span class="keyword">new</span>&nbsp;MyHomePageState();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomePageState&nbsp;<span class="keyword">extends</span>&nbsp;State&lt;MyHomePage&gt;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="keyword">new</span>&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;<span class="keyword">new</span>&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span class="keyword">new</span>&nbsp;Text(<span class="string">'Gestures&nbsp;Example'</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centerTitle:&nbsp;<span class="keyword">true</span>,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;<span class="keyword">new</span>&nbsp;Center(child:&nbsp;GestureDetector(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onTap:&nbsp;()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">'Box&nbsp;Clicked'</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;<span class="number">60.0</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;<span class="number">120.0</span>,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;EdgeInsets.all(<span class="number">10.0</span>),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decoration:&nbsp;BoxDecoration(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;Colors.blueGrey,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius:&nbsp;BorderRadius.circular(<span class="number">15.0</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Center(child:&nbsp;Text(<span class="string">'Click&nbsp;Me'</span>)),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output</strong></p>
+<p>When you run this dart file in Android Studio, it will give the following output in the emulator.</p>
+<p>In the above image, you can see a button with rounded edges on the center of the screen. When you tap on this, it behaves like a button, and the output can be seen in the console.</p>
+<p>Flutter also provides a set of widgets that can allow you to do a specific as well as advanced gestures. These widgets are given below:</p>
+<p><strong>Dismissible:</strong>&nbsp;It is a type of widget that supports the flick gesture to dismiss the widget.</p>
+<p><strong>Draggable:</strong>&nbsp;It is a type of widget that supports drag gestures to move the widget.</p>
+<p><strong>LongPressDraggable:</strong>&nbsp;It is a type of widget that supports drag gesture to move a widget along with its parent widget.</p>
+<p><strong>DragTarget:</strong>&nbsp;It is a type of widget that can accept any<strong>&nbsp;Draggable&nbsp;</strong>widget</p>
+<p><strong>IgnorePointer:</strong>&nbsp;It is a type of widget that hides the widget and its children from the gesture detection process.</p>
+<p><strong>AbsorbPointer:</strong>&nbsp;It is a type of widget that stops the gesture detection process itself. Due to this, any overlapping widget cannot able to participate in the gesture detection process, and thus, no event is raised.</p>
+<p><strong>Scrollable:</strong>&nbsp;It is a type of widget that supports scrolling of the content which is available inside the widget.</p>
+<h3 class="h3">Multiple Gesture Example</h3>
+<p>In this section, we are going to see how multiple gestures work in flutter applications. This demo app consists of two containers parent and child. Here, everything is handled manually by using 'RawGestureDetector' and a custom 'GestureRecognizer' The custom GestureRecognizer provide 'AllowMultipleGestureRecognizer' property to the gesture list and creates a 'GestureRecognizerFactoryWithHandlers'. Next, when the&nbsp;<strong>onTap()</strong>&nbsp;event is called, it prints text to the console.</p>
+<p>Open the flutter project and replace the following code in the main.dart file,</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/gestures.dart'</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//It&nbsp;is&nbsp;the&nbsp;entry&nbsp;point&nbsp;for&nbsp;your&nbsp;Flutter&nbsp;app.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;runApp(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span class="string">'Multiple&nbsp;Gestures&nbsp;Demo'</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;Scaffold(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appBar:&nbsp;AppBar(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;Text(<span class="string">'Multiple&nbsp;Gestures&nbsp;Demo'</span>),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:&nbsp;DemoApp(),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;DemoApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;RawGestureDetector(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gestures:&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowMultipleGestureRecognizer:&nbsp;GestureRecognizerFactoryWithHandlers&lt;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowMultipleGestureRecognizer&gt;(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;=&gt;&nbsp;AllowMultipleGestureRecognizer(),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AllowMultipleGestureRecognizer&nbsp;instance)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.onTap&nbsp;=&nbsp;()&nbsp;=&gt;&nbsp;print(<span class="string">'It&nbsp;is&nbsp;the&nbsp;parent&nbsp;container&nbsp;gesture'</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;behavior:&nbsp;HitTestBehavior.opaque,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Parent&nbsp;Container</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;Colors.green,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Center(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Now,&nbsp;wraps&nbsp;the&nbsp;second&nbsp;container&nbsp;in&nbsp;RawGestureDetector</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;RawGestureDetector(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gestures:&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowMultipleGestureRecognizer:&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GestureRecognizerFactoryWithHandlers&lt;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowMultipleGestureRecognizer&gt;(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()&nbsp;=&gt;&nbsp;AllowMultipleGestureRecognizer(),&nbsp;&nbsp;<span class="comment">//constructor</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AllowMultipleGestureRecognizer&nbsp;instance)&nbsp;{&nbsp;&nbsp;<span class="comment">//initializer</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.onTap&nbsp;=&nbsp;()&nbsp;=&gt;&nbsp;print(<span class="string">'It&nbsp;is&nbsp;the&nbsp;nested&nbsp;container'</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Creates&nbsp;the&nbsp;nested&nbsp;container&nbsp;within&nbsp;the&nbsp;first.</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Container(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;Colors.deepOrange,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;<span class="number">250.0</span>,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;<span class="number">350.0</span>,&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;AllowMultipleGestureRecognizer&nbsp;<span class="keyword">extends</span>&nbsp;TapGestureRecognizer&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;rejectGesture(<span class="keyword">int</span>&nbsp;pointer)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;acceptGesture(pointer);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output</strong></p>
+<p>When you run the app, it will give the following output.</p>
+<p>Next, tap on the orange box, the following output appears on your console.</p>
+<div class="codeblock3">
+<pre>It is the nested container.
+It is the parent container gesture.</pre>
+</div>

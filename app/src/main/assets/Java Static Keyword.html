@@ -1,0 +1,302 @@
+<h1 class="h1">Java static keyword</h1>
+<p>The&nbsp;<strong>static keyword</strong>&nbsp;in&nbsp;<a href="https://www.javatpoint.com/java-tutorial">Java</a>&nbsp;is used for memory management mainly. We can apply static keyword with&nbsp;<a href="https://www.javatpoint.com/java-variables">variables</a>, methods, blocks and&nbsp;<a href="https://www.javatpoint.com/java-inner-class">nested classes</a>. The static keyword belongs to the class than an instance of the class.</p>
+<p>The static can be:</p>
+<ol class="points">
+<li>Variable (also known as a class variable)</li>
+<li>Method (also known as a class method)</li>
+<li>Block</li>
+<li>Nested class</li>
+</ol>
+<h2 class="h2">1) Java static variable</h2>
+<p>If you declare any variable as static, it is known as a static variable.</p>
+<ul class="points">
+<li>The static variable can be used to refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc.</li>
+<li>The static variable gets memory only once in the class area at the time of class loading.</li>
+</ul>
+<h3 class="h4">Advantages of static variable</h3>
+<p>It makes your program&nbsp;<strong>memory efficient</strong>&nbsp;(i.e., it saves memory).</p>
+<h4 class="h4">Understanding the problem without static variable</h4>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;rollno;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;college=<span class="string">"ITS"</span>;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Suppose there are 500 students in my college, now all instance data members will get memory each time when the object is created. All students have its unique rollno and name, so instance data member is good in such case. Here, "college" refers to the common property of all&nbsp;<a href="https://www.javatpoint.com/object-and-class-in-java">objects</a>. If we make it static, this field will get the memory only once.</p>
+<h4 class="n">Java static property is shared to all objects.</h4>
+<h3 class="h3ex">Example of static variable</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;static&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;rollno;<span class="comment">//instance&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;String&nbsp;college&nbsp;=<span class="string">"ITS"</span>;<span class="comment">//static&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;<span class="comment">//constructor</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;Student(<span class="keyword">int</span>&nbsp;r,&nbsp;String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;rollno&nbsp;=&nbsp;r;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;to&nbsp;display&nbsp;the&nbsp;values</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display&nbsp;(){System.out.println(rollno+<span class="string">"&nbsp;"</span>+name+<span class="string">"&nbsp;"</span>+college);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Test&nbsp;class&nbsp;to&nbsp;show&nbsp;the&nbsp;values&nbsp;of&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestStaticVariable1{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;Student&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;Student&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student(<span class="number">222</span>,<span class="string">"Aryan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="comment">//we&nbsp;can&nbsp;change&nbsp;the&nbsp;college&nbsp;of&nbsp;all&nbsp;objects&nbsp;by&nbsp;the&nbsp;single&nbsp;line&nbsp;of&nbsp;code</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="comment">//Student.college="BBDIT";</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStaticVariable1" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan ITS
+222 Aryan ITS</pre>
+</div>
+<h3 class="h3ex">Program of the counter without static variable</h3>
+<p>In this example, we have created an instance variable named count which is incremented in the constructor. Since instance variable gets the memory at the time of object creation, each object will have the copy of the instance variable. If it is incremented, it won't reflect other objects. So each object will have the value 1 in the count variable.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;an&nbsp;instance&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//which&nbsp;get&nbsp;memory&nbsp;each&nbsp;time&nbsp;when&nbsp;we&nbsp;create&nbsp;an&nbsp;object&nbsp;of&nbsp;the&nbsp;class.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Counter{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;count=<span class="number">0</span>;<span class="comment">//will&nbsp;get&nbsp;memory&nbsp;each&nbsp;time&nbsp;when&nbsp;the&nbsp;instance&nbsp;is&nbsp;created</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">Counter(){&nbsp;&nbsp;</li>
+<li class="alt">count++;<span class="comment">//incrementing&nbsp;value</span>&nbsp;&nbsp;</li>
+<li class="">System.out.println(count);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Creating&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">Counter&nbsp;c1=<span class="keyword">new</span>&nbsp;Counter();&nbsp;&nbsp;</li>
+<li class="">Counter&nbsp;c2=<span class="keyword">new</span>&nbsp;Counter();&nbsp;&nbsp;</li>
+<li class="alt">Counter&nbsp;c3=<span class="keyword">new</span>&nbsp;Counter();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Counter" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>1
+1
+1
+</pre>
+</div>
+<hr />
+<h3 class="h3ex">Program of counter by static variable</h3>
+<p>As we have mentioned above, static variable will get the memory only once, if any object changes the value of the static variable, it will retain its value.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;illustrate&nbsp;the&nbsp;use&nbsp;of&nbsp;static&nbsp;variable&nbsp;which</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//is&nbsp;shared&nbsp;with&nbsp;all&nbsp;objects.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Counter2{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;count=<span class="number">0</span>;<span class="comment">//will&nbsp;get&nbsp;memory&nbsp;only&nbsp;once&nbsp;and&nbsp;retain&nbsp;its&nbsp;value</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">Counter2(){&nbsp;&nbsp;</li>
+<li class="alt">count++;<span class="comment">//incrementing&nbsp;the&nbsp;value&nbsp;of&nbsp;static&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="">System.out.println(count);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//creating&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">Counter2&nbsp;c1=<span class="keyword">new</span>&nbsp;Counter2();&nbsp;&nbsp;</li>
+<li class="">Counter2&nbsp;c2=<span class="keyword">new</span>&nbsp;Counter2();&nbsp;&nbsp;</li>
+<li class="alt">Counter2&nbsp;c3=<span class="keyword">new</span>&nbsp;Counter2();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Counter2" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>1
+2
+3
+</pre>
+</div>
+<hr />
+<h2 class="h2">2) Java static method</h2>
+<p>If you apply static keyword with any method, it is known as static method.</p>
+<ul class="points">
+<li>A static method belongs to the class rather than the object of a class.</li>
+<li>A static method can be invoked without the need for creating an instance of a class.</li>
+<li>A static method can access static data member and can change the value of it.</li>
+</ul>
+<h3 class="h3ex">Example of static method</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;use&nbsp;of&nbsp;a&nbsp;static&nbsp;method.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;rollno;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;String&nbsp;college&nbsp;=&nbsp;<span class="string">"ITS"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//static&nbsp;method&nbsp;to&nbsp;change&nbsp;the&nbsp;value&nbsp;of&nbsp;static&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;change(){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;college&nbsp;=&nbsp;<span class="string">"BBDIT"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//constructor&nbsp;to&nbsp;initialize&nbsp;the&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student(<span class="keyword">int</span>&nbsp;r,&nbsp;String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rollno&nbsp;=&nbsp;r;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;n;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;to&nbsp;display&nbsp;values</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(rollno+<span class="string">"&nbsp;"</span>+name+<span class="string">"&nbsp;"</span>+college);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Test&nbsp;class&nbsp;to&nbsp;create&nbsp;and&nbsp;display&nbsp;the&nbsp;values&nbsp;of&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestStaticMethod{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student.change();<span class="comment">//calling&nbsp;change&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//creating&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student&nbsp;s1&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Student&nbsp;s2&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student(<span class="number">222</span>,<span class="string">"Aryan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Student&nbsp;s3&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Student(<span class="number">333</span>,<span class="string">"Sonoo"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//calling&nbsp;display&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s1.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;s2.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;s3.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStaticMethod" target="_blank">Test it Now</a></span></p>
+<div class="codeblock3">
+<pre>Output:111 Karan BBDIT
+       222 Aryan BBDIT
+       333 Sonoo BBDIT
+</pre>
+</div>
+<hr />
+<h3 class="h3ex">Another example of a static method that performs a normal calculation</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;get&nbsp;the&nbsp;cube&nbsp;of&nbsp;a&nbsp;given&nbsp;number&nbsp;using&nbsp;the&nbsp;static&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Calculate{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;cube(<span class="keyword">int</span>&nbsp;x){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;x*x*x;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;result=Calculate.cube(<span class="number">5</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.out.println(result);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Calculate" target="_blank">Test it Now</a></span></p>
+<div class="codeblock3">
+<pre>Output:125
+</pre>
+</div>
+<h3 class="h4">Restrictions for the static method</h3>
+<p>There are two main restrictions for the static method. They are:</p>
+<ol class="points">
+<li>The static method can not use non static data member or call non-static method directly.</li>
+<li>this and super cannot be used in static context.</li>
+</ol>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;A{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;a=<span class="number">40</span>;<span class="comment">//non&nbsp;static</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;System.out.println(a);&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=A" target="_blank">Test it Now</a></span></p>
+<div class="codeblock3">
+<pre>Output:Compile Time Error
+</pre>
+</div>
+<hr />
+<h3 class="h3">Q) Why is the Java main method static?</h3>
+<p>Ans) It is because the object is not required to call a static method. If it were a non-static method,&nbsp;<a href="https://www.javatpoint.com/jvm-java-virtual-machine">JVM</a>&nbsp;creates an object first then call main() method that will lead the problem of extra memory allocation.</p>
+<hr />
+<h2 class="h2">3) Java static block</h2>
+<ul class="points">
+<li>Is used to initialize the static data member.</li>
+<li>It is executed before the main method at the time of classloading.</li>
+</ul>
+<h3 class="h3ex">Example of static block</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;A2{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">static</span>{System.out.println(<span class="string">"static&nbsp;block&nbsp;is&nbsp;invoked"</span>);}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Hello&nbsp;main"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=A2" target="_blank">Test it Now</a></span></p>
+<div class="codeblock3">
+<pre>Output:static block is invoked
+       Hello main
+</pre>
+</div>
+<hr />
+<h3 class="h4">Q) Can we execute a program without main() method?</h3>
+<p>Ans) No, one of the ways was the static block, but it was possible till JDK 1.6. Since JDK 1.7, it is not possible to execute a Java class without the&nbsp;<a href="https://www.javatpoint.com/java-main-method">main method</a>.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;A3{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">static</span>{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;System.out.println(<span class="string">"static&nbsp;block&nbsp;is&nbsp;invoked"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.exit(<span class="number">0</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=A3" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>static block is invoked
+</pre>
+</div>
+<p>Since JDK 1.7 and above, output would be:</p>
+<div class="codeblock3">
+<pre>Error: Main method not found in class A3, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+</pre>
+</div>

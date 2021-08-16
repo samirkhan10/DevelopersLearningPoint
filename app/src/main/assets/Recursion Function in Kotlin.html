@@ -1,0 +1,177 @@
+
+<h1 class="h1">Kotlin Recursion Function</h1>
+<p><em>Recursion function</em>&nbsp;is a function which calls itself continuously. This technique is called recursion.</p>
+<p><strong>Syntax</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;functionName(){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">..&nbsp;..&nbsp;..&nbsp;&nbsp;</li>
+<li class="alt">functionName()&nbsp;<span class="comment">//calling&nbsp;same&nbsp;function</span>&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Kotlin recursion function example 1: Finite times</h3>
+<p>Let's see an example of recursion function printing count.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">var&nbsp;count&nbsp;=&nbsp;<span class="number">0</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;rec(){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;count++;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(count&lt;=<span class="number">5</span>){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"hello&nbsp;"</span>+count);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rec();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;rec();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>hello 1
+hello 2
+hello 3
+hello 4
+hello 5
+</pre>
+</div>
+<h3 class="h3">Kotlin recursion function example 2: Factorial Number</h3>
+<p>Let's see an example of recursion function calculating factorial of number.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;number&nbsp;=&nbsp;<span class="number">5</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result:&nbsp;Long&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;factorial(number)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Factorial&nbsp;of&nbsp;$number&nbsp;=&nbsp;$result"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;factorial(n:&nbsp;Int):&nbsp;Long&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="keyword">if</span>(n&nbsp;==&nbsp;<span class="number">1</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n.toLong()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n*factorial(n-<span class="number">1</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Factorial of 5 = 120
+</pre>
+</div>
+<p>&nbsp;</p>
+<p>Working process of above factorial example</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">factorial(<span class="number">5</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;factorial(<span class="number">4</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factorial(<span class="number">3</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factorial(<span class="number">2</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factorial(<span class="number">1</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">1</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">2</span>*<span class="number">1</span>&nbsp;=&nbsp;<span class="number">2</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">3</span>*<span class="number">2</span>&nbsp;=&nbsp;<span class="number">6</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">4</span>*<span class="number">6</span>&nbsp;=&nbsp;<span class="number">24</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">5</span>*<span class="number">24</span>&nbsp;=&nbsp;<span class="number">120</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Kotlin Tail Recursion</h2>
+<p>Before we will discuss about the tail recursion, let's try to make an example which calculate sum of nth (100000 larger number) using general (normal) recursion.</p>
+<h3 class="h3">General Recursion</h3>
+<p>Let's see an example of calculating sum of nth (100000 larger number) using general (normal) recursion.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;result&nbsp;=&nbsp;recursiveSum(<span class="number">100000</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">fun</span>&nbsp;recursiveSum(n:&nbsp;Long)&nbsp;:&nbsp;Long&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="keyword">if</span>&nbsp;(n&nbsp;&lt;=&nbsp;<span class="number">1</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;+&nbsp;recursiveSum(n&nbsp;-&nbsp;<span class="number">1</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Exception in thread "main" java.lang.StackOverflowError
+</pre>
+</div>
+<p>The above example throws an exception of&nbsp;<em>"java.lang.StackOverflowError"</em>. This is because the compiler is unable to call large number of recursive function call.</p>
+<h3 class="h3">Tail Recursion</h3>
+<p><strong>Tail recursion</strong>&nbsp;is a recursion which performs the calculation first, then makes the recursive call. The result of current step is passed into the next recursive call.</p>
+<p>Tail recursion follows one rule for implementation. This rule is as follow:</p>
+<p><strong>The recursive call must be the last call of the method</strong>. To declare a recursion as tail recursion we need to use&nbsp;<strong>tailrec</strong>&nbsp;modifier before the recursive function.</p>
+<h3 class="h3">Kotlin Tail Recursion Example 1: calculating sun of nth(100000) number</h3>
+<p>Let's see an example of calculating sum of nth (100000 larger number) using tail recursion.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;number&nbsp;=&nbsp;<span class="number">100000</span>.toLong()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;result&nbsp;=&nbsp;recursiveSum(number)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"sun&nbsp;of&nbsp;upto&nbsp;$number&nbsp;number&nbsp;=&nbsp;$result"</span>)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">tailrec&nbsp;<span class="keyword">fun</span>&nbsp;recursiveSum(n:&nbsp;Long,&nbsp;semiresult:&nbsp;Long&nbsp;=&nbsp;<span class="number">0</span>)&nbsp;:&nbsp;Long&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="keyword">if</span>&nbsp;(n&nbsp;&lt;=&nbsp;<span class="number">0</span>)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;semiresult&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recursiveSum(&nbsp;(n&nbsp;-&nbsp;<span class="number">1</span>),&nbsp;n+semiresult)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>sun of upto 100000 number = 5000050000
+</pre>
+</div>
+<h3 class="h3">Kotlin Tail Recursion Example 2: calculating factorial of number</h3>
+<p>Let's see an example of calculating factorial of number using tail recursion.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;number&nbsp;=&nbsp;<span class="number">4</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result:&nbsp;Long&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;factorial(number)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"Factorial&nbsp;of&nbsp;$number&nbsp;=&nbsp;$result"</span>)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">tailrec&nbsp;<span class="keyword">fun</span>&nbsp;factorial(n:&nbsp;Int,&nbsp;run:&nbsp;Int&nbsp;=&nbsp;<span class="number">1</span>):&nbsp;Long&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="keyword">if</span>&nbsp;(n&nbsp;==&nbsp;<span class="number">1</span>){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run.toLong()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span>&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factorial(n-<span class="number">1</span>,&nbsp;run*n)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Factorial of 4 = 24</pre>
+</div>

@@ -33,4 +33,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void share(View view) {
+        final String appPackName = getPackageName();
+        Intent sendintent = new Intent();
+        sendintent.setAction(Intent.ACTION_SEND);
+        sendintent.putExtra(Intent.EXTRA_TEXT, "check out app at: https://play.google.com/store/apps/details?id=" + appPackName);
+        sendintent.setType("text/plain");
+        startActivity(sendintent);
+    }
 }

@@ -1,0 +1,506 @@
+<h1 class="h1">Objects and Classes in Java</h1>
+<div id="upr">
+<ol>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#object">Object in Java</a></li>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#class">Class in Java</a></li>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#objectinstancevariable">Instance Variable in Java</a></li>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#objectmethod">Method in Java</a></li>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#objectex2">Example of Object and class that maintains the records of student</a></li>
+<li><a href="https://www.javatpoint.com/object-and-class-in-java#objectannonymous">Anonymous Object</a></li>
+</ol>
+</div>
+<p>In this page, we will learn about Java objects and classes. In object-oriented programming technique, we design a program using objects and classes.</p>
+<p>An object in Java is the physical as well as a logical entity, whereas, a class in Java is a logical entity only.</p>
+<h3 class="h2">What is an object in Java</h3>
+<p>An entity that has state and behavior is known as an object e.g., chair, bike, marker, pen, table, car, etc. It can be physical or logical (tangible and intangible). The example of an intangible object is the banking system.</p>
+<p>An object has three characteristics:</p>
+<ul class="points">
+<li><strong>State:</strong>&nbsp;represents the data (value) of an object.</li>
+<li><strong>Behavior:</strong>&nbsp;represents the behavior (functionality) of an object such as deposit, withdraw, etc.</li>
+<li><strong>Identity:</strong>&nbsp;An object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. However, it is used internally by the JVM to identify each object uniquely.</li>
+</ul>
+<p>For Example, Pen is an object. Its name is Reynolds; color is white, known as its state. It is used to write, so writing is its behavior.</p>
+<p><strong>An object is an instance of a class.</strong>&nbsp;A class is a template or blueprint from which objects are created. So, an object is the instance(result) of a class.</p>
+<p><strong>Object Definitions:</strong></p>
+<ul class="points">
+<li>An object is&nbsp;<em>a real-world entity</em>.</li>
+<li>An object is&nbsp;<em>a runtime entity</em>.</li>
+<li>The object is&nbsp;<em>an entity which has state and behavior</em>.</li>
+<li>The object is&nbsp;<em>an instance of a class</em>.</li>
+</ul>
+<hr />
+<p>&nbsp;</p>
+<h2 id="class" class="h2">What is a class in Java</h2>
+<p>A class is a group of objects which have common properties. It is a template or blueprint from which objects are created. It is a logical entity. It can't be physical.</p>
+<p>A class in Java can contain:</p>
+<ul class="points">
+<li><strong>Fields</strong></li>
+<li><strong>Methods</strong></li>
+<li><strong>Constructors</strong></li>
+<li><strong>Blocks</strong></li>
+<li><strong>Nested class and interface</strong></li>
+</ul>
+<h3 class="h4">Syntax to declare a class:</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;&lt;class_name&gt;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;field;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;method;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<hr />
+<h3 class="h2">Instance variable in Java</h3>
+<p>A variable which is created inside the class but outside the method is known as an instance variable. Instance variable doesn't get memory at compile time. It gets memory at runtime when an object or instance is created. That is why it is known as an instance variable.</p>
+<hr />
+<h3 class="h2">Method in Java</h3>
+<p>In Java, a method is like a function which is used to expose the behavior of an object.</p>
+<h4 class="h4">Advantage of Method</h4>
+<ul class="points">
+<li>Code Reusability</li>
+<li>Code Optimization</li>
+</ul>
+<hr />
+<h3 class="h2">new keyword in Java</h3>
+<p>The new keyword is used to allocate memory at runtime. All objects get memory in Heap memory area.</p>
+<hr />
+<h3 class="h3ex">Object and Class Example: main within the class</h3>
+<p>In this example, we have created a Student class which has two data members id and name. We are creating the object of the Student class by new keyword and printing the object's value.</p>
+<p>Here, we are creating a main() method inside the class.</p>
+<p class="filename">File: Student.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;illustrate&nbsp;how&nbsp;to&nbsp;define&nbsp;a&nbsp;class&nbsp;and&nbsp;fields</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Defining&nbsp;a&nbsp;Student&nbsp;class.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="comment">//defining&nbsp;fields</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">int</span>&nbsp;id;<span class="comment">//field&nbsp;or&nbsp;data&nbsp;member&nbsp;or&nbsp;instance&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="comment">//creating&nbsp;main&nbsp;method&nbsp;inside&nbsp;the&nbsp;Student&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//Creating&nbsp;an&nbsp;object&nbsp;or&nbsp;instance</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Student&nbsp;s1=<span class="keyword">new</span>&nbsp;Student();<span class="comment">//creating&nbsp;an&nbsp;object&nbsp;of&nbsp;Student</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//Printing&nbsp;values&nbsp;of&nbsp;the&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.out.println(s1.id);<span class="comment">//accessing&nbsp;member&nbsp;through&nbsp;reference&nbsp;variable</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;System.out.println(s1.name);&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=Student" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>0 
+null
+</pre>
+</div>
+<h3 class="h3ex">Object and Class Example: main outside the class</h3>
+<p>In real time development, we create classes and use it from another class. It is a better approach than previous one. Let's see a simple example, where we are having main() method in another class.</p>
+<p>We can have multiple classes in different Java files or single Java file. If you define multiple classes in a single Java source file, it is a good idea to save the file name with the class name which has main() method.</p>
+<p class="filename">File: TestStudent1.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;having&nbsp;the&nbsp;main&nbsp;method&nbsp;in&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//another&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//Creating&nbsp;Student&nbsp;class.</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="">&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Creating&nbsp;another&nbsp;class&nbsp;TestStudent1&nbsp;which&nbsp;contains&nbsp;the&nbsp;main&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;TestStudent1{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Student&nbsp;s1=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.out.println(s1.id);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;System.out.println(s1.name);&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStudent1" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>0 
+null
+</pre>
+</div>
+<h2 class="h2">3 Ways to initialize object</h2>
+<p>There are 3 ways to initialize object in Java.</p>
+<ol class="points">
+<li>By reference variable</li>
+<li>By method</li>
+<li>By constructor</li>
+</ol>
+<h3 class="h3ex">1) Object and Class Example: Initialization through reference</h3>
+<p>Initializing an object means storing data into the object. Let's see a simple example where we are going to initialize the object through a reference variable.</p>
+<p class="filename">File: TestStudent2.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;TestStudent2{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Student&nbsp;s1=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;s1.id=<span class="number">101</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;s1.name=<span class="string">"Sonoo"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.out.println(s1.id+<span class="string">"&nbsp;"</span>+s1.name);<span class="comment">//printing&nbsp;members&nbsp;with&nbsp;a&nbsp;white&nbsp;space</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStudent2" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>101 Sonoo
+</pre>
+</div>
+<p>We can also create multiple objects and store information in it through reference variable.</p>
+<p class="filename">File: TestStudent3.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;TestStudent3{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//Creating&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Student&nbsp;s1=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Student&nbsp;s2=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="comment">//Initializing&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;s1.id=<span class="number">101</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;s1.name=<span class="string">"Sonoo"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;s2.id=<span class="number">102</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;s2.name=<span class="string">"Amit"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="comment">//Printing&nbsp;data</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;System.out.println(s1.id+<span class="string">"&nbsp;"</span>+s1.name);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;System.out.println(s2.id+<span class="string">"&nbsp;"</span>+s2.name);&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStudent3" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>101 Sonoo
+102 Amit
+</pre>
+</div>
+<h3 class="h3ex">2) Object and Class Example: Initialization through method</h3>
+<p>In this example, we are creating the two objects of Student class and initializing the value to these objects by invoking the insertRecord method. Here, we are displaying the state (data) of the objects by invoking the displayInformation() method.</p>
+<p class="filename">File: TestStudent4.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Student{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;rollno;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;insertRecord(<span class="keyword">int</span>&nbsp;r,&nbsp;String&nbsp;n){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;rollno=r;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;name=n;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;displayInformation(){System.out.println(rollno+<span class="string">"&nbsp;"</span>+name);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;TestStudent4{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Student&nbsp;s1=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Student&nbsp;s2=<span class="keyword">new</span>&nbsp;Student();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;s1.insertRecord(<span class="number">111</span>,<span class="string">"Karan"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;s2.insertRecord(<span class="number">222</span>,<span class="string">"Aryan"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;s1.displayInformation();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;s2.displayInformation();&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestStudent4" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>111 Karan
+222 Aryan</pre>
+</div>
+<p>As you can see in the above figure, object gets the memory in heap memory area. The reference variable refers to the object allocated in the heap memory area. Here, s1 and s2 both are reference variables that refer to the objects allocated in memory.</p>
+<hr />
+<h3 class="h3ex">3) Object and Class Example: Initialization through a constructor</h3>
+<p>We will learn about constructors in Java later.</p>
+<hr />
+<h3 class="h3ex">Object and Class Example: Employee</h3>
+<p>Let's see an example where we are maintaining records of employees.</p>
+<p class="filename">File: TestEmployee.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Employee{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;id;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;salary;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;insert(<span class="keyword">int</span>&nbsp;i,&nbsp;String&nbsp;n,&nbsp;<span class="keyword">float</span>&nbsp;s)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id=i;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name=n;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salary=s;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;display(){System.out.println(id+<span class="string">"&nbsp;"</span>+name+<span class="string">"&nbsp;"</span>+salary);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;TestEmployee&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Employee&nbsp;e1=<span class="keyword">new</span>&nbsp;Employee();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Employee&nbsp;e2=<span class="keyword">new</span>&nbsp;Employee();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Employee&nbsp;e3=<span class="keyword">new</span>&nbsp;Employee();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;e1.insert(<span class="number">101</span>,<span class="string">"ajeet"</span>,<span class="number">45000</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;e2.insert(<span class="number">102</span>,<span class="string">"irfan"</span>,<span class="number">25000</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;e3.insert(<span class="number">103</span>,<span class="string">"nakul"</span>,<span class="number">55000</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;e1.display();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;e2.display();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;e3.display();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestEmployee" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>101 ajeet 45000.0
+102 irfan 25000.0
+103 nakul 55000.0
+</pre>
+</div>
+<h3 class="h3ex">Object and Class Example: Rectangle</h3>
+<p>There is given another example that maintains the records of Rectangle class.</p>
+<p class="filename">File: TestRectangle1.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Rectangle{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;length;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">int</span>&nbsp;width;&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;insert(<span class="keyword">int</span>&nbsp;l,&nbsp;<span class="keyword">int</span>&nbsp;w){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;length=l;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;width=w;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;calculateArea(){System.out.println(length*width);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;TestRectangle1{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Rectangle&nbsp;r1=<span class="keyword">new</span>&nbsp;Rectangle();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Rectangle&nbsp;r2=<span class="keyword">new</span>&nbsp;Rectangle();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;r1.insert(<span class="number">11</span>,<span class="number">5</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;r2.insert(<span class="number">3</span>,<span class="number">15</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;r1.calculateArea();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;r2.calculateArea();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestRectangle1" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>55 
+45     
+</pre>
+</div>
+<h2 class="h2">What are the different ways to create an object in Java?</h2>
+<p>There are many ways to create an object in java. They are:</p>
+<ul class="points">
+<li>By new keyword</li>
+<li>By newInstance() method</li>
+<li>By clone() method</li>
+<li>By deserialization</li>
+<li>By factory method etc.</li>
+</ul>
+<p>We will learn these ways to create object later.</p>
+<h2 class="h2">Anonymous object</h2>
+<p>Anonymous simply means nameless. An object which has no reference is known as an anonymous object. It can be used at the time of object creation only.</p>
+<p>If you have to use an object only once, an anonymous object is a good approach. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Calculation();<span class="comment">//anonymous&nbsp;object</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Calling method through a reference:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Calculation&nbsp;c=<span class="keyword">new</span>&nbsp;Calculation();&nbsp;&nbsp;</li>
+<li class="">c.fact(<span class="number">5</span>);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Calling method through an anonymous object</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">new</span>&nbsp;Calculation().fact(<span class="number">5</span>);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Let's see the full example of an anonymous object in Java.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;Calculation{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;fact(<span class="keyword">int</span>&nbsp;&nbsp;n){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;fact=<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">1</span>;i&lt;=n;i++){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;fact=fact*i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;System.out.println(<span class="string">"factorial&nbsp;is&nbsp;"</span>+fact);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">new</span>&nbsp;Calculation().fact(<span class="number">5</span>);<span class="comment">//calling&nbsp;method&nbsp;with&nbsp;anonymous&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Factorial is 120
+</pre>
+</div>
+<h3 class="h2">Creating multiple objects by one type only</h3>
+<p>We can create multiple objects by one type only as we do in case of primitives.</p>
+<p>Initialization of primitive variables:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">int</span>&nbsp;a=<span class="number">10</span>,&nbsp;b=<span class="number">20</span>;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Initialization of refernce variables:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Rectangle&nbsp;r1=<span class="keyword">new</span>&nbsp;Rectangle(),&nbsp;r2=<span class="keyword">new</span>&nbsp;Rectangle();<span class="comment">//creating&nbsp;two&nbsp;objects</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Let's see the example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;illustrate&nbsp;the&nbsp;use&nbsp;of&nbsp;Rectangle&nbsp;class&nbsp;which</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//has&nbsp;length&nbsp;and&nbsp;width&nbsp;data&nbsp;members</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Rectangle{&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">int</span>&nbsp;length;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">int</span>&nbsp;width;&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;insert(<span class="keyword">int</span>&nbsp;l,<span class="keyword">int</span>&nbsp;w){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;length=l;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;width=w;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">void</span>&nbsp;calculateArea(){System.out.println(length*width);}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;TestRectangle2{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[]){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Rectangle&nbsp;r1=<span class="keyword">new</span>&nbsp;Rectangle(),r2=<span class="keyword">new</span>&nbsp;Rectangle();<span class="comment">//creating&nbsp;two&nbsp;objects</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;r1.insert(<span class="number">11</span>,<span class="number">5</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;r2.insert(<span class="number">3</span>,<span class="number">15</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;r1.calculateArea();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;r2.calculateArea();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestRectangle2" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>55 
+45     
+</pre>
+</div>
+<h3 class="h3ex">Real World Example: Account</h3>
+<p class="filename">File: TestAccount.java</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//Java&nbsp;Program&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;working&nbsp;of&nbsp;a&nbsp;banking-system</span>&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//where&nbsp;we&nbsp;deposit&nbsp;and&nbsp;withdraw&nbsp;amount&nbsp;from&nbsp;our&nbsp;account.</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//Creating&nbsp;an&nbsp;Account&nbsp;class&nbsp;which&nbsp;has&nbsp;deposit()&nbsp;and&nbsp;withdraw()&nbsp;methods</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;Account{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;acc_no;&nbsp;&nbsp;</li>
+<li class="">String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">float</span>&nbsp;amount;&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//Method&nbsp;to&nbsp;initialize&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;insert(<span class="keyword">int</span>&nbsp;a,String&nbsp;n,<span class="keyword">float</span>&nbsp;amt){&nbsp;&nbsp;</li>
+<li class="">acc_no=a;&nbsp;&nbsp;</li>
+<li class="alt">name=n;&nbsp;&nbsp;</li>
+<li class="">amount=amt;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//deposit&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;deposit(<span class="keyword">float</span>&nbsp;amt){&nbsp;&nbsp;</li>
+<li class="">amount=amount+amt;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(amt+<span class="string">"&nbsp;deposited"</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//withdraw&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;withdraw(<span class="keyword">float</span>&nbsp;amt){&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(amount&lt;amt){&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"Insufficient&nbsp;Balance"</span>);&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class="">amount=amount-amt;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(amt+<span class="string">"&nbsp;withdrawn"</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//method&nbsp;to&nbsp;check&nbsp;the&nbsp;balance&nbsp;of&nbsp;the&nbsp;account</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;checkBalance(){System.out.println(<span class="string">"Balance&nbsp;is:&nbsp;"</span>+amount);}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//method&nbsp;to&nbsp;display&nbsp;the&nbsp;values&nbsp;of&nbsp;an&nbsp;object</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;display(){System.out.println(acc_no+<span class="string">"&nbsp;"</span>+name+<span class="string">"&nbsp;"</span>+amount);}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//Creating&nbsp;a&nbsp;test&nbsp;class&nbsp;to&nbsp;deposit&nbsp;and&nbsp;withdraw&nbsp;amount</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;TestAccount{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args){&nbsp;&nbsp;</li>
+<li class="">Account&nbsp;a1=<span class="keyword">new</span>&nbsp;Account();&nbsp;&nbsp;</li>
+<li class="alt">a1.insert(<span class="number">832345</span>,<span class="string">"Ankit"</span>,<span class="number">1000</span>);&nbsp;&nbsp;</li>
+<li class="">a1.display();&nbsp;&nbsp;</li>
+<li class="alt">a1.checkBalance();&nbsp;&nbsp;</li>
+<li class="">a1.deposit(<span class="number">40000</span>);&nbsp;&nbsp;</li>
+<li class="alt">a1.checkBalance();&nbsp;&nbsp;</li>
+<li class="">a1.withdraw(<span class="number">15000</span>);&nbsp;&nbsp;</li>
+<li class="alt">a1.checkBalance();&nbsp;&nbsp;</li>
+<li class="">}}&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><span class="testit"><a href="https://www.javatpoint.com/opr/test.jsp?filename=TestAccount" target="_blank">Test it Now</a></span></p>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>832345 Ankit 1000.0
+Balance is: 1000.0
+40000.0 deposited
+Balance is: 41000.0
+15000.0 withdrawn
+Balance is: 26000.0</pre>
+</div>

@@ -1,0 +1,107 @@
+<h1 class="h1">Kotlin for Loop</h1>
+<p>Kotlin&nbsp;<strong>for</strong>&nbsp;loop is used to&nbsp;<em>iterate</em>&nbsp;a part of program several times. It iterates through arrays, ranges, collections, or anything that provides for iterate. Kotlin for loop is equivalent to the&nbsp;<strong>foreach</strong>&nbsp;loop in languages like C#.</p>
+<p><strong>Syntax of for loop in Kotlin:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">for</span>&nbsp;(item&nbsp;in&nbsp;collection){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//body&nbsp;of&nbsp;loop</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Iterate through array</h3>
+<p>Let's see a simple example of iterating the elements of array.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args&nbsp;:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;marks&nbsp;=&nbsp;arrayOf(<span class="number">80</span>,<span class="number">85</span>,<span class="number">60</span>,<span class="number">90</span>,<span class="number">70</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(item&nbsp;in&nbsp;marks){&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(item)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>80
+85
+60
+90
+70
+</pre>
+</div>
+<p>If the body of for loop contains only one single line of statement, it is not necessary to enclose within curly braces&nbsp;<strong>{}.</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args&nbsp;:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;marks&nbsp;=&nbsp;arrayOf(<span class="number">80</span>,<span class="number">85</span>,<span class="number">60</span>,<span class="number">90</span>,<span class="number">70</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(item&nbsp;in&nbsp;marks)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(item)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>The elements of an array are iterated on the basis of&nbsp;<em>indices</em>&nbsp;(index) of array. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args&nbsp;:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;marks&nbsp;=&nbsp;arrayOf(<span class="number">80</span>,<span class="number">85</span>,<span class="number">60</span>,<span class="number">90</span>,<span class="number">70</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(item&nbsp;in&nbsp;marks.indices)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(<span class="string">"marks[$item]:&nbsp;"</span>+&nbsp;marks[item])&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>marks[0]: 80
+marks[1]: 85
+marks[2]: 60
+marks[3]: 90
+marks[4]: 70
+</pre>
+</div>
+<h3 class="h3">Iterate through range</h3>
+<p>Let's see an example of iterating the elements of range.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;main(args&nbsp;:&nbsp;Array&lt;String&gt;)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;1..5)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">5</span>)&nbsp;print(i)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;5..1)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">5</span>..<span class="number">1</span>)&nbsp;print(i)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;prints&nbsp;nothing</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;5&nbsp;downTo&nbsp;1)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">5</span>&nbsp;downTo&nbsp;<span class="number">1</span>)&nbsp;print(i)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;5&nbsp;downTo&nbsp;2)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">5</span>&nbsp;downTo&nbsp;<span class="number">2</span>)&nbsp;print(i)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;println()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;1..5&nbsp;step&nbsp;2)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">1</span>..<span class="number">5</span>&nbsp;step&nbsp;<span class="number">2</span>)&nbsp;print(i)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println()&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;print(<span class="string">"for&nbsp;(i&nbsp;in&nbsp;5&nbsp;downTo&nbsp;1&nbsp;step&nbsp;2)&nbsp;print(i)&nbsp;=&nbsp;"</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;in&nbsp;<span class="number">5</span>&nbsp;downTo&nbsp;<span class="number">1</span>&nbsp;step&nbsp;<span class="number">2</span>)&nbsp;print(i)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>for (i in 1..5) print(i) = 12345
+for (i in 5..1) print(i) = 
+for (i in 5 downTo 1) print(i) = 54321
+for (i in 5 downTo 2) print(i) = 5432
+for (i in 1..5 step 2) print(i) = 135
+for (i in 5 downTo 1 step 2) print(i) = 531</pre>
+</div>

@@ -1,0 +1,355 @@
+<h1 class="h1">Method in Java</h1>
+<p>In general, a&nbsp;<strong>method</strong>&nbsp;is a way to perform some task. Similarly, the&nbsp;<strong>method in Java</strong>&nbsp;is a collection of instructions that performs a specific task. It provides the reusability of code. We can also easily modify code using&nbsp;<strong>methods</strong>. In this section, we will learn&nbsp;<strong>what is a method in Java, types of methods, method declaration,</strong>&nbsp;and&nbsp;<strong>how to call a method in Java</strong>.</p>
+<h2 class="h2">What is a method in Java?</h2>
+<p>A&nbsp;<strong>method</strong>&nbsp;is a block of code or collection of statements or a set of code grouped together to perform a certain task or operation. It is used to achieve the&nbsp;<strong>reusability</strong>&nbsp;of code. We write a method once and use it many times. We do not require to write code again and again. It also provides the&nbsp;<strong>easy modification</strong>&nbsp;and&nbsp;<strong>readability</strong>&nbsp;of code, just by adding or removing a chunk of code. The method is executed only when we call or invoke it.</p>
+<p>The most important method in Java is the&nbsp;<strong>main()</strong>&nbsp;method. If you want to read more about the main() method, go through the link&nbsp;<a href="https://www.javatpoint.com/java-main-method">https://www.javatpoint.com/java-main-method</a>.</p>
+<h3 class="h3">Method Declaration</h3>
+<p>The method declaration provides information about method attributes, such as visibility, return-type, name, and arguments. It has six components that are known as&nbsp;<strong>method header</strong>, as we have shown in the following figure.</p>
+<p><strong>Method Signature:</strong>&nbsp;Every method has a method signature. It is a part of the method declaration. It includes the&nbsp;<strong>method name</strong>&nbsp;and&nbsp;<strong>parameter list</strong>.</p>
+<p><strong>Access Specifier:</strong>&nbsp;Access specifier or modifier is the access type of the method. It specifies the visibility of the method. Java provides&nbsp;<strong>four</strong>&nbsp;types of access specifier:</p>
+<ul class="points">
+<li><strong>Public:</strong>&nbsp;The method is accessible by all classes when we use public specifier in our application.</li>
+<li><strong>Private:</strong>&nbsp;When we use a private access specifier, the method is accessible only in the classes in which it is defined.</li>
+<li><strong>Protected:</strong>&nbsp;When we use protected access specifier, the method is accessible within the same package or subclasses in a different package.</li>
+<li><strong>Default:</strong>&nbsp;When we do not use any access specifier in the method declaration, Java uses default access specifier by default. It is visible only from the same package only.</li>
+</ul>
+<p><strong>Return Type:</strong>&nbsp;Return type is a data type that the method returns. It may have a primitive data type, object, collection, void, etc. If the method does not return anything, we use void keyword.</p>
+<p><strong>Method Name:</strong>&nbsp;It is a unique name that is used to define the name of a method. It must be corresponding to the functionality of the method. Suppose, if we are creating a method for subtraction of two numbers, the method name must be&nbsp;<strong>subtraction().</strong>&nbsp;A method is invoked by its name.</p>
+<p><strong>Parameter List:</strong>&nbsp;It is the list of parameters separated by a comma and enclosed in the pair of parentheses. It contains the data type and variable name. If the method has no parameter, left the parentheses blank.</p>
+<p><strong>Method Body:</strong>&nbsp;It is a part of the method declaration. It contains all the actions to be performed. It is enclosed within the pair of curly braces.</p>
+<h2 class="h2">Naming a Method</h2>
+<p>While defining a method, remember that the method name must be a&nbsp;<strong>verb</strong>&nbsp;and start with a&nbsp;<strong>lowercase</strong>&nbsp;letter. If the method name has more than two words, the first name must be a verb followed by adjective or noun. In the multi-word method name, the first letter of each word must be in&nbsp;<strong>uppercase</strong>&nbsp;except the first word. For example:</p>
+<p><strong>Single-word method name:</strong>&nbsp;sum(), area()</p>
+<p><strong>Multi-word method name:</strong>&nbsp;areaOfCircle(), stringComparision()</p>
+<p>It is also possible that a method has the same name as another method name in the same class, it is known as&nbsp;<strong>method overloading</strong>.</p>
+<h2 class="h2">Types of Method</h2>
+<p>There are two types of methods in Java:</p>
+<ul class="points">
+<li>Predefined Method</li>
+<li>User-defined Method</li>
+</ul>
+<h3 class="h3">Predefined Method</h3>
+<p>In Java, predefined methods are the method that is already defined in the Java class libraries is known as predefined methods. It is also known as the&nbsp;<strong>standard library method</strong>&nbsp;or&nbsp;<strong>built-in method</strong>. We can directly use these methods just by calling them in the program at any point. Some pre-defined methods are&nbsp;<strong>length(), equals(), compareTo(), sqrt(),</strong>&nbsp;etc. When we call any of the predefined methods in our program, a series of codes related to the corresponding method runs in the background that is already stored in the library.</p>
+<p>Each and every predefined method is defined inside a class. Such as&nbsp;<strong>print()</strong>&nbsp;method is defined in the&nbsp;<strong>java.io.PrintStream</strong>&nbsp;class. It prints the statement that we write inside the method. For example,&nbsp;<strong>print("Java")</strong>, it prints Java on the console.</p>
+<p>Let's see an example of the predefined method.</p>
+<p><strong>Demo.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Demo&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//&nbsp;using&nbsp;the&nbsp;max()&nbsp;method&nbsp;of&nbsp;Math&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="">System.out.print(<span class="string">"The&nbsp;maximum&nbsp;number&nbsp;is:&nbsp;"</span>&nbsp;+&nbsp;Math.max(<span class="number">9</span>,<span class="number">7</span>));&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>The maximum number is: 9
+</pre>
+</div>
+<p>In the above example, we have used three predefined methods&nbsp;<strong>main(), print(),</strong>&nbsp;and&nbsp;<strong>max()</strong>. We have used these methods directly without declaration because they are predefined. The print() method is a method of&nbsp;<strong>PrintStream</strong>&nbsp;class that prints the result on the console. The max() method is a method of the&nbsp;<strong>Math</strong>&nbsp;class that returns the greater of two numbers.</p>
+<p>We can also see the method signature of any predefined method by using the link&nbsp;<a href="https://docs.oracle.com/" target="_blank" rel="nofollow">https://docs.oracle.com/</a>. When we go through the link and see the max() method signature, we find the following:</p>
+<p>In the above method signature, we see that the method signature has access specifier&nbsp;<strong>public</strong>, non-access modifier&nbsp;<strong>static</strong>, return type&nbsp;<strong>int</strong>, method name&nbsp;<strong>max(),</strong>&nbsp;parameter list&nbsp;<strong>(int a, int b).</strong>&nbsp;In the above example, instead of defining the method, we have just invoked the method. This is the advantage of a predefined method. It makes programming less complicated.</p>
+<p>Similarly, we can also see the method signature of the print() method.</p>
+<h3 class="h3">User-defined Method</h3>
+<p>The method written by the user or programmer is known as&nbsp;<strong>a user-defined</strong>&nbsp;method. These methods are modified according to the requirement.</p>
+<h3 class="h4">How to Create a User-defined Method</h3>
+<p>Let's create a user defined method that checks the number is even or odd. First, we will define the method.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="comment">//user&nbsp;defined&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;findEvenOdd(<span class="keyword">int</span>&nbsp;num)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//method&nbsp;body</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>(num%<span class="number">2</span>==<span class="number">0</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="">System.out.println(num+<span class="string">"&nbsp;is&nbsp;even"</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">System.out.println(num+<span class="string">"&nbsp;is&nbsp;odd"</span>);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>We have defined the above method named findevenodd(). It has a parameter&nbsp;<strong>num</strong>&nbsp;of type int. The method does not return any value that's why we have used void. The method body contains the steps to check the number is even or odd. If the number is even, it prints the number&nbsp;<strong>is even</strong>, else prints the number&nbsp;<strong>is odd</strong>.</p>
+<h3 class="h4">How to Call or Invoke a User-defined Method</h3>
+<p>Once we have defined a method, it should be called. The calling of a method in a program is simple. When we call or invoke a user-defined method, the program control transfer to the called method.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.Scanner;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;EvenOdd&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main&nbsp;(String&nbsp;args[])&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//creating&nbsp;Scanner&nbsp;class&nbsp;object&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">Scanner&nbsp;scan=<span class="keyword">new</span>&nbsp;Scanner(System.in);&nbsp;&nbsp;</li>
+<li class="">System.out.print(<span class="string">"Enter&nbsp;the&nbsp;number:&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//reading&nbsp;value&nbsp;from&nbsp;the&nbsp;user</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;num=scan.nextInt();&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//method&nbsp;calling</span>&nbsp;&nbsp;</li>
+<li class="">findEvenOdd(num);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above code snippet, as soon as the compiler reaches at line&nbsp;<strong>findEvenOdd(num),</strong>&nbsp;the control transfer to the method and gives the output accordingly.</p>
+<p>Let's combine both snippets of codes in a single program and execute it.</p>
+<p><strong>EvenOdd.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.Scanner;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;EvenOdd&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main&nbsp;(String&nbsp;args[])&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//creating&nbsp;Scanner&nbsp;class&nbsp;object&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">Scanner&nbsp;scan=<span class="keyword">new</span>&nbsp;Scanner(System.in);&nbsp;&nbsp;</li>
+<li class="">System.out.print(<span class="string">"Enter&nbsp;the&nbsp;number:&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//reading&nbsp;value&nbsp;from&nbsp;user</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;num=scan.nextInt();&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//method&nbsp;calling</span>&nbsp;&nbsp;</li>
+<li class="">findEvenOdd(num);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//user&nbsp;defined&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;findEvenOdd(<span class="keyword">int</span>&nbsp;num)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//method&nbsp;body</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(num%<span class="number">2</span>==<span class="number">0</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(num+<span class="string">"&nbsp;is&nbsp;even"</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(num+<span class="string">"&nbsp;is&nbsp;odd"</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output 1:</strong></p>
+<div class="codeblock3">
+<pre>Enter the number: 12
+12 is even
+</pre>
+</div>
+<p><strong>Output 2:</strong></p>
+<div class="codeblock3">
+<pre>Enter the number: 99
+99 is odd
+</pre>
+</div>
+<p>Let's see another program that return a value to the calling method.</p>
+<p>In the following program, we have defined a method named&nbsp;<strong>add()</strong>&nbsp;that sum up the two numbers. It has two parameters n1 and n2 of integer type. The values of n1 and n2 correspond to the value of a and b, respectively. Therefore, the method adds the value of a and b and store it in the variable s and returns the sum.</p>
+<p><strong>Addition.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Addition&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;a&nbsp;=&nbsp;<span class="number">19</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;b&nbsp;=&nbsp;<span class="number">5</span>;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//method&nbsp;calling</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;c&nbsp;=&nbsp;add(a,&nbsp;b);&nbsp;&nbsp;&nbsp;<span class="comment">//a&nbsp;and&nbsp;b&nbsp;are&nbsp;actual&nbsp;parameters</span>&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"The&nbsp;sum&nbsp;of&nbsp;a&nbsp;and&nbsp;b&nbsp;is=&nbsp;"</span>&nbsp;+&nbsp;c);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//user&nbsp;defined&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;add(<span class="keyword">int</span>&nbsp;n1,&nbsp;<span class="keyword">int</span>&nbsp;n2)&nbsp;&nbsp;&nbsp;<span class="comment">//n1&nbsp;and&nbsp;n2&nbsp;are&nbsp;formal&nbsp;parameters</span>&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;s;&nbsp;&nbsp;</li>
+<li class="alt">s=n1+n2;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;s;&nbsp;<span class="comment">//returning&nbsp;the&nbsp;sum</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>The sum of a and b is= 24
+</pre>
+</div>
+<h3 class="h3">Static Method</h3>
+<p>A method that has static keyword is known as static method. In other words, a method that belongs to a class rather than an instance of a class is known as a static method. We can also create a static method by using the keyword&nbsp;<strong>static</strong>&nbsp;before the method name.</p>
+<p>The main advantage of a static method is that we can call it without creating an object. It can access static data members and also change the value of it. It is used to create an instance method. It is invoked by using the class name. The best example of a static method is the&nbsp;<strong>main()</strong>&nbsp;method.</p>
+<h3 class="h4">Example of static method</h3>
+<p><strong>Display.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Display&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">show();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;show()&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"It&nbsp;is&nbsp;an&nbsp;example&nbsp;of&nbsp;static&nbsp;method."</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>It is an example of a static method.
+</pre>
+</div>
+<h3 class="h3">Instance Method</h3>
+<p>The method of the class is known as an&nbsp;<strong>instance method</strong>. It is a&nbsp;<strong>non-static</strong>&nbsp;method defined in the class. Before calling or invoking the instance method, it is necessary to create an object of its class. Let's see an example of an instance method.</p>
+<p><strong>InstanceMethodExample.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;InstanceMethodExample&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;[]&nbsp;args)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//Creating&nbsp;an&nbsp;object&nbsp;of&nbsp;the&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="">InstanceMethodExample&nbsp;obj&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;InstanceMethodExample();&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//invoking&nbsp;instance&nbsp;method&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"The&nbsp;sum&nbsp;is:&nbsp;"</span>+obj.add(<span class="number">12</span>,&nbsp;<span class="number">13</span>));&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;s;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//user-defined&nbsp;method&nbsp;because&nbsp;we&nbsp;have&nbsp;not&nbsp;used&nbsp;static&nbsp;keyword</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">int</span>&nbsp;add(<span class="keyword">int</span>&nbsp;a,&nbsp;<span class="keyword">int</span>&nbsp;b)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">s&nbsp;=&nbsp;a+b;&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//returning&nbsp;the&nbsp;sum</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;s;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>The sum is: 25
+</pre>
+</div>
+<p>There are two types of instance method:</p>
+<ul class="points">
+<li><strong>Accessor Method</strong></li>
+<li><strong>Mutator Method</strong></li>
+</ul>
+<p><strong>Accessor Method:</strong>&nbsp;The method(s) that reads the instance variable(s) is known as the accessor method. We can easily identify it because the method is prefixed with the word&nbsp;<strong>get</strong>. It is also known as&nbsp;<strong>getters</strong>. It returns the value of the private field. It is used to get the value of the private field.</p>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">int</span>&nbsp;getId()&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">return</span>&nbsp;Id;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Mutator Method:</strong>&nbsp;The method(s) read the instance variable(s) and also modify the values. We can easily identify it because the method is prefixed with the word&nbsp;<strong>set</strong>. It is also known as&nbsp;<strong>setters</strong>&nbsp;or&nbsp;<strong>modifiers</strong>. It does not return anything. It accepts a parameter of the same data type that depends on the field. It is used to set the value of the private field.</p>
+<p><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">void</span>&nbsp;setRoll(<span class="keyword">int</span>&nbsp;roll)&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">this</span>.roll&nbsp;=&nbsp;roll;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h4">Example of accessor and mutator method</h3>
+<p><strong>Student.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Student&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">private</span>&nbsp;<span class="keyword">int</span>&nbsp;roll;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">private</span>&nbsp;String&nbsp;name;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">int</span>&nbsp;getRoll()&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//accessor&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">return</span>&nbsp;roll;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">void</span>&nbsp;setRoll(<span class="keyword">int</span>&nbsp;roll)&nbsp;<span class="comment">//mutator&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">this</span>.roll&nbsp;=&nbsp;roll;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;String&nbsp;getName()&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">return</span>&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">void</span>&nbsp;setName(String&nbsp;name)&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">this</span>.name&nbsp;=&nbsp;name;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">void</span>&nbsp;display()&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Roll&nbsp;no.:&nbsp;"</span>+roll);&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"Student&nbsp;name:&nbsp;"</span>+name);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Abstract Method</h3>
+<p>The method that does not has method body is known as abstract method. In other words, without an implementation is known as abstract method. It always declares in the&nbsp;<strong>abstract class</strong>. It means the class itself must be abstract if it has abstract method. To create an abstract method, we use the keyword&nbsp;<strong>abstract</strong>.</p>
+<p><strong>Syntax</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">abstract</span>&nbsp;<span class="keyword">void</span>&nbsp;method_name();&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h4">Example of abstract method</h3>
+<p><strong>Demo.java</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">abstract</span>&nbsp;<span class="keyword">class</span>&nbsp;Demo&nbsp;<span class="comment">//abstract&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//abstract&nbsp;method&nbsp;declaration</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">abstract</span>&nbsp;<span class="keyword">void</span>&nbsp;display();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;MyClass&nbsp;<span class="keyword">extends</span>&nbsp;Demo&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//method&nbsp;impelmentation</span>&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;display()&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">System.out.println(<span class="string">"Abstract&nbsp;method?"</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[])&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//creating&nbsp;object&nbsp;of&nbsp;abstract&nbsp;class</span>&nbsp;&nbsp;</li>
+<li class="">Demo&nbsp;obj&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;MyClass();&nbsp;&nbsp;</li>
+<li class="alt"><span class="comment">//invoking&nbsp;abstract&nbsp;method</span>&nbsp;&nbsp;</li>
+<li class="">obj.display();&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Abstract method...
+</pre>
+</div>
+<h3 class="h3">Factory method</h3>
+<p>It is a method that returns an object to the class to which it belongs. All static methods are factory methods. For example,&nbsp;<strong>NumberFormat obj = NumberFormat.getNumberInstance();</strong></p>
+<hr />

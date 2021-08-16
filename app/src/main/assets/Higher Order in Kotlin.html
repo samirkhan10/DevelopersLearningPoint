@@ -1,0 +1,41 @@
+<h1 class="h1">Higher order function</h1>
+<p><strong>High order function (Higher level function)</strong>&nbsp;is a function which accepts function as a parameter or returns a function or can do both. Means, instead of passing Int, String, or other types as a parameter in a function we can pass a function as a parameter in other function.</p>
+<p><strong>Let's see the following example:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;myFun(org:&nbsp;String,portal:&nbsp;String,&nbsp;fn:&nbsp;(String,String)&nbsp;-&gt;&nbsp;String):&nbsp;Unit&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;fn(org,portal)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In this above example, we defined a function myFun() with three parameters. The first and second parameter take String and the third parameter as a type of function from String to String. The parameter String to String type means function takes string as an input and returns output as string types.</p>
+<p>To call this above function, we can pass function literal or lambda. For example:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">fun</span>&nbsp;myFun(org:&nbsp;String,portal:&nbsp;String,&nbsp;fn:&nbsp;(String,String)&nbsp;-&gt;&nbsp;String):&nbsp;Unit&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;result&nbsp;=&nbsp;fn(org,portal)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;println(result)&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">fun</span>&nbsp;main(args:&nbsp;Array&lt;String&gt;){&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;fn:(String,String)-&gt;String={org,portal-&gt;<span class="string">"$org&nbsp;develop&nbsp;$portal"</span>}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;myFun(<span class="string">"sssit.org"</span>,<span class="string">"javatpoint.com"</span>,fn)&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>sssit.org develop javatpoint.com
+</pre>
+</div>
+<p>The above higher order function can also be called in another ways as below mention code in main() function:</p>
+<div class="codeblock3">
+<pre>myFun("sssit.org","javatpoint.com",{org,portal-&gt;"$org develop $portal"})</pre>
+</div>

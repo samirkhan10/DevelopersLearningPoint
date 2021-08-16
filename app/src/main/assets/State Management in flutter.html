@@ -1,0 +1,139 @@
+<h1 class="h1">Flutter State Management</h1>
+<p>In this section, we are going to discuss state management and how we can handle it in the Flutter. We know that in Flutter, everything is a widget. The widget can be classified into two categories, one is a&nbsp;<strong>Stateless widget,</strong>&nbsp;and another is a&nbsp;<strong>Stateful widget.</strong>&nbsp;The Stateless widget does not have any internal state. It means once it is built, we cannot change or modify it until they are initialized again. On the other hand, a Stateful widget is dynamic and has a state. It means we can modify it easily throughout its lifecycle without reinitialized it again.</p>
+<h2 class="h2">What is State?</h2>
+<p>A state is information that can be&nbsp;<strong>read</strong>&nbsp;when the widget is built and might&nbsp;<strong>change or modified</strong>&nbsp;over a lifetime of the app. If you want to change your widget, you need to update the state object, which can be done by using the setState() function available for Stateful widgets. The&nbsp;<strong>setState()</strong>&nbsp;function allows us to set the properties of the state&nbsp;<strong>object</strong>&nbsp;that triggers a redraw of the UI.</p>
+<p>The state management is one of the most popular and necessary processes in the lifecycle of an application. According to official documentation, Flutter is declarative. It means Flutter builds its UI by reflecting the current state of your app. The following figure explains it more clearly where you can build a UI from the application state.</p>
+<p>Let us take a simple example to understand the concept of state management. Suppose you have created a list of customers or products in your app. Now, assume you have added a new customer or product dynamically in that list. Then, there is a need to refresh the list to view the newly added item into the record. Thus, whenever you add a new item, you need to refresh the list. This type of programming requires state management to handle such a situation to improve performance. It is because every time you make a change or update the same, the state gets refreshed.</p>
+<p>In&nbsp;<a href="https://www.javatpoint.com/flutter">Flutter</a>, the state management categorizes into two conceptual types, which are given below:</p>
+<ol class="points">
+<li>Ephemeral State</li>
+<li>App State</li>
+</ol>
+<h3 class="h3">Ephemeral State</h3>
+<p>This state is also known as UI State or local state. It is a type of state which is related to the&nbsp;<strong>specific widget,</strong>&nbsp;or you can say that it is a state that contains in a single widget. In this kind of state, you do not need to use state management techniques. The common example of this state is&nbsp;<strong>Text Field</strong>.</p>
+<p class="pq"><strong>Example</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;MyHomepage&nbsp;<span class="keyword">extends</span>&nbsp;StatefulWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;MyHomepageState&nbsp;createState()&nbsp;=&gt;&nbsp;MyHomepageState();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">class</span>&nbsp;MyHomepageState&nbsp;<span class="keyword">extends</span>&nbsp;State&lt;MyHomepage&gt;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;String&nbsp;_name&nbsp;=&nbsp;<span class="string">"Peter"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;RaisedButton(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(_name),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPressed:&nbsp;()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_name&nbsp;=&nbsp;_name&nbsp;==&nbsp;<span class="string">"Peter"</span>&nbsp;?&nbsp;<span class="string">"John"</span>&nbsp;:&nbsp;<span class="string">"Peter"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example, the&nbsp;<strong>_name</strong>&nbsp;is an ephemeral state. Here, only the setState() function inside the StatefulWidget's class can access the _name. The build method calls a setState() function, which does the modification in the state variables. When this method is executed, the widget object is replaced with the new one, which gives the modified variable value.</p>
+<h3 class="h3">App State</h3>
+<p>It is different from the ephemeral state. It is a type of state that we want to&nbsp;<strong>share</strong>&nbsp;across various parts of our app and want to keep between user sessions. Thus, this type of state can be used globally. Sometimes it is also known as application state or shared state. Some of the examples of this state are User preferences, Login info, notifications in a social networking app, the shopping cart in an e-commerce app, read/unread state of articles in a news app, etc.</p>
+<p>The following diagram explains the difference between the ephemeral state and the app state more appropriately.</p>
+<p>The simplest example of app state management can be learned by using the&nbsp;<strong>provider package.</strong>&nbsp;The state management with the provider is easy to understand and requires less coding. A provider is a&nbsp;<strong>third-party</strong>&nbsp;library. Here, we need to understand three main concepts to use this library.</p>
+<ol class="points">
+<li>ChangeNotifier</li>
+<li>ChangeNotifierProvider</li>
+<li>Consumer</li>
+</ol>
+<h3 class="h4">ChangeNotifier</h3>
+<p>ChangeNotifier is a simple class, which provides change notification to its listeners. It is easy to understand, implement, and optimized for a small number of listeners. It is used for the listener to observe a model for changes. In this, we only use the&nbsp;<strong>notifyListener()</strong>&nbsp;method to inform the listeners.</p>
+<p>For example, let us define a model based on ChangeNotifier. In this model, the&nbsp;<strong>Counter</strong>&nbsp;is extended with ChangeNotifier, which is used to notify its listeners when we call notifyListeners(). It is the only method that needs to implement in a ChangeNotifier model. In this example, we declared two functions the&nbsp;<strong>increment</strong>&nbsp;and&nbsp;<strong>decrement,</strong>&nbsp;which are used to increase and decrease the value. We can call notifyListeners() method any time the model changes in a way that might change your app's UI.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;<span class="string">'package:flutter/material.dart'</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">class</span>&nbsp;Counter&nbsp;with&nbsp;ChangeNotifier&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;_counter;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;Counter(<span class="keyword">this</span>._counter);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;getCounter()&nbsp;=&gt;&nbsp;_counter;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;setCounter(<span class="keyword">int</span>&nbsp;counter)&nbsp;=&gt;&nbsp;_counter&nbsp;=&nbsp;counter;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;increment()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;_counter++;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;notifyListeners();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;decrement()&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;_counter--;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;notifyListeners();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h4">ChangeNotifierProvider</h3>
+<p>ChangeNotifierProvider is the widget that provides an&nbsp;<strong>instance</strong>&nbsp;of a ChangeNotifier to its descendants. It comes from the provider package. The following code snippets help to understand the concept of ChangeNotifierProvider.</p>
+<p>Here, we have defined a&nbsp;<strong>builder</strong>&nbsp;who will create a new instance of the&nbsp;<strong>Counter</strong>&nbsp;model. ChangeNotifierProvider does not rebuild Counter unless there is a need for this. It will also automatically call the&nbsp;<strong>dispose()</strong>&nbsp;method on the Counter model when the instance is no longer needed.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">class</span>&nbsp;MyApp&nbsp;<span class="keyword">extends</span>&nbsp;StatelessWidget&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;<span class="annotation">@override</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;MaterialApp(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme:&nbsp;ThemeData(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primarySwatch:&nbsp;Colors.indigo,&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home:&nbsp;ChangeNotifierProvider&lt;CounterModel&gt;(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder:&nbsp;(_)&nbsp;=&gt;&nbsp;CounterModel(),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;CounterView(),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>If there is a need to provide more than one class, you can use&nbsp;<strong>MultiProvider.</strong>&nbsp;The MultiProvider is a list of all the different Providers being used within its scope. Without using this, we would have to nest our Providers with one being the child of another and another. We can understand this from the below code.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;runApp(&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;MultiProvider(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;providers:&nbsp;[&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChangeNotifierProvider(builder:&nbsp;(context)&nbsp;=&gt;&nbsp;Counter()),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provider(builder:&nbsp;(context)&nbsp;=&gt;&nbsp;SomeOtherClass()),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;MyApp(),&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;),&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h4">Consumer</h3>
+<p>It is a type of provider that does not do any fancy work. It just calls the provider in a new widget and delegates its build implementation to the builder. The following code explains it more clearly./p&gt;</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">return</span>&nbsp;Consumer&lt;Counter&gt;(&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;builder:&nbsp;(context,&nbsp;count,&nbsp;child)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;Text(<span class="string">"Total&nbsp;price:&nbsp;${count.total}"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;},&nbsp;&nbsp;</li>
+<li class="alt">);&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>In the above example, you can see that the&nbsp;<strong>consumer widget</strong>&nbsp;only requires a builder function, which is called whenever the ChangeNotifier changes. The builder function contains&nbsp;<strong>three</strong>&nbsp;arguments, which are&nbsp;<strong>context, count, and child.</strong>&nbsp;The first argument, context, contain in every build() method. The second argument is the instance of the ChangeNotifier, and the third argument is the child that is used for optimization. It is the best idea to put the consumer widget as deep as in the tree as possible.</p>
